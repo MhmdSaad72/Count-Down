@@ -45,7 +45,7 @@ class ThemeController extends Controller
       ThemeImage::where('theme_id',$theme->id)->update(['active' => 0]);
 
       if ($file) {        // case uploade new image
-        
+
           $fileName = 'uploaded-' . $theme->id . '.jpg';
           $path = public_path().'/img';
           $uplaod = $file->move($path,$fileName);

@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/login-alt' , [App\Http\Controllers\Auth\LoginController::class, 'forgetLoginForm'])->name('login-alt');
+Route::get('/logout' , [App\Http\Controllers\Auth\LoginController::class, 'logout']);
 Auth::routes();
 
 Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function(){
