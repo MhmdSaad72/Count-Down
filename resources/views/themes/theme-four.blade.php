@@ -72,56 +72,56 @@
                             </li>
                             @if ($themeFour->checkSocial('facebookUrl'))
                               <li class="list-inline-item mx-2">
-                                <a class="reset-link text-white text-sm" href="#" title="Facebook">
+                                <a class="reset-link text-white text-sm" href="{{ $themeFour->socialUrl('facebookUrl') }}" title="Facebook">
                                   <i class="fab fa-facebook-f"></i>
                                 </a>
                               </li>
                             @endif
                             @if ($themeFour->checkSocial('twitterUrl'))
                               <li class="list-inline-item mx-2">
-                                <a class="reset-link text-white text-sm" href="#" title="Twitter">
+                                <a class="reset-link text-white text-sm" href="{{ $themeFour->socialUrl('twitterUrl') }}" title="Twitter">
                                   <i class="fab fa-twitter"></i>
                                 </a>
                               </li>
                             @endif
                             @if ($themeFour->checkSocial('linkedinUrl'))
                               <li class="list-inline-item mx-2">
-                                <a class="reset-link text-white text-sm" href="#" title="Linkedin">
+                                <a class="reset-link text-white text-sm" href="{{ $themeFour->socialUrl('linkedinUrl') }}" title="Linkedin">
                                   <i class="fab fa-linkedin-in"></i>
                                 </a>
                               </li>
                             @endif
                             @if ($themeFour->checkSocial('vimeoUrl'))
                               <li class="list-inline-item mx-2">
-                                <a class="reset-link text-white text-sm" href="#" title="vimeo">
+                                <a class="reset-link text-white text-sm" href="{{ $themeFour->socialUrl('vimeoUrl') }}" title="vimeo">
                                   <i class="fab fa-vimeo-v"></i>
                                 </a>
                               </li>
                             @endif
                             @if ($themeFour->checkSocial('youtubeUrl'))
                               <li class="list-inline-item mx-2">
-                                <a class="reset-link text-white text-sm" href="#" title="youtube">
+                                <a class="reset-link text-white text-sm" href="{{ $themeFour->socialUrl('youtubeUrl') }}" title="youtube">
                                   <i class="fab fa-youtube"></i>
                                 </a>
                               </li>
                             @endif
                             @if ($themeFour->checkSocial('behanceUrl'))
                               <li class="list-inline-item mx-2">
-                                <a class="reset-link text-white text-sm" href="#" title="behance">
+                                <a class="reset-link text-white text-sm" href="{{ $themeFour->socialUrl('behanceUrl') }}" title="behance">
                                   <i class="fab fa-behance"></i>
                                 </a>
                               </li>
                             @endif
                             @if ($themeFour->checkSocial('pinterestUrl'))
                               <li class="list-inline-item mx-2">
-                                <a class="reset-link text-white text-sm" href="#" title="pinterest">
+                                <a class="reset-link text-white text-sm" href="{{ $themeFour->socialUrl('pinterestUrl') }}" title="pinterest">
                                   <i class="fab fa-pinterest"></i>
                                 </a>
                               </li>
                             @endif
                             @if ($themeFour->checkSocial('instagramUrl'))
                               <li class="list-inline-item mx-2">
-                                <a class="reset-link text-white text-sm" href="#" title="instagram">
+                                <a class="reset-link text-white text-sm" href="{{ $themeFour->socialUrl('instagramUrl') }}" title="instagram">
                                   <i class="fab fa-instagram"></i>
                                 </a>
                               </li>
