@@ -17,9 +17,11 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name',
+        'user_name',
         'email',
         'password',
+        'security_key',
+        'full_name'
     ];
 
     /**
@@ -40,4 +42,15 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // public function getAuthPassword()
+    // {
+    //     return $this->password;
+    // }
+
+    public function confirmed()
+    {
+      $confirmed = $this->email_verified_at ? 'confirmed' : 'unconfirmed';
+      return $confirmed ;
+    }
 }
