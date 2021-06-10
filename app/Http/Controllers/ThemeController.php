@@ -45,15 +45,18 @@ class ThemeController extends Controller
       ThemeImage::where('theme_id',$theme->id)->update(['active' => 0]);
 
       if ($file) {        // case uploade new image
-          $fileName = 'uploaded.jpg';
+        
+          $fileName = 'uploaded-' . $theme->id . '.jpg';
           $path = public_path().'/img';
           $uplaod = $file->move($path,$fileName);
-          $image = ThemeImage::where('image', 'LIKE','%uploaded%')->first();
+          $image = ThemeImage::where('image', $fileName)->first();
+
           if ($image) {
-            $image->update(['image' => $fileName , 'active' => 1]);
+            $image->update(['image' => $fileName , 'theme_id' => $theme->id,  'active' => 1]);
           }else {
             ThemeImage::create(['image' => $fileName , 'theme_id' => $theme->id , 'active' => 1]);
           }
+
       }else {
         ThemeImage::where('theme_id',$theme->id)->where('image',$request->themebg)->update(['active' => 1]);
       }

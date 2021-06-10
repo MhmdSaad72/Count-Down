@@ -117,9 +117,10 @@
             <div class="row pb-5">
                 <div class="col-lg-5 mx-auto">
                     <p class="lead mb-3 text-center">{{ $generalSetting->newsletter ?? '' }}</p>
-                    <form class="subscribing-form" action="#">
+                    <form class="subscribing-form" action="{{ route('subscribe.user')}}" method="POST">
+                      @csrf
                         <div class="input-group mb-3 p-2 rounded bg-light border">
-                            <input class="form-control bg-none border-0 shadow-0" type="text" placeholder="e.g. Jasondoe@gmail.com" aria-label="Recipient's email address">
+                            <input class="form-control bg-none border-0 shadow-0" type="text" placeholder="e.g. Jasondoe@gmail.com" name="email" aria-label="Recipient's email address">
                             <button class="btn btn-light bg-white rounded px-4" type="submit">{{ $generalSetting->submit_button ?? '' }}</button>
                         </div>
                     </form>

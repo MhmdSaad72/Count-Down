@@ -55,9 +55,10 @@
                         <!-- Newsletter-->
                         <div class="row">
                             <div class="col-lg-10">
-                                <form class="subscribing-form mb-5" action="#">
+                                <form class="subscribing-form mb-5" action="{{ route('subscribe.user')}}" method="POST">
+                                  @csrf
                                     <div class="input-group mb-3 p-2 rounded bg-transparent">
-                                        <input class="form-control bg-none border-0 shadow-0 text-white" type="text" placeholder="e.g. Jasondoe@gmail.com" aria-label="Recipient's email address">
+                                        <input class="form-control bg-none border-0 shadow-0 text-white" type="text" name="email" placeholder="e.g. Jasondoe@gmail.com" aria-label="Recipient's email address">
                                         <button class="btn btn-light bg-white rounded px-4" type="submit">{{ $generalSetting->submit_button ?? '' }}</button>
                                     </div>
                                 </form>

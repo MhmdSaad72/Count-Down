@@ -22,6 +22,14 @@
     </head>
 
     <body>
+          <!-- Success Flash Message-->
+          @if (session('flash_message'))
+          <div class="flash-msg-popup is-dismissed px-4 py-3">
+              <p class="mb-0 w-100">
+                  <i class="fas fa-check-circle me-2"></i>{{ session('flash_message') }}
+              </p>
+          </div>
+          @endif
 
           @yield('content')
 
@@ -32,6 +40,7 @@
         </script>
         <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
         <script src="{{asset('js/counter.js')}}"></script>
+        <script src="{{asset('js/admin.js')}}"></script>
         @yield('js')
         <!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">

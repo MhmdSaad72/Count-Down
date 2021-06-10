@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Mail\ConfirmationMail;
+use Illuminate\Support\Facades\Mail;
 
 class UsersController extends Controller
 {
@@ -44,5 +46,32 @@ class UsersController extends Controller
       } else {
           return redirect()->back()->with('error','Error! invalid old password');
       }
+    }
+
+    /*==================================================
+                    Add new subscriber
+    ====================================================*/
+    public function subscribe(Request $request)
+    {
+      $this->validate($request,[
+        'email' => 'required|email'
+      ]);
+
+      $user = User::create([
+        'email' => $request->email
+      ]);
+
+      Mail::to($user->email)->send(new ConfirmationMail($user));
+
+      return redirect()->back()->with('flash_message','Cool! You have successfully subscribed');
+    }
+
+    public function verify($id)
+    {
+      $user = User::findOrFail($id);
+      $user->update([
+        'email_verified_at' => \Carbon\Carbon::now(),
+      ]);
+      return redirect()->route('home')->with('flash_message','Cool! your email is verified ');
     }
 }
