@@ -52,7 +52,7 @@
                 <a class="dropdown-toggle float-end no-caret reset-link" id="userDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
                     <div class="d-flex align-items-center">
                         <div class="me-2 text-right">
-                            <h6 class="text-uppercase letter-spacing-0 fw-bold mb-0 line-height-0">{{ $auth->user_name ?? ''}}</h6>
+                            <h6 class="text-uppercase letter-spacing-0 fw-bold mb-0 line-height-0">{{ $auth->full_name ?? ''}}</h6>
                             <p class="text-gray-500 mb-0 text-sm line-height-0">{{ $auth->role == 1 ? 'Administrator' : ''}}</p>
                         </div>
                         <img class="rounded-circle" src="{{asset('img/profile.svg')}}" alt="Jason Doe" width="40">

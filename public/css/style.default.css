@@ -7758,9 +7758,6 @@ body::-webkit-scrollbar-thumb {
 main.admin-main {
   width: 100%;
   transition: all 0.3s; }
-  @media (max-width: 991.98px) {
-    main.admin-main {
-      width: calc(100% + 6.5rem); } }
   main.admin-main.active {
     margin-right: -6.5rem; }
 
@@ -7961,11 +7958,10 @@ label.theme-label {
 *
 */
 .datepicker-picker {
-  font-family: "Arsenal", sans-serif;
-}
-.datepicker-dropdown{
-  z-index: 9999 !important;
-}
+  font-family: "Arsenal", sans-serif; }
+
+.datepicker-dropdown {
+  z-index: 9999; }
 
 .datepicker-controls .button {
   border: none;
@@ -8009,9 +8005,11 @@ label.theme-label {
   box-shadow: 1px 1px 3px rgba(69, 190, 165, 0.4); }
   .dataTable-table > thead > tr > th {
     background: none;
-    color: #fff;
     padding: 1rem;
     border-bottom: none; }
+    .dataTable-table > thead > tr > th a {
+      text-decoration: none;
+      color: #fff; }
     .dataTable-table > thead > tr > th:first-of-type {
       border-radius: 0.25rem 0 0; }
     .dataTable-table > thead > tr > th:last-of-type {
@@ -8067,21 +8065,22 @@ label.theme-label {
 .desc .dataTable-sorter::after {
   border-bottom-color: #1b4f44; }
 
-.dataTable-pagination li {
+.dataTable-pagination li.pager {
   margin: 0.125rem; }
-  .dataTable-pagination li.active a {
-    background: linear-gradient(to right, #45bea5, #45beb9);
-    box-shadow: 1px 1px 3px rgba(69, 190, 165, 0.4);
-    color: white;
-    font-weight: bold; }
-    .dataTable-pagination li.active a:hover, .dataTable-pagination li.active a:focus {
-      color: white; }
-  .dataTable-pagination li a {
+  .dataTable-pagination li.pager a {
     border-radius: 0.25rem;
     transition: all 0.3s;
     background: white; }
-    .dataTable-pagination li a:hover, .dataTable-pagination li a:focus {
+    .dataTable-pagination li.pager a:hover, .dataTable-pagination li.pager a:focus {
       color: #212529; }
+
+.dataTable-pagination li.active a {
+  background: linear-gradient(to right, #45bea5, #45beb9);
+  box-shadow: 1px 1px 3px rgba(69, 190, 165, 0.4);
+  color: white;
+  font-weight: bold; }
+  .dataTable-pagination li.active a:hover, .dataTable-pagination li.active a:focus {
+    color: white; }
 
 /*
 *
@@ -8623,6 +8622,9 @@ a.text-hover-dark {
 
 .bg-gradient-dark {
   background: linear-gradient(to right, #343a40, #343840); }
+
+[class*='btn-outline-']:not(.btn-outline-light):not(.btn-outline-secondary):hover, [class*='btn-outline-']:not(.btn-outline-light):not(.btn-outline-secondary):focus {
+  color: #fff !important; }
 
 /*
      Transparent overlays

@@ -6,17 +6,25 @@
 
 @section('content')
 <section class="py-5">
+  <!-- Success Flash Message-->
+  @if (session('flash_message'))
+  <div class="flash-msg-popup is-dismissed px-4 py-3">
+      <p class="mb-0 w-100">
+          <i class="fas fa-check-circle me-2"></i>{{ session('flash_message') }}
+      </p>
+  </div>
+  @endif
 
     <!-- Subscribers Table-->
     <table class="table bg-white shadow rounded table-striped text-nowrap mb-0" id="subscribersTable">
         <thead>
             <tr>
-                <th>ID<span class="pe-4 pe-lg-2"> </span></th>
-                <th>Email Address</th>
-                <th>Status</th>
-                <th>Confirmed</th>
-                <th>Subscribed</th>
-                <th>Action</th>
+                <th>{{__('ID')}}<span class="pe-4 pe-lg-2"> </span></th>
+                <th>{{__('Email Address')}}</th>
+                <th>{{__('Status')}}</th>
+                <th>{{__('Confirmed')}}</th>
+                <th>{{__('Subscribed')}}</th>
+                <th>{{__('Action')}}</th>
             </tr>
         </thead>
         <tbody>
@@ -25,12 +33,20 @@
               <td> <strong>{{ $loop->iteration }}</strong></td>
               <td>{{ $value->email }}</td>
                 <td>
-                  <div class="badge bg-success text-uppercase">{{ $value->confirmed() }}</div>
+                  @if ($value->email_verified_at)
+                    <div class="badge bg-success text-uppercase">{{ $value->confirmed() }}</div>
+                  @else
+                    <div class="badge bg-warning text-uppercase">{{ $value->confirmed() }}</div>
+                  @endif
                 </td>
                 <td>{{ $value->email_verified_at}}</td>
                 <td>{{ $value->created_at }}</td>
                 <td>
-                  <button class="btn btn-sm btn-danger py-1 px-2" type="button"><i class="fas fa-trash-alt text-xs"></i></button>
+                  <form class="" action="{{ route('delete.subscriber' , $value->id) }}" method="post">
+                    @csrf
+                    @method('DELETE')
+                    <button class="btn btn-sm btn-danger py-1 px-2" type="submit" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fas fa-trash-alt text-xs"></i></button>
+                  </form>
                 </td>
               </tr>
           @endforeach

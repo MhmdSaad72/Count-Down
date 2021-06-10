@@ -1,5 +1,13 @@
 @extends('layouts.app')
-
+@section('style')
+  <style>
+  .admin-login::before {
+    background: url({{asset('/img/theme-2.jpg')}});
+    background-position: center center;
+    background-size: cover;
+  }
+</style>
+@endsection
 @section('content')
 <div class="admin-login d-flex align-items-center p-4 transitionHolder fade">
     <section class="w-100">

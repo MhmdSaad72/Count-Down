@@ -47,4 +47,11 @@ class Theme extends Model
       $url = $social ? $social->url : null;
       return $url;
     }
+
+
+    public function checkImage($id)
+    {
+      $image = ThemeImage::where('id',$id)->where('active',1)->first();
+      return $image;
+    }
 }

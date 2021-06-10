@@ -85,10 +85,30 @@
 
             <div class="form-group col-lg-6">
                 <!-- Input-->
-                <label class="form-label h5 mb-0" for="metaDescription">Favicon</label>
+                <label class="form-label h5 mb-0" for="metaDescription">Timezone</label>
                 <p class="form-text mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
-                <textarea class="form-control shadow-0" rows="4" id="metaDescription" name="favicon_text" placeholder="Set a description for your page">{{ $generalSetting->favicon_text ?? '' }}</textarea>
+                <select class="form-select shadow-0" name="timezone">
+                  @foreach ($timeZones as $key => $value)
+                    <option value="{{ $value }}" {{ $currentTimeZone == $value ? 'selected' : ''}}>{{ $value }}</option>
+                  @endforeach
+                </select>
+              </div>
+
+            <div class="col-12">
+              <div class="row">
+                <div class="col-12">
+                  <div class="form-group col-lg-6">
+                      <!-- Input-->
+                      <label class="form-label h5 mb-0" for="metaDescription">Meta description</label>
+                      <p class="form-text mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+                      <textarea class="form-control shadow-0" rows="4" id="metaDescription" name="meta_description" placeholder="Set a description for your page">{{ $generalSetting->favicon_text ?? '' }}</textarea>
+                  </div>
+                </div>
+              </div>
             </div>
+
+
+
 
             <div class="form-group col-12">
                 <!-- Submit Button-->

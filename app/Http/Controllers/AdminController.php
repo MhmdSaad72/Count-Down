@@ -86,7 +86,9 @@ class AdminController extends Controller
       $general = true ;
       $auth = Auth::user();
       $generalSetting = GeneralSetting::first();
-      return view('admin.general',compact('pageName','general','auth','generalSetting'));
+      $timeZones = timezone_identifiers_list();
+      $currentTimeZone = \Config::get('app.timezone');
+      return view('admin.general',compact('pageName','general','auth','generalSetting','timeZones','currentTimeZone'));
     }
 
     /*=========================================================
@@ -102,8 +104,8 @@ class AdminController extends Controller
         'page_name' => 'required|max:255',
         'meta_keywords' => 'nullable|regex:/^[\pL\s]+$/u|max:255',
         'meta_author' => 'nullable|max:255',
-        'favicon_image' => 'nullable|file|image|mimes:jpeg,png,jpg,gif,svg',
-        'favicon_text' => 'nullable|max:255',
+        'favicon_image' => 'nullable|file|image|mimes:jpeg,png,jpg,gif,svg|dimensions:min_width=80,max_width=80,min_height=80,max_height=80',
+        'meta_description' => 'nullable|max:255',
       ]);
 
       $requestData = $request->all();
@@ -112,6 +114,7 @@ class AdminController extends Controller
                                                 ->store('uploads', 'public');
       }
 
+      config(['app.timezone' => $requestData['timezone']]);
       $general->update($requestData);
       return redirect()->back()->with('flash_message','Cool! You\'ve updated your data');
     }

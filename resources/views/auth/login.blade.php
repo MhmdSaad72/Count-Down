@@ -1,5 +1,14 @@
 @extends('layouts.app')
 
+@section('style')
+  <style>
+  .admin-login::before {
+    background: url({{asset('/img/theme-2.jpg')}});
+    background-position: center center;
+    background-size: cover;
+  }
+</style>
+@endsection
 @section('content')
   <div class="admin-login d-flex align-items-center p-4 transitionHolder fade">
 
@@ -32,7 +41,7 @@
                                   <label class="form-label h6 mb-2" for="password">Password </label>
                                   <!-- Icon Input-->
                                   <div class="input-group flex-row-reverse">
-                                      <input class="form-control border-start-0 shadow-0 rounded rounded-start-0" id="password" type="password" name="password" placeholder="Enter your password" aria-label="password" aria-describedby="password-addon" value="12345678"/>
+                                      <input class="form-control border-start-0 shadow-0 rounded rounded-start-0" id="password" type="password" name="password" placeholder="Enter your password" aria-label="password" aria-describedby="password-addon"/>
                                       <span class="input-group-text pe-0 border-end-0 rounded rounded-end-0" id="password-addon">
                                           <i class="text-muted fas fa-lock"></i>
                                       </span>

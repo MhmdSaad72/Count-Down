@@ -34,5 +34,6 @@ Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function(){
   Route::patch('/social-links' , [App\Http\Controllers\SocialLinkController::class, 'updateSocial'])->name('update.social');
   Route::patch('/admin-profile/{user}' , [App\Http\Controllers\UsersController::class, 'updateUser'])->name('update.user');
   Route::post('/subscribe' , [App\Http\Controllers\UsersController::class, 'subscribe'])->name('subscribe.user');
+  Route::delete('/subscribe/{id}' , [App\Http\Controllers\UsersController::class, 'destroy'])->name('delete.subscriber');
   Route::get('/verify/email/{id}' , [App\Http\Controllers\UsersController::class, 'verify'])->name('verify.email');
 });

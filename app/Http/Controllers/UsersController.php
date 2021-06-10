@@ -16,7 +16,7 @@ class UsersController extends Controller
     {
       $this->validate($request,[
         'full_name' => 'required|max:100',
-        'user_name' => 'required|max:100',
+        'user_name' => 'required|max:100|alpha_num',
         'email' => 'required|email|max:100',
         'password' => 'required_with:new_password|nullable|min:8|max:30',
         'new_password' => 'required_with:password|nullable|min:8|max:30|different:password',
@@ -73,5 +73,13 @@ class UsersController extends Controller
         'email_verified_at' => \Carbon\Carbon::now(),
       ]);
       return redirect()->route('home')->with('flash_message','Cool! your email is verified ');
+    }
+
+
+    public function destroy($id)
+    {
+      $user =  User::findOrFail($id);
+      $user->delete();
+      return redirect()->back()->with('flash_message','Y\'ve successfully deleted a subscriber');
     }
 }

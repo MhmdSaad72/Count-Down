@@ -22,7 +22,7 @@
             @foreach ($singleTheme->images as $key => $value)
             <!-- Theme default background item-->
             <div class="col-xl-2 col-lg-3 col-6 form-group">
-                <input class="btn-check" type="radio" name="themebg" id="themeOneBg{{ $loop->iteration }}" onchange="altBackground()" value="{{$value->image}}">
+                <input class="btn-check" type="radio" name="themebg" id="themeOneBg{{ $loop->iteration }}" onchange="altBackground()" value="{{$value->image}}" {{ $singleTheme->checkImage($value->id) ? 'checked' : '' }}>
                 <label class="bg-cover bg-center theme-label rounded-lg bg-cover bg-center" for="themeOneBg{{ $loop->iteration }}" style="background: url({{ asset('img/' . $value->image)}})">
                     <span class="theme-label-identifier bg-success text-white px-2 text-xs text-uppercase letter-spacing-0 fw-bold">
                         <i class="fas fa-check-circle me-2"></i>
@@ -169,6 +169,10 @@
                 <div class="form-group">
                     <!-- Submit Button-->
                     <button class="btn btn-gradient-success" type="submit"> <i class="me-2 fas fa-check"></i>Save changes</button>
+                    <a class="btn btn-outline-success" href="{{ route('themes') }}">
+                      <i class="fas fa-chalkboard ms-2"></i>
+                      Back to themes
+                    </a>
                 </div>
 
             </div>

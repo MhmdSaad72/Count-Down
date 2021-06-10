@@ -24,7 +24,7 @@ class CreateGeneralSettingsTable extends Migration
             $table->string('meta_keywords')->nullable();
             $table->string('meta_author')->nullable();
             $table->string('favicon_image')->nullable();
-            $table->text('favicon_text')->nullable();
+            $table->text('meta_description')->nullable();
             $table->bigInteger('views')->default(0);
         });
     }

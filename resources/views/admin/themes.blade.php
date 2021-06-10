@@ -16,7 +16,11 @@
                   <form  action="{{ route('active.theme' , $value->id)}}" method="post">
                     @csrf
                     @method('PATCH')
-                    <button class="btn btn-gradient-success btn-sm apply-btn" type="submit">Apply theme</button>
+                    @if ($value->active == 1)
+                      <button class="btn btn-gradient-success btn-sm apply-btn" type="submit"><i class="fas fa-check me-2"></i>Applied</button>
+                    @else
+                      <button class="btn btn-gradient-success btn-sm apply-btn" type="submit">Apply theme</button>
+                    @endif
                     <span class="btn btn-gradient-success btn-sm applied-btn">
                       <i class="fas fa-check me-2"></i>
                       Applied
