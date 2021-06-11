@@ -11,7 +11,7 @@
     </div>
     @endif
     <h2 class="h5 text-uppercase letter-spacing-0 mb-0">{{__('Choose theme background')}}</h2>
-    <p class="form-text mb-3">{{__('Lorem ipsum dolor sit amet, consectetur adipisicing.')}}</p>
+    <p class="form-text mb-3">{{__('Choose a suitable background of your counter\'s page, each theme has its unique backgrounds.')}}</p>
 
     <!-- Theme Edit Form-->
     <form class="theme-edit-form" action="{{ route('update.theme' , $singleTheme->id)}}" method="POST" enctype="multipart/form-data">
@@ -51,7 +51,7 @@
                 <!-- Image uploader-->
                 <div class="form-group mb-4 d-none" id="altBackground">
                     <h2 class="form-label h5 mb-0">{{__('Custom Image')}}</h2>
-                    <p class="form-text mb-3">{{__('Lorem ipsum dolor sit amet, consectetur adipisicing.')}}</p>
+                    <p class="form-text mb-3">{{__('Upload a custom background image from your device.')}}</p>
                     <div class="uploader" id="file-upload-form">
                         <input class="d-none" id="file-upload" type="file" name="fileUpload" accept="image/*">
                         <label class="d-block" id="file-drag" for="file-upload">
@@ -71,7 +71,7 @@
                 <!-- Included social links                    -->
                 <div class="form-group mb-4">
                     <h5 class="form-label h5 mb-0">{{__('Social links included')}}</h5>
-                    <p class="form-text mb-3">{{__('Lorem ipsum dolor sit amet, consectetur adipisicing.')}}</p>
+                    <p class="form-text mb-3">{{__('Choose which social icons should be appear on your counter\'s page.')}}</p>
 
                     <div class="row gy-3">
 
