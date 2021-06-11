@@ -12,14 +12,14 @@
                     <!-- Sidebar Link-->
                     <a class="sidebar-link {{ isset($dashboard) ? 'active' : '' }}" href="{{ route('dashboard')}} ">
                         <i class="me-lg-2 fa-fw fas fa-cube"></i>
-                        <span>Dashboard</span>
+                        <span>{{__('Dashboard')}}</span>
                     </a>
                 </li>
                 <li class="sidebar-item py-lg-1">
                     <!-- Sidebar Link-->
                     <a class="sidebar-link {{ isset($subscribers) ? 'active' : '' }}" href="{{ route('subscribes') }}">
                         <i class="me-lg-2 fa-fw fas fa-address-book"></i>
-                        <span>Subscribers</span>
+                        <span>{{__('Subscribers')}}</span>
                     </a>
                 </li>
             </ul>
@@ -32,21 +32,21 @@
                     <!-- Sidebar Link-->
                     <a class="sidebar-link {{ isset($themes) ? 'active' : '' }}" href="{{ route('themes') }}">
                         <i class="me-lg-2 fa-fw fas fa-chalkboard"></i>
-                        <span>Themes</span>
+                        <span>{{__('Themes')}}</span>
                     </a>
                 </li>
                 <li class="sidebar-item py-lg-1">
                     <!-- Sidebar Link-->
                     <a class="sidebar-link {{ isset($counter) ? 'active' : '' }}" href="{{ route('counter') }}">
                         <i class="me-lg-2 fa-fw fas fa-stopwatch"></i>
-                        <span>Counter</span>
+                        <span>{{__('Counter')}}</span>
                     </a>
                 </li>
                 <li class="sidebar-item py-lg-1">
                     <!-- Sidebar Link-->
                     <a class="sidebar-link {{ isset($social) ? 'active' : '' }}" href="{{ route('social') }}">
                         <i class="me-lg-2 fa-fw fas fa-globe-africa"></i>
-                        <span>Social links</span>
+                        <span>{{__('Social links')}}</span>
                     </a>
                 </li>
             </ul>
@@ -59,14 +59,14 @@
                     <!-- Sidebar Link-->
                     <a class="sidebar-link {{ isset($profile) ? 'active' : '' }}" href="{{ route('profile') }}">
                         <i class="me-lg-2 fa-fw fas fa-id-card-alt"></i>
-                        <span>Profile</span>
+                        <span>{{__('Profile')}}</span>
                     </a>
                 </li>
                 <li class="sidebar-item py-lg-1">
                     <!-- Sidebar Link-->
                     <a class="sidebar-link {{ isset($general) ? 'active' : '' }}" href="{{ route('general') }}">
                         <i class="me-lg-2 fa-fw fas fa-cog"></i>
-                        <span>General</span>
+                        <span>{{__('General')}}</span>
                     </a>
                 </li>
             </ul>
