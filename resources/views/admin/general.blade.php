@@ -79,7 +79,7 @@
             <div class="form-group col-lg-6">
                 <!-- Input-->
                 <label class="form-label h5 mb-0" for="pageFavicon">{{__('Favicon')}}</label>
-                <p class="form-text mb-3">{{__('upload the browser\'s tab favicon, the image uploaded dimensions must be 80x80px.')}}</p>
+                <p class="form-text mb-3">{{__('Upload the browser\'s tab favicon, the image uploaded dimensions must be 80x80px.')}}</p>
                 <input class="form-control shadow-0" id="pageFavicon" type="file" name="favicon_image" />
             </div>
 
