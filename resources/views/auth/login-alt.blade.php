@@ -27,7 +27,7 @@
                           @csrf
                             <div class="form-group mb-4">
                                 <label class="form-label h6 mb-0" for="uniqueKey">Unique security key</label>
-                                <p class="form-text mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+                                <p class="form-text mb-3">{{__('A master key that allows you to login without any other credentials, check it inside your theme directory.')}}</p>
                                 <!-- Icon Input-->
                                 <div class="input-group flex-row-reverse">
                                     <input class="form-control border-start-0 shadow-0 rounded rounded-start-0" id="uniqueKey" type="text" name="security_key" placeholder="Enter your unique security key" aria-label="uniqueKey"
