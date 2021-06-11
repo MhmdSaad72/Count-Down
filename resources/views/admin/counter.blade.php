@@ -34,14 +34,14 @@
             <div class="form-group col-lg-6">
                 <!-- Input-->
                 <label class="form-label h5 mb-0 required" for="releaseDate">{{__('Release date')}}</label>
-                <p class="form-text mb-3">{{__('Lorem ipsum dolor sit amet, consectetur adipisicing.')}}</p>
+                <p class="form-text mb-3">{{__('Please select the date of your project release.')}}</p>
                 <input class="form-control shadow-0" id="releaseDate" type="text" name="releaseDate" placeholder="select release date" value="{{ $countDown->releaseDate ?? ''}}" required="required" />
             </div>
 
             <div class="form-group col-lg-6">
                 <!-- Select -->
-                <label class="form-label required h5 mb-0" for="releaseHours">{{__('Release Hours')}}</label>
-                <p class="form-text mb-3">{{__('Lorem ipsum dolor sit amet, consectetur adipisicing.')}}</p>
+                <label class="form-label required h5 mb-0" for="releaseHours">{{__('Release Hour')}}</label>
+                <p class="form-text mb-3">{{__('Please select the hour of your project release.')}}</p>
                 <select class="form-select shadow-0" id="releaseHours" name="releaseHours">
                     @for ($i=1; $i <= 24; $i++) <option value="{{ $i }}" {{ $countDown->releaseHours == $i ? 'selected' : '' }}>{{ $i }}</option>
                     @endfor
@@ -50,8 +50,8 @@
 
             <div class="form-group col-lg-6">
                 <!-- Select-->
-                <label class="form-label required h5 mb-0" for="releaseMinutes">{{__('Release Minutes')}}</label>
-                <p class="form-text mb-3">{{__('Lorem ipsum dolor sit amet, consectetur adipisicing.')}}</p>
+                <label class="form-label required h5 mb-0" for="releaseMinutes">{{__('Release Minute')}}</label>
+                <p class="form-text mb-3">{{__('Please select the minute of your project release.')}}</p>
                 <select class="form-select shadow-0" id="releaseMinutes" name="releaseMinutes">
                     @for ($i=1; $i < 60; $i++) <option value="{{ $i }}" {{ $countDown->releaseMinutes == $i ? 'selected' : '' }}>{{ $i }}</option>
                     @endfor
@@ -61,7 +61,7 @@
             <div class="form-group col-lg-6">
                 <!-- Input-->
                 <label class="form-label h5 mb-0 required" for="releaseUrl">{{__('Release Url')}}</label>
-                <p class="form-text mb-3">{{__('Lorem ipsum dolor sit amet, consectetur adipisicing.')}}</p>
+                <p class="form-text mb-3">{{__('Please type the URL which the app'll redirect to.')}}</p>
                 <input class="form-control shadow-0" id="releaseUrl" type="text" name="releaseUrl" placeholder="Type your release url" required="required" value="{{ $countDown->releaseUrl ?? '' }}" />
             </div>
 
