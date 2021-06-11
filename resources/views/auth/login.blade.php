@@ -55,7 +55,7 @@
 
                               <div class="form-group">
                                   <!-- Alternative Login-->
-                                  <p class="mb-0 text-center"> <span class="text-muted">Forget your password? </span><a class="text-success reset-link" href="{{ route('login-alt') }}">Login with security key</a></p>
+                                  <p class="mb-0 text-center"> <span class="text-muted">{{__('Forget your password?')}} </span><a class="text-success reset-link" href="{{ route('login-alt') }}">{{__('Login with security key')}} </a></p>
                               </div>
 
                           </form>
