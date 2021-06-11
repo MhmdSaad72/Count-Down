@@ -22,8 +22,8 @@
             <!-- User Dropdown-->
             <div class="dropdown"><a class="dropdown-toggle float-end no-caret reset-link" id="userDropdownAlt" href="#" data-bs-toggle="dropdown" aria-expanded="false"><img class="rounded" src="{{asset('img/profile.svg')}}" alt="Jason Doe" width="40"></a>
                 <ul class="dropdown-menu dropdown-menu-end mt-2" aria-labelledby="userDropdownAlt">
-                    <li><a class="dropdown-item text-muted" href="admin-profile.html"> <i class="fas fa-cog me-2 text-sm"></i>Settings</a></li>
-                    <li><a class="dropdown-item text-muted" href="{{ route('logout') }}"> <i class="fas fa-door-open me-2 text-sm"></i>Logout</a></li>
+                    <li><a class="dropdown-item text-muted" href="admin-profile.html"> <i class="fas fa-cog me-2 text-sm"></i>{{__('Settings')}}</a></li>
+                    <li><a class="dropdown-item text-muted" href="{{ route('logout') }}"> <i class="fas fa-door-open me-2 text-sm"></i>{{__('Logout')}}</a></li>
                 </ul>
             </div>
         </li>
@@ -64,7 +64,7 @@
                     <li>
                         <a class="dropdown-item text-muted" href="admin-profile.html">
                             <i class="fas fa-cog me-2 text-sm"></i>
-                            Settings
+                            {{__('Settings')}}
                         </a>
                     </li>
                     <li>
@@ -74,7 +74,7 @@
                                 @csrf
                             </form>
                             <i class="fas fa-door-open me-2 text-sm"></i>
-                            Logout
+                            {{__('Logout')}}
                         </a>
                     </li>
                 </ul>
