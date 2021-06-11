@@ -8,6 +8,7 @@ use App\Models\GeneralSetting;
 use App\Models\Counter;
 use App\Models\SocialLink;
 use \Carbon\Carbon;
+use Illuminate\Support\Facades\Config;
 use Auth;
 
 class AdminController extends Controller
@@ -87,8 +88,7 @@ class AdminController extends Controller
       $auth = Auth::user();
       $generalSetting = GeneralSetting::first();
       $timeZones = timezone_identifiers_list();
-      $currentTimeZone = \Config::get('app.timezone');
-      return view('admin.general',compact('pageName','general','auth','generalSetting','timeZones','currentTimeZone'));
+      return view('admin.general',compact('pageName','general','auth','generalSetting','timeZones'));
     }
 
     /*=========================================================
@@ -110,11 +110,14 @@ class AdminController extends Controller
 
       $requestData = $request->all();
       if ($request->hasFile('favicon_image')) {
-        $requestData['favicon_image'] = $request->file('favicon_image')
-                                                ->store('uploads', 'public');
+         $file = $requestData['favicon_image'];
+         $extension = $file->getClientOriginalExtension(); // you can also use file name
+         $fileName = 'favicon' . $extension;
+         $path = public_path().'/img';
+         $uplaod = $file->move($path,$fileName);
+         $requestData['image'] = $fileName;
       }
 
-      config(['app.timezone' => $requestData['timezone']]);
       $general->update($requestData);
       return redirect()->back()->with('flash_message','Cool! You\'ve updated your data');
     }

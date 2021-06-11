@@ -47,7 +47,6 @@ class HomeController extends Controller
       if ($now >= $releaseDate) {
         $nextDate = Carbon::parse($releaseDate)->addDays(365);
         $counter->update(['releaseDate' => $nextDate]);
-        // return redirect()->back();
       }
     }
 }

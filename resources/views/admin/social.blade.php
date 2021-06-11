@@ -30,7 +30,7 @@ use \App\Http\Controllers\AdminController;
         <div class="row gy-4">
 
             <div class="form-group col-md-6">
-                <label class="form-label h6" for="facebookUrl">Facebook</label>
+                <label class="form-label h6" for="facebookUrl">{{__('Facebook')}}</label>
                 <!-- Icon Input-->
                 <div class="input-group flex-row-reverse">
                     <input class="form-control border-start-0 shadow-0 rounded rounded-start-0 bg-white" id="facebookUrl" type="text" name="facebookUrl" placeholder="https://www.facebook.com" aria-label="facebookUrl"
@@ -42,7 +42,7 @@ use \App\Http\Controllers\AdminController;
             </div>
 
             <div class="form-group col-md-6">
-                <label class="form-label h6" for="twitterUrl">Twitter</label>
+                <label class="form-label h6" for="twitterUrl">{{__('Twitter')}}</label>
                 <!-- Icon Input-->
                 <div class="input-group flex-row-reverse">
                     <input class="form-control border-start-0 shadow-0 rounded rounded-start-0 bg-white" id="twitterUrl" type="text" name="twitterUrl" placeholder="https://www.twitter.com" aria-label="twitterUrl" aria-describedby="twitterUrl-addon"
@@ -54,7 +54,7 @@ use \App\Http\Controllers\AdminController;
             </div>
 
             <div class="form-group col-md-6">
-                <label class="form-label h6" for="instagramUrl">Instagram</label>
+                <label class="form-label h6" for="instagramUrl">{{__('Instagram')}}</label>
                 <!-- Icon Input-->
                 <div class="input-group flex-row-reverse">
                     <input class="form-control border-start-0 shadow-0 rounded rounded-start-0 bg-white" id="instagramUrl" type="text" name="instagramUrl" placeholder="https://www.instagram.com" aria-label="instagramUrl"
@@ -66,7 +66,7 @@ use \App\Http\Controllers\AdminController;
             </div>
 
             <div class="form-group col-md-6">
-                <label class="form-label h6" for="youtubeUrl">Youtube</label>
+                <label class="form-label h6" for="youtubeUrl">{{__('Youtube')}}</label>
                 <!-- Icon Input-->
                 <div class="input-group flex-row-reverse">
                     <input class="form-control border-start-0 shadow-0 rounded rounded-start-0 bg-white" id="youtubeUrl" type="text" name="youtubeUrl" placeholder="https://www.youtube.com" aria-label="youtubeUrl" aria-describedby="youtubeUrl-addon"
@@ -78,7 +78,7 @@ use \App\Http\Controllers\AdminController;
             </div>
 
             <div class="form-group col-md-6">
-                <label class="form-label h6" for="vimeoUrl">Vimeo</label>
+                <label class="form-label h6" for="vimeoUrl">{{__('Vimeo')}}</label>
                 <!-- Icon Input-->
                 <div class="input-group flex-row-reverse">
                     <input class="form-control border-start-0 shadow-0 rounded rounded-start-0 bg-white" id="vimeoUrl" type="text" name="vimeoUrl" placeholder="https://www.vimeo.com" aria-label="vimeoUrl" aria-describedby="vimeoUrl-addon"
@@ -90,7 +90,7 @@ use \App\Http\Controllers\AdminController;
             </div>
 
             <div class="form-group col-md-6">
-                <label class="form-label h6" for="linkedinUrl">Linkedin</label>
+                <label class="form-label h6" for="linkedinUrl">{{__('Linkedin')}}</label>
                 <!-- Icon Input-->
                 <div class="input-group flex-row-reverse">
                     <input class="form-control border-start-0 shadow-0 rounded rounded-start-0 bg-white" id="linkedinUrl" type="text" name="linkedinUrl" placeholder="https://www.linkedin.com" aria-label="linkedinUrl"
@@ -102,7 +102,7 @@ use \App\Http\Controllers\AdminController;
             </div>
 
             <div class="form-group col-md-6">
-                <label class="form-label h6" for="behanceUrl">Behance</label>
+                <label class="form-label h6" for="behanceUrl">{{__('Behance')}}</label>
                 <!-- Icon Input-->
                 <div class="input-group flex-row-reverse">
                     <input class="form-control border-start-0 shadow-0 rounded rounded-start-0 bg-white" id="behanceUrl" type="text" name="behanceUrl" placeholder="https://www.behance.com" aria-label="behanceUrl" aria-describedby="behanceUrl-addon"
@@ -114,7 +114,7 @@ use \App\Http\Controllers\AdminController;
             </div>
 
             <div class="form-group col-md-6">
-                <label class="form-label h6" for="pinterestUrl">Pinterest</label>
+                <label class="form-label h6" for="pinterestUrl">{{__('Pinterest')}}</label>
                 <!-- Icon Input-->
                 <div class="input-group flex-row-reverse">
                     <input class="form-control border-start-0 shadow-0 rounded rounded-start-0 bg-white" id="pinterestUrl" type="text" name="pinterestUrl" placeholder="https://www.pinterest.com" aria-label="pinterestUrl"
@@ -127,7 +127,7 @@ use \App\Http\Controllers\AdminController;
 
             <div class="form-group col-md-6">
                 <!-- Submit Button-->
-                <button class="btn btn-gradient-success" type="submit"> <i class="me-2 fas fa-check"></i>Save Settings</button>
+                <button class="btn btn-gradient-success" type="submit"> <i class="me-2 fas fa-check"></i>{{__('Save Settings')}}</button>
             </div>
 
         </div>
