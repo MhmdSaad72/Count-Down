@@ -86,7 +86,7 @@
             <div class="form-group col-lg-6">
                 <!-- Input-->
                 <label class="form-label h5 mb-0" for="metaDescription">{{__('Timezone')}}</label>
-                <p class="form-text mb-3">{{__('Add a short brief about your released project... This value is a <meta> tag value.')}}</p>
+                <p class="form-text mb-3">{{__('Please select your time zone.')}}</p>
                 <select class="form-select shadow-0" name="timezone">
                   @foreach ($timeZones as $key => $value)
                     <option value="{{ $value }}" {{ $generalSetting->timezone == $value ? 'selected' : ''}}>{{ $value }}</option>
@@ -100,7 +100,7 @@
                   <div class="form-group col-lg-6">
                       <!-- Input-->
                       <label class="form-label h5 mb-0" for="metaDescription">{{__('Meta description')}}</label>
-                      <p class="form-text mb-3">{{__('Lorem ipsum dolor sit amet, consectetur adipisicing.')}}</p>
+                      <p class="form-text mb-3">{{__('Add a short brief about your released project... This value is a <meta> tag value.')}}</p>
                       <textarea class="form-control shadow-0" rows="4" id="metaDescription" name="meta_description" placeholder="Set a description for your page">{{ $generalSetting->favicon_text ?? '' }}</textarea>
                   </div>
                 </div>
