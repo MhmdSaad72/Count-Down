@@ -18,10 +18,11 @@ class ThemeController extends Controller
     public function themes()
     {
       $pageName = 'Themes';
+      $pageDescription = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.';
       $themes = true;
       $all_themes = Theme::all();
       $auth = Auth::user();
-      return view('admin.themes',compact('all_themes','pageName','themes','auth'));
+      return view('admin.themes',compact('all_themes','pageName','themes','auth','pageDescription'));
     }
 
     /*========================================================

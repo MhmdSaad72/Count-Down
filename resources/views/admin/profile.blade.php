@@ -46,21 +46,21 @@
                 <!-- Input-->
                 <label class="form-label h5 mb-0 required" for="fullName">{{__('Full name')}}</label>
                 <p class="form-text mb-3">{{__('Your full name that will appear in header dropdown menu.')}}</p>
-                <input class="form-control shadow-0" id="fullName" type="text" name="full_name" placeholder="e.g. Jason Doe" value="{{ $auth->full_name }}" required="required" />
+                <input class="form-control shadow-0" id="fullName" type="text" name="full_name" placeholder="e.g. Jason Doe" value="{{ $auth->full_name }}" />
             </div>
 
             <div class="form-group col-lg-6">
                 <!-- Input-->
                 <label class="form-label h5 mb-0 required" for="userName">{{__('Username')}}</label>
                 <p class="form-text mb-3">{{__('Choose a username that you can login with later on.')}}</p>
-                <input class="form-control shadow-0" id="userName" type="text" name="user_name" placeholder="e.g. Jasondoe" value="{{ $auth->user_name }}" required="required" />
+                <input class="form-control shadow-0" id="userName" type="text" name="user_name" placeholder="e.g. Jasondoe" value="{{ $auth->user_name }}" />
             </div>
 
             <div class="form-group col-lg-6">
                 <!-- Input-->
                 <label class="form-label h5 mb-0 required" for="userEmail">{{__('Email address')}}</label>
                 <p class="form-text mb-3">{{__('Choose a working email address that you can login with later on.')}}</p>
-                <input class="form-control shadow-0" id="userEmail" type="email" name="email" placeholder="e.g. Jasondoe@admin.com" value="{{ $auth->email }}" required="required"/>
+                <input class="form-control shadow-0" id="userEmail" type="email" name="email" placeholder="e.g. Jasondoe@admin.com" value="{{ $auth->email }}" />
             </div>
 
             <div class="form-group col-lg-6">

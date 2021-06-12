@@ -26,7 +26,7 @@
                         <form class="login-form" action="{{ route('login') }}" method="POST">
                           @csrf
                             <div class="form-group mb-4">
-                                <label class="form-label h6 mb-0" for="uniqueKey">Unique security key</label>
+                                <label class="form-label h6 mb-0" for="uniqueKey">{{__('Unique security key')}}</label>
                                 <p class="form-text mb-3">{{__('A master key that allows you to login without any other credentials, check it inside your theme directory.')}}</p>
                                 <!-- Icon Input-->
                                 <div class="input-group flex-row-reverse">
@@ -45,7 +45,7 @@
 
                             <div class="form-group">
                                 <!-- Alternative Login-->
-                                <p class="mb-0 text-center"> <span class="text-muted">Don't have the key? </span><a class="text-success reset-link" href="{{ route('login') }}">Login with your credentials</a></p>
+                                <p class="mb-0 text-center"> <span class="text-muted">{{__('Don\'t have the key?')}} </span><a class="text-success reset-link" href="{{ route('login') }}">{{__('Login with your credentials')}}</a></p>
                             </div>
 
                         </form>

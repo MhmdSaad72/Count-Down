@@ -31,35 +31,35 @@
                 <!-- Input-->
                 <label class="form-label h5 mb-0 required" for="themeHeading">{{__('Theme main heading')}}</label>
                 <p class="form-text mb-3">{{__('The large heading appears on counter\'s page center.')}}</p>
-                <input class="form-control shadow-0" id="themeHeading" type="text" name="main_heading" placeholder="Type theme main heading" value="{{ $generalSetting->main_heading ?? '' }}" required="required" />
+                <input class="form-control shadow-0" id="themeHeading" type="text" name="main_heading" placeholder="Type theme main heading" value="{{ $generalSetting->main_heading ?? '' }}" />
             </div>
 
             <div class="form-group col-lg-6">
                 <!-- Input-->
                 <label class="form-label h5 mb-0 required" for="newsLetterText">{{__('Newsletter text')}}</label>
                 <p class="form-text mb-3">{{__('The newsletter\'s text message encourages users to subscribe.')}}</p>
-                <input class="form-control shadow-0" id="newsLetterText" type="text" name="newsletter" placeholder="Type newsletter notifying text" value="{{ $generalSetting->newsletter ?? '' }}" required="required" />
+                <input class="form-control shadow-0" id="newsLetterText" type="text" name="newsletter" placeholder="Type newsletter notifying text" value="{{ $generalSetting->newsletter ?? '' }}" />
             </div>
 
             <div class="form-group col-lg-6">
                 <!-- Input-->
                 <label class="form-label h5 mb-0 required" for="submitText">{{__('Submit button text')}}</label>
                 <p class="form-text mb-3">{{__('The text value of newsletter\'s submit button.')}}</p>
-                <input class="form-control shadow-0" id="submitText" type="text" name="submit_button" placeholder="Type newsletter notifying text" value="{{ $generalSetting->submit_button ?? '' }}" required="required" />
+                <input class="form-control shadow-0" id="submitText" type="text" name="submit_button" placeholder="Type newsletter notifying text" value="{{ $generalSetting->submit_button ?? '' }}" />
             </div>
 
             <div class="form-group col-lg-6">
                 <!-- Input-->
                 <label class="form-label h5 mb-0 required" for="copyrightsText">{{__('Copyrights text')}}</label>
                 <p class="form-text mb-3">{{__('Page\'s footer copyrights message.')}}</p>
-                <input class="form-control shadow-0" id="copyrightsText" type="text" name="copyrights" placeholder="Type copyrights text" value="{{ $generalSetting->copyrights ?? '' }}" required="required" />
+                <input class="form-control shadow-0" id="copyrightsText" type="text" name="copyrights" placeholder="Type copyrights text" value="{{ $generalSetting->copyrights ?? '' }}" />
             </div>
 
             <div class="form-group col-lg-6">
                 <!-- Input-->
                 <label class="form-label h5 mb-0 required" for="pageName">{{__('Page name')}}</label>
                 <p class="form-text mb-3">{{__('The name you can see on the browser\'s tab... This value is a <meta> tag value.')}}</p>
-                <input class="form-control shadow-0" id="pageName" type="text" name="page_name" placeholder="Set your page title" value="{{ $generalSetting->page_name ?? '' }}" required="required" />
+                <input class="form-control shadow-0" id="pageName" type="text" name="page_name" placeholder="Set your page title" value="{{ $generalSetting->page_name ?? '' }}" />
             </div>
 
             <div class="form-group col-lg-6">

@@ -21,12 +21,13 @@ class AdminController extends Controller
       $startOfMonth = Carbon::now()->startOfMonth();
       $endOfMonth = Carbon::now()->endOfMonth();
       $pageName = 'Dashboard';
+      $pageDescription = 'Some few statistics about your counter page.';
       $dashboard = true;
       $all_users = User::where('role','!=',1)->count();
       $new_users = User::where('role','!=',1)->whereBetween('created_at',[$startOfMonth,$endOfMonth])->count();
       $views = GeneralSetting::first()->views;
       $auth = Auth::user();
-      return view('admin.dashboard',compact('all_users','new_users','views','pageName','dashboard','auth'));
+      return view('admin.dashboard',compact('all_users','new_users','views','pageName','dashboard','auth','pageDescription'));
     }
 
     /*======================================================
@@ -35,10 +36,11 @@ class AdminController extends Controller
     public function subscribes()
     {
       $pageName = 'Subscribers';
+      $pageDescription = 'View who has been subscribed on your newsletter to get notified about your project release.';
       $subscribers = true;
       $users = User::where('role','!=',1)->get();
       $auth = Auth::user();
-      return view('admin.subscribes',compact('users','pageName','subscribers','auth'));
+      return view('admin.subscribes',compact('users','pageName','subscribers','auth','pageDescription'));
     }
 
     /*==============================================
@@ -47,13 +49,14 @@ class AdminController extends Controller
     public function counter()
     {
       $pageName = 'Counter Settings';
+      $pageDescription = 'Manipulate the settings of your project release date and time. ';
       $counter = true ;
       $countDown = Counter::first();
       $countDown->releaseDate = Carbon::parse($countDown->releaseDate)->format('d/m/Y');
       $countDown->releaseHours = Carbon::parse($countDown->releaseHours)->format('H');
       $countDown->releaseMinutes = Carbon::parse($countDown->releaseMinutes)->format('i');
       $auth = Auth::user();
-      return view('admin.counter',compact('pageName','counter','auth','countDown'));
+      return view('admin.counter',compact('pageName','counter','auth','countDown','pageDescription'));
     }
 
     /*=================================================
@@ -62,9 +65,10 @@ class AdminController extends Controller
     public function social()
     {
       $pageName = 'Social links';
+      $pageDescription = 'Providing a variety of social media options to render on your counter page.';
       $social = true ;
       $auth = Auth::user();
-      return view('admin.social',compact('pageName','social','auth'));
+      return view('admin.social',compact('pageName','social','auth','pageDescription'));
     }
 
     /*================================================
@@ -73,9 +77,10 @@ class AdminController extends Controller
     public function profile()
     {
       $pageName = 'Profile Settings';
+      $pageDescription = 'Maniplulate your admin security settings.';
       $profile = true ;
       $auth = Auth::user();
-      return view('admin.profile',compact('pageName','profile','auth'));
+      return view('admin.profile',compact('pageName','profile','auth','pageDescription'));
     }
 
     /*================================================
@@ -84,11 +89,12 @@ class AdminController extends Controller
     public function general_settings()
     {
       $pageName = 'General Page settings';
+      $pageDescription = 'General settings to fully customize your counter page markup.';
       $general = true ;
       $auth = Auth::user();
       $generalSetting = GeneralSetting::first();
       $timeZones = timezone_identifiers_list();
-      return view('admin.general',compact('pageName','general','auth','generalSetting','timeZones'));
+      return view('admin.general',compact('pageName','general','auth','generalSetting','timeZones','pageDescription'));
     }
 
     /*=========================================================

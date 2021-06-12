@@ -13,7 +13,7 @@
         <li class="list-inline-item">
             <a class="btn btn-gradient-success btn-sm py-2" href="{{ route('home') }}">
                 <i class="fas fa-home me-2"></i>
-                Homepage
+                {{__('Homepage')}}
             </a>
         </li>
 
@@ -41,7 +41,7 @@
             <i class="text-success me-1 me-lg-2 fa-2x fas fa-cube"></i>
             <div class="ms-2">
                 <h1 class="h3 text-uppercase fw-bold letter-spacing-0 mb-0 mb-lg-2 line-height-0">{{ $pageName ?? '' }}</h1>
-                <p class="text-gray-500 mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                <p class="text-gray-500 mb-0">{{ $pageDescription ?? '' }}</p>
             </div>
         </div>
 

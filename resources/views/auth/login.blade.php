@@ -27,7 +27,7 @@
                           <form class="login-form" action="{{ route('login') }}" method="POST">
                             @csrf
                               <div class="form-group mb-4">
-                                  <label class="form-label h6 mb-2" for="username">Username or email</label>
+                                  <label class="form-label h6 mb-2" for="username">{{__('Username or email')}}</label>
                                   <!-- Icon Input-->
                                   <div class="input-group flex-row-reverse">
                                       <input class="form-control border-start-0 shadow-0 rounded rounded-start-0" id="username" type="text" name="username" placeholder="Enter your username or email address" aria-label="username" aria-describedby="username-addon" value="admin@admin.com"/>
@@ -38,7 +38,7 @@
                               </div>
 
                               <div class="form-group mb-4">
-                                  <label class="form-label h6 mb-2" for="password">Password </label>
+                                  <label class="form-label h6 mb-2" for="password">{{__('Password')}} </label>
                                   <!-- Icon Input-->
                                   <div class="input-group flex-row-reverse">
                                       <input class="form-control border-start-0 shadow-0 rounded rounded-start-0" id="password" type="password" name="password" placeholder="Enter your password" aria-label="password" aria-describedby="password-addon"/>

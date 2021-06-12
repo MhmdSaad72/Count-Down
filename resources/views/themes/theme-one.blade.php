@@ -91,19 +91,19 @@
             <div class="counter" id="counter">
                 <div class="mx-1">
                     <div class="counter-item days theme-1-heading shadow h1 rounded-lg"></div>
-                    <p class="counter-item-title my-3">Days</p>
+                    <p class="counter-item-title my-3">{{__('Days')}}</p>
                 </div>
                 <div class="mx-1">
                     <div class="counter-item hours theme-1-heading shadow h1 rounded-lg"></div>
-                    <p class="counter-item-title my-3">Hours</p>
+                    <p class="counter-item-title my-3">{{__('Hours')}}</p>
                 </div>
                 <div class="mx-1">
                     <div class="counter-item minutes theme-1-heading shadow h1 rounded-lg"></div>
-                    <p class="counter-item-title my-3">Minutes</p>
+                    <p class="counter-item-title my-3">{{__('Minutes')}}</p>
                 </div>
                 <div class="mx-1">
                     <div class="counter-item seconds theme-1-heading shadow h1 rounded-lg"></div>
-                    <p class="counter-item-title my-3">Seconds</p>
+                    <p class="counter-item-title my-3">{{__('Seconds')}}</p>
                 </div>
             </div>
         </div>

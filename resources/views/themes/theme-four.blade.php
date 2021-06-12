@@ -27,8 +27,8 @@
                         <!-- Page main heading-->
                         <div class="row">
                             <div class="col-lg-11">
-                                <h1 class="theme-4-heading heading-2x">Our website is on the way</h1>
-                                <p class="mb-5 lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+                                <h1 class="theme-4-heading heading-2x">{{__('Our website is on the way')}}</h1>
+                                <p class="mb-5 lead">{{__('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.')}}</p>
                             </div>
                         </div>
 
@@ -36,19 +36,19 @@
                         <div class="counter text-center justify-content-start mb-5" id="counter">
                             <div class="mx-2">
                                 <div class="counter-item days counter-no theme-4-heading rounded-lg h2"></div>
-                                <p class="counter-item-title my-2">Days</p>
+                                <p class="counter-item-title my-2">{{__('Days')}}</p>
                             </div>
                             <div class="mx-2">
                                 <div class="counter-item hours counter-no theme-4-heading rounded-lg h2"></div>
-                                <p class="counter-item-title my-2">Hours</p>
+                                <p class="counter-item-title my-2">{{__('Hours')}}</p>
                             </div>
                             <div class="mx-2">
                                 <div class="counter-item minutes counter-no theme-4-heading rounded-lg h2"></div>
-                                <p class="counter-item-title my-2">Minutes</p>
+                                <p class="counter-item-title my-2">{{__('Minutes')}}</p>
                             </div>
                             <div class="mx-2">
                                 <div class="counter-item seconds counter-no theme-4-heading rounded-lg h2"></div>
-                                <p class="counter-item-title my-2">Seconds</p>
+                                <p class="counter-item-title my-2">{{__('Seconds')}}</p>
                             </div>
                         </div>
 
@@ -68,7 +68,7 @@
                         <!-- Social Links-->
                         <ul class="list-inline">
                             <li class="list-inline-item">
-                                <p class="mb-0 pe-5 position-relative text-uppercase">Follow us<span class="separator"></span></p>
+                                <p class="mb-0 pe-5 position-relative text-uppercase">{{__('Follow us')}}<span class="separator"></span></p>
                             </li>
                             @if ($themeFour->checkSocial('facebookUrl'))
                               <li class="list-inline-item mx-2">

@@ -7,7 +7,7 @@
         <!-- Theme Item-->
         <div class="col-lg-6">
           <h2 class="h5 text-uppercase letter-spacing-0 mb-0">{{ $value->name ?? '' }}</h2>
-          <p class="text-muted mb-4">{{__('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.')}}</p>
+          <p class="text-muted mb-4">{{ $value->description($key) }}</p>
           <!-- Theme Item Card-->
           <div class="card theme-card shadow rounded-lg" style="background: url({{ $value->activeImage() ?? asset('img/index1.png')}})">
             <div class="card-overlay p-3">

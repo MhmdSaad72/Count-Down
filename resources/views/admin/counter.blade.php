@@ -35,7 +35,7 @@
                 <!-- Input-->
                 <label class="form-label h5 mb-0 required" for="releaseDate">{{__('Release date')}}</label>
                 <p class="form-text mb-3">{{__('Please select the date of your project release.')}}</p>
-                <input class="form-control shadow-0" id="releaseDate" type="text" name="releaseDate" placeholder="select release date" value="{{ $countDown->releaseDate ?? ''}}" required="required" />
+                <input class="form-control shadow-0" id="releaseDate" type="text" name="releaseDate" placeholder="select release date" value="{{ $countDown->releaseDate ?? ''}}" />
             </div>
 
             <div class="form-group col-lg-6">
@@ -61,8 +61,8 @@
             <div class="form-group col-lg-6">
                 <!-- Input-->
                 <label class="form-label h5 mb-0 required" for="releaseUrl">{{__('Release Url')}}</label>
-                <p class="form-text mb-3">{{__('Please type the URL which the app'll redirect to.')}}</p>
-                <input class="form-control shadow-0" id="releaseUrl" type="text" name="releaseUrl" placeholder="Type your release url" required="required" value="{{ $countDown->releaseUrl ?? '' }}" />
+                <p class="form-text mb-3">{{__('Please type the URL which the app\'ll redirect to.')}}</p>
+                <input class="form-control shadow-0" id="releaseUrl" type="text" name="releaseUrl" placeholder="Type your release url" value="{{ $countDown->releaseUrl ?? '' }}" />
             </div>
 
             <div class="form-group col-12">

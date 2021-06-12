@@ -54,4 +54,10 @@ class Theme extends Model
       $image = ThemeImage::where('id',$id)->where('active',1)->first();
       return $image;
     }
+
+    public function description($index)
+    {
+      $themesDesc = ['A large sans serif bold heading with light background counter items, all are rendered on the page middle.','A large sans serif thin heading with a geometric background, all are rendered on the page middle.','A large serif bold heading with a plain background and counter items separator, all are rendered on the page middle.','A large sans serif heading with a fancy background and light counter items background, all are rendered on the page side.'];
+      return $themesDesc[$index];
+    }
 }

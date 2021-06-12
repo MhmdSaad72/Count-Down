@@ -1,12 +1,12 @@
 @component('mail::message')
-# Hey {{ $data->email }},
+{{__('# Hey')}} {{ $data->email }},
 
-Please verify your email to recieve new updates.
+{{__('Please verify your email to recieve new updates.')}}
 
 @component('mail::button', ['url' => route('verify.email' , ['id' => $data->id])])
-Verify
+{{__('Verify')}}
 @endcomponent
 
-Thanks,<br>
+{{__('Thanks,')}}<br>
 {{ config('app.name') }}
 @endcomponent
