@@ -18,7 +18,8 @@ class SetTimeZone
     public function handle(Request $request, Closure $next)
     {
         $generalSetting = GeneralSetting::first();
-        date_default_timezone_set('UTC');
+        $timezone = $generalSetting->timezone ??  'UTC' ;
+        date_default_timezone_set($timezone);
         return $next($request);
     }
 }
