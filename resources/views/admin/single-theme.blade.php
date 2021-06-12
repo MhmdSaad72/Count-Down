@@ -11,7 +11,6 @@
     </div>
     @endif
     <h2 class="h5 text-uppercase letter-spacing-0 mb-0">{{__('Choose theme background')}}</h2>
-    <p class="form-text mb-3">{{__('Choose a suitable background of your counter\'s page, each theme has its unique backgrounds.')}}</p>
 
     <!-- Theme Edit Form-->
     <form class="theme-edit-form" action="{{ route('update.theme' , $singleTheme->id)}}" method="POST" enctype="multipart/form-data">
