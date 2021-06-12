@@ -39,7 +39,6 @@
         const releaseUrl = "{{ $releaseUrl ?? '' }}" ;
         </script>
         <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-        <script src="{{asset('js/counter.js')}}"></script>
         <script src="{{asset('js/admin.js')}}"></script>
         @yield('js')
         <!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
