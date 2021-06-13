@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/login-alt' , [App\Http\Controllers\Auth\LoginController::class, 'forgetLoginForm'])->name('login-alt');
 Route::get('/logout' , [App\Http\Controllers\Auth\LoginController::class, 'logout']);
+Route::post('/subscribe' , [App\Http\Controllers\UsersController::class, 'subscribe'])->name('subscribe.user');
+Route::get('/verify/email/{id}' , [App\Http\Controllers\UsersController::class, 'verify'])->name('verify.email');
 Auth::routes();
 
 Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function(){
@@ -33,7 +35,5 @@ Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function(){
   Route::patch('/active/{theme}' , [App\Http\Controllers\ThemeController::class, 'activeTheme'])->name('active.theme');
   Route::patch('/social-links' , [App\Http\Controllers\SocialLinkController::class, 'updateSocial'])->name('update.social');
   Route::patch('/admin-profile/{user}' , [App\Http\Controllers\UsersController::class, 'updateUser'])->name('update.user');
-  Route::post('/subscribe' , [App\Http\Controllers\UsersController::class, 'subscribe'])->name('subscribe.user');
   Route::delete('/subscribe/{id}' , [App\Http\Controllers\UsersController::class, 'destroy'])->name('delete.subscriber');
-  Route::get('/verify/email/{id}' , [App\Http\Controllers\UsersController::class, 'verify'])->name('verify.email');
 });
