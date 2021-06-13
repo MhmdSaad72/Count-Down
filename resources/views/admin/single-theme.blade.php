@@ -167,8 +167,8 @@
 
                 <div class="form-group">
                     <!-- Submit Button-->
-                    <button class="btn btn-gradient-success" type="submit"> <i class="me-2 fas fa-check"></i>{{__('Save changes')}}</button>
-                    <a class="btn btn-outline-success ms-2 my-1" href="{{ route('themes') }}">
+                    <button class="btn btn-gradient-success me-2" type="submit"> <i class="me-2 fas fa-check"></i>{{__('Save changes')}}</button>
+                    <a class="btn btn-outline-success my-1" href="{{ route('themes') }}">
                       <i class="fas fa-chalkboard me-2"></i>
                       {{__('Back to themes')}}
                     </a>
