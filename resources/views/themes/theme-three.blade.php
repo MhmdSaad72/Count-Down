@@ -85,7 +85,12 @@
             </ul>
 
             <!-- Page main heading-->
-            <h1 class="theme-3-heading heading-4x text-uppercase text-shadow mb-5">{{ $generalSetting->main_heading ?? '' }}</h1>
+            <h1 class="theme-3-heading heading-4x text-uppercase text-shadow mb-3">{{ $generalSetting->main_heading ?? '' }}</h1>
+            <div class="row">
+              <div class="col-lg-8 mx-auto">
+                <p class="mb-5 lead">{{ $generalSetting->counter_message ?? ''}}</p>
+              </div>
+            </div>
 
             <!-- Counter-->
             <div class="counter" id="counter">
