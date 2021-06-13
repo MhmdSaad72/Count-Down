@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>{{__('Laravel Coming soon page')}}</title>
+        <title>{{ $generalSetting->page_name ?? '' }}</title>
         <meta name="description" content="{{ $generalSetting->meta_description ?? '' }}">
         <meta name="keywords" content="{{ str_replace(' ', ',', $generalSetting->meta_keywords ?? '') }}">
         <meta name="author" content="{{ $generalSetting->meta_author ?? '' }}">
