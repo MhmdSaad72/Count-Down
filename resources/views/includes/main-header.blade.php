@@ -22,8 +22,15 @@
             <!-- User Dropdown-->
             <div class="dropdown"><a class="dropdown-toggle float-end no-caret reset-link" id="userDropdownAlt" href="#" data-bs-toggle="dropdown" aria-expanded="false"><img class="rounded" src="{{asset('img/profile.svg')}}" alt="Jason Doe" width="40"></a>
                 <ul class="dropdown-menu dropdown-menu-end mt-2" aria-labelledby="userDropdownAlt">
-                    <li><a class="dropdown-item text-muted" href="admin-profile.html"> <i class="fas fa-cog me-2 text-sm"></i>{{__('Settings')}}</a></li>
-                    <li><a class="dropdown-item text-muted" href="{{ route('logout') }}"> <i class="fas fa-door-open me-2 text-sm"></i>{{__('Logout')}}</a></li>
+                    <li><a class="dropdown-item text-muted" href="{{ route('profile')}}"> <i class="fas fa-cog me-2 text-sm"></i>{{__('Settings')}}</a></li>
+                    <li>
+                      <a class="dropdown-item text-muted" href="{{ route('logout') }}">
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                        <i class="fas fa-door-open me-2 text-sm"></i>{{__('Logout')}}
+                      </a>
+                    </li>
                 </ul>
             </div>
         </li>
@@ -40,7 +47,7 @@
         <div class="d-flex">
             <i class="text-success me-1 me-lg-2 fa-2x fas fa-cube"></i>
             <div class="ms-2">
-              
+
                 @isset ($pageDescription)
                  <h1 class="h3 text-uppercase fw-bold letter-spacing-0 mb-0 mb-lg-2 line-height-0">{{ $pageName ?? '' }}</h1>
                  <p class="text-gray-500 mb-0">{{ $pageDescription }}</p>
@@ -67,7 +74,7 @@
                 <!-- Dropdown Menu-->
                 <ul class="dropdown-menu dropdown-menu-end mt-2" aria-labelledby="userDropdown">
                     <li>
-                        <a class="dropdown-item text-muted" href="admin-profile.html">
+                        <a class="dropdown-item text-muted" href="{{ route('profile')}}">
                             <i class="fas fa-cog me-2 text-sm"></i>
                             {{__('Settings')}}
                         </a>
