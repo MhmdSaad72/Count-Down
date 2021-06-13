@@ -28,7 +28,7 @@
                         <div class="row">
                             <div class="col-lg-11">
                                 <h1 class="theme-4-heading heading-2x">{{__('Our website is on the way')}}</h1>
-                                <p class="mb-5 lead">{{__('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.')}}</p>
+                                <p class="mb-5 lead">{{ $generalSetting->counter_message ?? ''}}</p>
                             </div>
                         </div>
 

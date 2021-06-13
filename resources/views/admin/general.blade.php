@@ -36,6 +36,12 @@
 
             <div class="form-group col-lg-6">
                 <!-- Input-->
+                <label class="form-label h5 mb-0 required" for="newsLetterText">{{__('Theme counter message')}}</label>
+                <p class="form-text mb-3">{{__('Your main counter description message.')}}</p>
+                <input class="form-control shadow-0" id="counter_message" type="text" name="counter_message" placeholder="Type theme counter message" value="{{ $generalSetting->counter_message ?? '' }}" />
+            </div>
+            <div class="form-group col-lg-6">
+                <!-- Input-->
                 <label class="form-label h5 mb-0 required" for="newsLetterText">{{__('Newsletter text')}}</label>
                 <p class="form-text mb-3">{{__('The newsletter\'s text message encourages users to subscribe.')}}</p>
                 <input class="form-control shadow-0" id="newsLetterText" type="text" name="newsletter" placeholder="Type newsletter notifying text" value="{{ $generalSetting->newsletter ?? '' }}" />

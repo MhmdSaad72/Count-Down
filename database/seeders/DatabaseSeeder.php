@@ -76,6 +76,7 @@ class DatabaseSeeder extends Seeder
           'page_name' => 'Coming soon counter',
           'meta_keywords' => 'IonicCounter countdown counter',
           'meta_author' => 'Ionichub',
+          'counter_message' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.'
         ]);
 
     }
