@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('style')
-<link rel="stylesheet" href="{{asset("vendor/vanilla-dataTables/vanilla-dataTables.min.css")}}">
+<link rel="stylesheet" href="{{asset("vendor/vanilla-datatables/vanilla-dataTables.min.css")}}">
 @endsection
 
 @section('content')
