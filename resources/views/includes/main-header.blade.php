@@ -40,13 +40,13 @@
         <div class="d-flex">
             <i class="text-success me-1 me-lg-2 fa-2x fas fa-cube"></i>
             <div class="ms-2">
-
-                @if ($pageDescription)
+              
+                @isset ($pageDescription)
                  <h1 class="h3 text-uppercase fw-bold letter-spacing-0 mb-0 mb-lg-2 line-height-0">{{ $pageName ?? '' }}</h1>
                  <p class="text-gray-500 mb-0">{{ $pageDescription }}</p>
                 @else
                  <h1 class="h3 text-uppercase fw-bold letter-spacing-0 pt-lg-2 mb-0 line-height-0">{{ $pageName ?? '' }}</h1>
-                @endif
+                @endisset
             </div>
         </div>
 
