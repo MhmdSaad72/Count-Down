@@ -10,7 +10,7 @@
         </p>
     </div>
     @endif
-    <h2 class="h5 text-uppercase letter-spacing-0 mb-0">{{__('Choose theme background')}}</h2>
+    <h2 class="h5 text-uppercase letter-spacing-0 mb-3">{{__('Choose theme background')}}</h2>
 
     <!-- Theme Edit Form-->
     <form class="theme-edit-form" action="{{ route('update.theme' , $singleTheme->id)}}" method="POST" enctype="multipart/form-data">
@@ -168,8 +168,8 @@
                 <div class="form-group">
                     <!-- Submit Button-->
                     <button class="btn btn-gradient-success" type="submit"> <i class="me-2 fas fa-check"></i>{{__('Save changes')}}</button>
-                    <a class="btn btn-outline-success" href="{{ route('themes') }}">
-                      <i class="fas fa-chalkboard ms-2"></i>
+                    <a class="btn btn-outline-success ms-2 my-1" href="{{ route('themes') }}">
+                      <i class="fas fa-chalkboard me-2"></i>
                       {{__('Back to themes')}}
                     </a>
                 </div>
