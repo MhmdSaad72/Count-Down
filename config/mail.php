@@ -84,7 +84,7 @@ return [
     */
 
     'from' => [
-        'address' => 'ionic.hub.eg@gmail.com',
+        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
         'name' => env('MAIL_FROM_NAME', 'Example'),
     ],
 

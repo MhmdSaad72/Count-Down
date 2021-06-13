@@ -30,6 +30,6 @@ class ConfirmationMail extends Mailable
      */
     public function build()
     {
-        return $this->from('ionic.hub.eg@gmail.com')->markdown('mail.confirmation');
+        return $this->markdown('mail.confirmation');
     }
 }
