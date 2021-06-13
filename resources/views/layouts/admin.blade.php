@@ -11,12 +11,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Arsenal:ital,wght@0,400;0,700;1,400&amp;display=swap">
+    @yield('style')
     <!-- Theme stylesheet-->
     <link rel="stylesheet" href="{{asset('css/style.default.css')}}" id="theme-stylesheet">
     <!-- Favicon-->
     <link rel="shortcut icon" href="{{asset('img/favicon.ico')}}">
-    <!-- Tweaks for older IEs-->
-    @yield('style')
 </head>
 
 <body>

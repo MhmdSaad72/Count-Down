@@ -1,6 +1,7 @@
 @extends('layouts.admin')
 
 @section('style')
+  {{-- dataTable --}}
 <link rel="stylesheet" href="{{asset("vendor/vanilla-datatables/vanilla-dataTables.min.css")}}">
 @endsection
 
@@ -52,10 +53,6 @@
           @endforeach
         </tbody>
     </table>
-
-    <div class="px-3 pt-4 text-center text-lg-start">
-        <!-- Send Mail Button--><a class="btn btn-gradient-success" href="#"> <i class="fas fa-envelope-open-text me-2"></i>{{__('Send email for subscribers')}}</a>
-    </div>
 
 </section>
 @endsection
