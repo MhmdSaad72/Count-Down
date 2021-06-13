@@ -135,3 +135,6 @@
 
 </div>
 @endsection
+@section('js')
+<script src="{{asset('js/counter.js')}}"></script>
+@endsection

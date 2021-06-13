@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('google-fonts')
+<link rel='stylesheet' href="https://fonts.googleapis.com/css2?family=Arsenal:ital,wght@0,400;0,700;1,400&display=swap">
+@endsection
+
 @section('style')
   <style>
   .admin-login::before {
@@ -68,6 +72,4 @@
       </section>
   </div>
 @endsection
-@section('js')
-  <script src="{{asset('js/admin.js')}}"></script>
 @endsection
