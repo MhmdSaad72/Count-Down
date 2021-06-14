@@ -22,56 +22,56 @@
             <ul class="list-inline mb-0">
               @if ($themeTwo->checkSocial('facebookUrl'))
                 <li class="list-inline-item mx-2">
-                  <a class="reset-link text-white" href="{{ $themeTwo->socialUrl('facebookUrl') }}" title="facebook">
+                  <a class="reset-link" href="{{ $themeTwo->socialUrl('facebookUrl') }}" title="facebook">
                     <i class="fab fa-facebook-f"></i>
                   </a>
                 </li>
               @endif
               @if ($themeTwo->checkSocial('twitterUrl'))
                 <li class="list-inline-item mx-2">
-                  <a class="reset-link text-white" href="{{ $themeTwo->socialUrl('twitterUrl') }}" title="twitter">
+                  <a class="reset-link" href="{{ $themeTwo->socialUrl('twitterUrl') }}" title="twitter">
                     <i class="fab fa-twitter"></i>
                   </a>
                 </li>
               @endif
               @if ($themeTwo->checkSocial('linkedinUrl'))
                 <li class="list-inline-item mx-2">
-                  <a class="reset-link text-white" href="{{ $themeTwo->socialUrl('linkedinUrl') }}" title="linkedin">
+                  <a class="reset-link" href="{{ $themeTwo->socialUrl('linkedinUrl') }}" title="linkedin">
                     <i class="fab fa-linkedin-in"></i>
                   </a>
                 </li>
               @endif
               @if ($themeTwo->checkSocial('instagramUrl'))
                 <li class="list-inline-item mx-2">
-                  <a class="reset-link text-white" href="{{ $themeTwo->socialUrl('instagramUrl') }}" title="instagram">
+                  <a class="reset-link" href="{{ $themeTwo->socialUrl('instagramUrl') }}" title="instagram">
                     <i class="fab fa-instagram"></i>
                   </a>
                 </li>
               @endif
               @if ($themeTwo->checkSocial('vimeoUrl'))
                 <li class="list-inline-item mx-2">
-                  <a class="reset-link text-white" href="{{ $themeTwo->socialUrl('vimeoUrl') }}" title="vimeo">
+                  <a class="reset-link" href="{{ $themeTwo->socialUrl('vimeoUrl') }}" title="vimeo">
                     <i class="fab fa-vimeo-v"></i>
                   </a>
                 </li>
               @endif
               @if ($themeTwo->checkSocial('pinterestUrl'))
                 <li class="list-inline-item mx-2">
-                  <a class="reset-link text-white" href="{{ $themeTwo->socialUrl('pinterestUrl') }}" title="pinterest">
+                  <a class="reset-link" href="{{ $themeTwo->socialUrl('pinterestUrl') }}" title="pinterest">
                     <i class="fab fa-pinterest"></i>
                   </a>
                 </li>
               @endif
               @if ($themeTwo->checkSocial('youtubeUrl'))
                 <li class="list-inline-item mx-2">
-                  <a class="reset-link text-white" href="{{ $themeTwo->socialUrl('youtubeUrl') }}" title="youtube">
+                  <a class="reset-link" href="{{ $themeTwo->socialUrl('youtubeUrl') }}" title="youtube">
                     <i class="fab fa-youtube"></i>
                   </a>
                 </li>
               @endif
               @if ($themeTwo->checkSocial('behanceUrl'))
                 <li class="list-inline-item mx-2">
-                  <a class="reset-link text-white" href="{{ $themeTwo->socialUrl('behanceUrl') }}" title="behance">
+                  <a class="reset-link" href="{{ $themeTwo->socialUrl('behanceUrl') }}" title="behance">
                     <i class="fab fa-behance"></i>
                   </a>
                 </li>
