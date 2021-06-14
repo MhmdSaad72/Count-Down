@@ -17,7 +17,7 @@
                     @csrf
                     @method('PATCH')
                     @if ($value->active == 1)
-                      <button class="btn btn-gradient-success btn-sm apply-btn" type="submit"><i class="fas fa-check me-2"></i>{{__('Applied')}}</button>
+                      <button class="btn btn-gradient-success btn-sm apply-btn" type="button"><i class="fas fa-check me-2"></i>{{__('Applied')}}</button>
                     @else
                       <button class="btn btn-gradient-success btn-sm apply-btn" type="submit">{{__('Apply theme')}}</button>
                     @endif
