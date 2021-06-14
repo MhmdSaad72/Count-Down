@@ -111,7 +111,7 @@ class AdminController extends Controller
         'page_name' => 'required|max:255',
         'meta_keywords' => 'nullable|regex:/^[\pL\s]+$/u|max:255',
         'meta_author' => 'nullable|max:255',
-        'favicon_image' => 'nullable|file|image|mimes:jpeg,png,jpg,gif,svg|dimensions:min_width=80,max_width=80,min_height=80,max_height=80',
+        'favicon_image' => 'nullable|file|image|mimes:jpeg,png,jpg,ico|dimensions:ratio=1',
         'meta_description' => 'nullable|max:255',
       ]);
 
@@ -119,10 +119,10 @@ class AdminController extends Controller
       if ($request->hasFile('favicon_image')) {
          $file = $requestData['favicon_image'];
          $extension = $file->getClientOriginalExtension(); // you can also use file name
-         $fileName = 'favicon' . $extension;
+         $fileName = 'favicon.' . $extension;
          $path = public_path().'/img';
          $uplaod = $file->move($path,$fileName);
-         $requestData['image'] = $fileName;
+         $requestData['favicon_image'] = $fileName;
       }
 
       $general->update($requestData);

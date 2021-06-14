@@ -11,14 +11,12 @@
         <meta name="robots" content="all,follow">
         <!-- Google fonts-->
         @yield('google-fonts')
+
+        @yield('style')
         <!-- Theme stylesheet-->
         <link rel="stylesheet" href="{{asset('css/style.default.css')}}" id="theme-stylesheet">
         <!-- Favicon-->
         <link rel="shortcut icon" href="{{ isset($generalSetting->favicon_image) ? asset('img/' . $generalSetting->favicon_image ) : 'img/favicon.ico' }}">
-        @yield('style')
-        <!-- Tweaks for older IEs--><!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
     </head>
 
     <body>

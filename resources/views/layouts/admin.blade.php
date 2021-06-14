@@ -5,9 +5,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>{{ $generalSetting->page_name ?? '' }}</title>
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <meta name="author" content="">
+    <meta name="description" content="{{ $generalSetting->meta_description ?? '' }}">
+    <meta name="keywords" content="{{ str_replace(' ', ',', $generalSetting->meta_keywords ?? '') }}">
+    <meta name="author" content="{{ $generalSetting->meta_author ?? '' }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Arsenal:ital,wght@0,400;0,700;1,400&amp;display=swap">
@@ -15,7 +15,7 @@
     <!-- Theme stylesheet-->
     <link rel="stylesheet" href="{{asset('css/style.default.css')}}" id="theme-stylesheet">
     <!-- Favicon-->
-    <link rel="shortcut icon" href="{{asset('img/favicon.ico')}}">
+    <link rel="shortcut icon" href="{{ isset($generalSetting->favicon_image) ? asset('img/' . $generalSetting->favicon_image ) : 'img/favicon.ico' }}">
 </head>
 
 <body>
