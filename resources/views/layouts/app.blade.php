@@ -12,11 +12,11 @@
         <!-- Google fonts-->
         @yield('google-fonts')
 
-        @yield('style')
         <!-- Theme stylesheet-->
         <link rel="stylesheet" href="{{asset('css/style.default.css')}}" id="theme-stylesheet">
         <!-- Favicon-->
         <link rel="shortcut icon" href="{{ isset($generalSetting->favicon_image) ? asset('img/' . $generalSetting->favicon_image ) : 'img/favicon.ico' }}">
+        @yield('style')
     </head>
 
     <body>
