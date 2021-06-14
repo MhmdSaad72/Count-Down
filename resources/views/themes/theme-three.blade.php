@@ -19,7 +19,7 @@
 <div class="page-holder theme theme-3 text-white">
 
     <!-- Keep it there -->
-    <div class="py-4 text-center"></div>
+    <div class="just-to-fix-flex"></div>
 
     <!-- Main Content-->
     <section class="py-5 text-center">
