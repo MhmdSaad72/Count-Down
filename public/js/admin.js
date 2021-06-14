@@ -7,8 +7,12 @@ const pageHolder = document.querySelector('.transitionHolder');
 if (sidebarLinks.length > 0) {
     // Make sidebar link hide the current page on click
     sidebarLinks.forEach((sidebarLink) => {
-        sidebarLink.addEventListener('click', function () {
-            pageHolder.classList.add('fade');
+        sidebarLink.addEventListener('click', function (event) {
+            if( event.which == 2 || (event.which == 1 && event.ctrlKey )) { 
+                event.preventDefault();
+            } else {
+                pageHolder.classList.add('fade');
+            }
         });
     });
 }
