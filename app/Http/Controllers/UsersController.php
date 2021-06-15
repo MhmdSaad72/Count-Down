@@ -14,6 +14,7 @@ class UsersController extends Controller
     =======================================================*/
     public function updateUser(Request $request,User $user)
     {
+      return redirect()->back()->with('flash_message','This feature is not available in the demo version');
       $this->validate($request,[
         'full_name' => 'required|max:100',
         'user_name' => 'required|max:100|alpha_num',
@@ -78,6 +79,7 @@ class UsersController extends Controller
 
     public function destroy($id)
     {
+      return redirect()->back()->with('flash_message','This feature is not available in the demo version');
       $user =  User::findOrFail($id);
       $user->delete();
       return redirect()->back()->with('flash_message','Y\'ve successfully deleted a subscriber');

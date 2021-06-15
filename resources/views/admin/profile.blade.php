@@ -86,7 +86,7 @@
 
             <div class="form-group col-12">
                 <!-- Submit Button-->
-                <button class="btn btn-gradient-success" type="submit"> <i class="me-2 fas fa-check"></i>{{__('Save changes')}}</button>
+                <button class="btn btn-gradient-success" type="submit" disabled> <i class="me-2 fas fa-check"></i>{{__('Save changes')}}</button>
             </div>
 
         </div>

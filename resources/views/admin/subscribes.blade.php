@@ -46,7 +46,7 @@
                   <form class="" action="{{ route('delete.subscriber' , $value->id) }}" method="post">
                     @csrf
                     @method('DELETE')
-                    <button class="btn btn-sm btn-danger py-1 px-2" type="submit" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fas fa-trash-alt text-xs"></i></button>
+                    <button class="btn btn-sm btn-danger py-1 px-2" type="submit" onclick="return confirm(&quot;Confirm delete?&quot;)" disabled><i class="fas fa-trash-alt text-xs"></i></button>
                   </form>
                 </td>
               </tr>
