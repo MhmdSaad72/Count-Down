@@ -38,7 +38,7 @@ class AdminController extends Controller
       $pageName = 'Subscribers';
       $pageDescription = 'View who has been subscribed on your newsletter to get notified about your project release.';
       $subscribers = true;
-      $users = User::where('role','!=',1)->get();
+      $users = User::where('role','!=',1)->latest()->get();
       $auth = Auth::user();
       return view('admin.subscribes',compact('users','pageName','subscribers','auth','pageDescription'));
     }
