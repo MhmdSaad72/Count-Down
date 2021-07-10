@@ -33,6 +33,22 @@
 
             <div class="form-group col-lg-6">
                 <!-- Input-->
+                <label class="form-label h5 mb-0 required" for="countingType">{{__('Counting Type')}}</label>
+                <p class="form-text mb-3">{{__('Please select the date type of counting, progress or counter.')}}</p>
+                <select class="form-select shadow-0" id="countingType"/>
+                    <option value="counter">Counter</option>
+                    <option value="progress">progress</option>
+            </div>
+
+            <div class="form-group col-lg-6 initialDateInput">
+                <!-- Input-->
+                <label class="form-label h5 mb-0 required" for="initialDate">{{__('Initial date')}}</label>
+                <p class="form-text mb-3">{{__('Please select the date on which you'll start construction i.e. start date.')}}</p>
+                <input class="form-control shadow-0" id="initialDate" type="text" name="initialDate" placeholder="select initial date" value="" />
+            </div>
+
+            <div class="form-group col-lg-6">
+                <!-- Input-->
                 <label class="form-label h5 mb-0 required" for="releaseDate">{{__('Release date')}}</label>
                 <p class="form-text mb-3">{{__('Please select the date of your project release.')}}</p>
                 <input class="form-control shadow-0" id="releaseDate" type="text" name="releaseDate" placeholder="select release date" value="{{ $countDown->releaseDate ?? ''}}" />
@@ -84,12 +100,32 @@
     const datepicker = new Datepicker(elem, {
         format: 'dd M 20yy'
     });
+    /* ======================================
+            INITIALIZING DATEPICKER
+    ======================================== */
+    const elem2 = document.getElementById('initialDate');
+    const datepicker2 = new Datepicker(elem2, {
+        format: 'dd M 20yy'
+    });
 
     /* ======================================
     PREVENT DATEPICKER INPUT FROM TYPING
     ======================================== */
     elem.addEventListener('keypress', function(e) {
         e.preventDefault();
+    });
+
+    /* ======================================
+    TOGGLE BETWEEN COUNTER AND PROGRESS
+    ======================================== */
+    let countingType = document.getElementById('countingType');
+    let initialDateInput = document.querySelector('.initialDateInput');
+    countingType.addEventListener('change', function () {
+        if (countingType.value == 'progress') {
+            initialDateInput.classList.replace('d-none', 'd-block');
+        } else {
+            initialDateInput.classList.replace('d-block', 'd-none');
+        }
     });
 </script>
 @endsection
