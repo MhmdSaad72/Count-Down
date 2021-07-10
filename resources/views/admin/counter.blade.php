@@ -48,11 +48,11 @@
                 <input class="form-control shadow-0" id="initialDate" type="text" name="initialDate" placeholder="select initial date" value="" />
             </div>
 
-            <div class="form-group col-lg-6 initialDateInput d-none">
+            <div class="form-group col-lg-6 initialTimeInput d-none">
                 <!-- Input-->
                 <label class="form-label h5 mb-0 required" for="initialTime">{{__('Initial time')}}</label>
                 <p class="form-text mb-3">{{__('Please select the time on which you\'ll start construction i.e. start date.')}}</p>
-                <input class="form-control shadow-0" id="initialTime" type="time" name="initialTime" placeholder="select initial tiem" value="" />
+                <input class="form-control shadow-0" id="initialTime" type="time" name="initialTime" placeholder="select initial time" value="" />
             </div>
 
             <div class="form-group col-lg-6">
@@ -107,17 +107,26 @@
     TOGGLE BETWEEN COUNTER AND PROGRESS
     ======================================== */
     let countingType = document.getElementById('countingType');
-    let initialDateInputs = document.querySelectorAll('.initialDateInput');
+    let initialDateInput = document.querySelector('.initialDateInput');
+    let initialTimeInput = document.querySelector('.initialTimeInput');
     countingType.addEventListener('change', function () {
         if (countingType.value == 'progress') {
-            initialDateInputs.forEach((initialDateInput) => {
-                initialDateInput.classList.replace('d-none', 'd-block');
-            });
+          initialDateInput.classList.replace('d-none', 'd-block');
+          initialTimeInput.classList.replace('d-none', 'd-block');
         } else {
-            initialDateInputs.forEach((initialDateInput) => {
-                initialDateInput.classList.replace('d-none', 'd-block');
-            });
+          initialDateInput.classList.replace('d-block', 'd-none');
+          initialTimeInput.classList.replace('d-block', 'd-none');
         }
+    });
+
+    window.addEventListener('load', function () {
+      if (countingType.value == 'progress') {
+        initialDateInput.classList.replace('d-none', 'd-block');
+        initialTimeInput.classList.replace('d-none', 'd-block');
+      } else {
+        initialDateInput.classList.replace('d-block', 'd-none');
+        initialTimeInput.classList.replace('d-block', 'd-none');
+      }
     });
 </script>
 @endsection

@@ -1,8 +1,7 @@
 @extends('layouts.app')
 
 @section('google-fonts')
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Limelight&amp;display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300;700&amp;display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&amp;display=swap">
 @endsection
 
 @section('style')
@@ -17,78 +16,89 @@
 
 @section('content')
 <div class="page-holder theme theme-3 text-white">
+  <div class="parallax-el parallax-el-1"></div>
+  <div class="parallax-el parallax-el-2"></div>
+  <div class="parallax-el parallax-el-3"></div>
+  <!-- Sociallinks-->
+  <div class="container pt-4 px-4 text-center">
+    <div class="d-flex align-items-center justify-content-between">
+      <div class="logo z-index-20"><a class="d-block" href="{{ route('home') }}"><img class="img-fluid" src="{{ asset('img/theme-1-logo.svg') }}" alt="Ionic Counter" width="100"></a></div>
 
-    <!-- Keep it there -->
-    <div class="just-to-fix-flex"></div>
+      <ul class="list-inline mb-0 z-index-20">
+        @if ($themeThree->checkSocial('facebookUrl'))
+          <li class="list-inline-item mx-2 mx-md-1">
+            <a class="social-link text-white" href="{{$themeThree->socialUrl('facebookUrl')}}" title="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+          </li>
+        @endif
+        @if ($themeThree->checkSocial('linkedinUrl'))
+          <li class="list-inline-item mx-2 mx-md-1">
+            <a class="social-link text-white" href="{{$themeThree->socialUrl('linkedinUrl')}}" title="linkedin">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </li>
+        @endif
+        @if ($themeThree->checkSocial('youtubeUrl'))
+          <li class="list-inline-item mx-2 mx-md-1">
+            <a class="social-link text-white" href="{{$themeThree->socialUrl('youtubeUrl')}}" title="youtube">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </li>
+        @endif
+        @if ($themeThree->checkSocial('instagramUrl'))
+          <li class="list-inline-item mx-2 mx-md-1">
+            <a class="social-link text-white" href="{{$themeThree->socialUrl('instagramUrl')}}" title="instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </li>
+        @endif
+        @if ($themeThree->checkSocial('behanceUrl'))
+          <li class="list-inline-item mx-2 mx-md-1">
+            <a class="social-link text-white" href="{{$themeThree->socialUrl('behanceUrl')}}" title="behance">
+              <i class="fab fa-behance"></i>
+            </a>
+          </li>
+        @endif
+        @if ($themeThree->checkSocial('vimeoUrl'))
+          <li class="list-inline-item mx-2 mx-md-1">
+            <a class="social-link text-white" href="{{$themeThree->socialUrl('vimeoUrl')}}" title="vimeo">
+              <i class="fab fa-vimeo-v"></i>
+            </a>
+          </li>
+        @endif
+        @if ($themeThree->checkSocial('pinterestUrl'))
+          <li class="list-inline-item mx-2 mx-md-1">
+            <a class="social-link text-white" href="{{$themeThree->socialUrl('pinterestUrl')}}" title="pinterest">
+              <i class="fab fa-pinterest"></i>
+            </a>
+          </li>
+        @endif
+        @if ($themeThree->checkSocial('twitterUrl'))
+          <li class="list-inline-item mx-2 mx-md-1">
+            <a class="social-link text-white" href="{{$themeThree->socialUrl('twitterUrl')}}" title="twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+        @endif
+      </ul>
 
+      <!-- Social Menu-->
+    </div>
+  </div>
     <!-- Main Content-->
     <section class="py-5 text-center">
 
-        <div class="container pt-5">
-            <ul class="list-inline my-5">
-              @if ($themeThree->checkSocial('facebookUrl'))
-                <li class="list-inline-item mx-2">
-                  <a class="reset-link text-white social-link" href="{{$themeThree->socialUrl('facebookUrl')}}" title="Facebook">
-                    <i class="fab fa-facebook-f"></i>
-                  </a>
-                </li>
-              @endif
-              @if ($themeThree->checkSocial('linkedinUrl'))
-                <li class="list-inline-item mx-2">
-                  <a class="reset-link text-white social-link" href="{{$themeThree->socialUrl('linkedinUrl')}}" title="linkedin">
-                    <i class="fab fa-linkedin-in"></i>
-                  </a>
-                </li>
-              @endif
-              @if ($themeThree->checkSocial('youtubeUrl'))
-                <li class="list-inline-item mx-2">
-                  <a class="reset-link text-white social-link" href="{{$themeThree->socialUrl('youtubeUrl')}}" title="youtube">
-                    <i class="fab fa-youtube"></i>
-                  </a>
-                </li>
-              @endif
-              @if ($themeThree->checkSocial('instagramUrl'))
-                <li class="list-inline-item mx-2">
-                  <a class="reset-link text-white social-link" href="{{$themeThree->socialUrl('instagramUrl')}}" title="instagram">
-                    <i class="fab fa-instagram"></i>
-                  </a>
-                </li>
-              @endif
-              @if ($themeThree->checkSocial('behanceUrl'))
-                <li class="list-inline-item mx-2">
-                  <a class="reset-link text-white social-link" href="{{$themeThree->socialUrl('behanceUrl')}}" title="behance">
-                    <i class="fab fa-behance"></i>
-                  </a>
-                </li>
-              @endif
-              @if ($themeThree->checkSocial('vimeoUrl'))
-                <li class="list-inline-item mx-2">
-                  <a class="reset-link text-white social-link" href="{{$themeThree->socialUrl('vimeoUrl')}}" title="vimeo">
-                    <i class="fab fa-vimeo-v"></i>
-                  </a>
-                </li>
-              @endif
-              @if ($themeThree->checkSocial('pinterestUrl'))
-                <li class="list-inline-item mx-2">
-                  <a class="reset-link text-white social-link" href="{{$themeThree->socialUrl('pinterestUrl')}}" title="pinterest">
-                    <i class="fab fa-pinterest"></i>
-                  </a>
-                </li>
-              @endif
-              @if ($themeThree->checkSocial('twitterUrl'))
-                <li class="list-inline-item mx-2">
-                  <a class="reset-link text-white social-link" href="{{$themeThree->socialUrl('twitterUrl')}}" title="twitter">
-                    <i class="fab fa-twitter"></i>
-                  </a>
-                </li>
-              @endif
-            </ul>
+        <div class="container">
+
+          <!-- Page subheading -->
+          <p class="h4 theme-font-main z-index-20">Stay tuned!</p>
 
             <!-- Page main heading-->
-            <h1 class="theme-3-heading heading-4x text-uppercase text-shadow mb-3">{{ $generalSetting->main_heading ?? '' }}</h1>
+            <h1 class="theme-3-main-heading text-shadow mb-2">{{ $generalSetting->main_heading ?? '' }}</h1>
             <div class="row">
               <div class="col-lg-8 mx-auto">
-                <p class="mb-5 lead">{{ $generalSetting->counter_message ?? ''}}</p>
+                <p class="text-whtie lead mb-5">{{ $generalSetting->counter_message ?? ''}}</p>
               </div>
             </div>
 
