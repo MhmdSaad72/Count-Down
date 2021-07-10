@@ -48,6 +48,13 @@
                 <input class="form-control shadow-0" id="initialDate" type="text" name="initialDate" placeholder="select initial date" value="" />
             </div>
 
+            <div class="form-group col-lg-6 initialDateInput d-none">
+                <!-- Input-->
+                <label class="form-label h5 mb-0 required" for="initialTime">{{__('Initial time')}}</label>
+                <p class="form-text mb-3">{{__('Please select the time on which you\'ll start construction i.e. start date.')}}</p>
+                <input class="form-control shadow-0" id="initialTime" type="time" name="initialTime" placeholder="select initial tiem" value="" />
+            </div>
+
             <div class="form-group col-lg-6">
                 <!-- Input-->
                 <label class="form-label h5 mb-0 required" for="releaseDate">{{__('Release date')}}</label>
@@ -57,29 +64,9 @@
 
             <div class="form-group col-lg-6">
                 <!-- Select -->
-                <label class="form-label required h5 mb-0" for="releaseHours">{{__('Release Hour')}}</label>
-                <p class="form-text mb-3">{{__('Please select the hour of your project release.')}}</p>
-                <select class="form-select shadow-0" id="releaseHours" name="releaseHours">
-                    @for ($i=1; $i <= 24; $i++) <option value="{{ $i }}" {{ $countDown->releaseHours == $i ? 'selected' : '' }}>{{ $i }}</option>
-                    @endfor
-                </select>
-            </div>
-
-            <div class="form-group col-lg-6">
-                <!-- Select-->
-                <label class="form-label required h5 mb-0" for="releaseMinutes">{{__('Release Minute')}}</label>
-                <p class="form-text mb-3">{{__('Please select the minute of your project release.')}}</p>
-                <select class="form-select shadow-0" id="releaseMinutes" name="releaseMinutes">
-                    @for ($i=1; $i < 60; $i++) <option value="{{ $i }}" {{ $countDown->releaseMinutes == $i ? 'selected' : '' }}>{{ $i }}</option>
-                    @endfor
-                </select>
-            </div>
-
-            <div class="form-group col-lg-6">
-                <!-- Input-->
-                <label class="form-label h5 mb-0 required" for="releaseUrl">{{__('Release Url')}}</label>
-                <p class="form-text mb-3">{{__('Please type the URL which the app\'ll redirect to.')}}</p>
-                <input class="form-control shadow-0" id="releaseUrl" type="text" name="releaseUrl" placeholder="Type your release url" value="{{ $countDown->releaseUrl ?? '' }}" />
+                <label class="form-label required h5 mb-0" for="releaseTime">{{__('Release time')}}</label>
+                <p class="form-text mb-3">{{__('Please select the time of your project release.')}}</p>
+                <input type="time" name="releaseTime" placeholder="Type your release time" value="">
             </div>
 
             <div class="form-group col-12">
@@ -120,12 +107,16 @@
     TOGGLE BETWEEN COUNTER AND PROGRESS
     ======================================== */
     let countingType = document.getElementById('countingType');
-    let initialDateInput = document.querySelector('.initialDateInput');
+    let initialDateInputs = document.querySelectorAll('.initialDateInput');
     countingType.addEventListener('change', function () {
         if (countingType.value == 'progress') {
-            initialDateInput.classList.replace('d-none', 'd-block');
+            initialDateInputs.forEach((initialDateInput) => {
+                initialDateInput.classList.replace('d-none', 'd-block');
+            });
         } else {
-            initialDateInput.classList.replace('d-block', 'd-none');
+            initialDateInputs.forEach((initialDateInput) => {
+                initialDateInput.classList.replace('d-none', 'd-block');
+            });
         }
     });
 </script>
