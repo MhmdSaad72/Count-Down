@@ -38,12 +38,13 @@
                 <select class="form-select shadow-0" id="countingType"/>
                     <option value="counter">Counter</option>
                     <option value="progress">progress</option>
+                  </select>
             </div>
 
-            <div class="form-group col-lg-6 initialDateInput">
+            <div class="form-group col-lg-6 initialDateInput d-none">
                 <!-- Input-->
                 <label class="form-label h5 mb-0 required" for="initialDate">{{__('Initial date')}}</label>
-                <p class="form-text mb-3">{{__('Please select the date on which you'll start construction i.e. start date.')}}</p>
+                <p class="form-text mb-3">{{__('Please select the date on which you\'ll start construction i.e. start date.')}}</p>
                 <input class="form-control shadow-0" id="initialDate" type="text" name="initialDate" placeholder="select initial date" value="" />
             </div>
 
