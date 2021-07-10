@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Laravel Coming soon page</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    <!-- Google fonts-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Arsenal:wght@300;400;700&amp;display=swap">
+    <!-- Theme stylesheet-->
+    <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <!-- Tweaks for older IEs--><!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+  </head>
+  <body>
+    <div class="page-holder text-white theme theme-2">
+      <div id="particles-js"></div>
+      <!-- Sociallinks-->
+      <div class="pt-4 px-4 text-center">
+        <div class="container-fluid d-flex align-item-center justify-content-center flex-column">
+          <div class="logo z-index-20"><a class="d-block" href="index.html"><img class="img-fluid" src="img/theme-1-logo.svg" alt="Ionic Counter" width="70"></a></div>
+          <!-- Social Menu-->
+          <ul class="list-inline mb-0 social-menu z-index-20">
+            <li class="list-inline-item mx-2"><a class="reset-link text-white" href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+            <li class="list-inline-item mx-2"><a class="reset-link text-white" href="#" title="Twitter"><i class="fab fa-twitter"></i></a></li>
+            <li class="list-inline-item mx-2"><a class="reset-link text-white" href="#" title="Linkedin"><i class="fab fa-linkedin-in"></i></a></li>
+            <li class="list-inline-item mx-2"><a class="reset-link text-white" href="#" title="vimeo"><i class="fab fa-vimeo-v"></i></a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- Main Content-->
+      <section class="py-5 text-center">
+        <div class="container pb-3">
+          <!-- Page Subheading-->
+          <p class="theme-2-subheading text-uppercase text-gray-500 letter-spacing-3 fw-bold z-index-20">Site is under construction</p>
+          <!-- Page main heading-->
+          <h1 class="ta theme-2-main-heading text-uppercase mb-3 z-index-20">Coming soon</h1>
+          <div class="row z-index-20">
+            <div class="col-lg-8 mx-auto">
+              <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+            </div>
+          </div>
+          <!-- Counter-->
+          <div class="d-none row z-index-20">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-7 mx-auto">
+              <div class="position-relative">
+                <div class="progress rounded-pill">
+                  <div class="progress-bar rounded-pill bar-bg-custom" role="progressbar" data-width="70" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <div class="progress-status text-white"><i class="fas fa-calendar me-2"></i>Lanched at 20/05/2020</div>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex counter" id="counter">
+            <div class="mx-1 mx-lg-2">
+              <div class="counter-item days theme-1-heading fw-normal h4"></div>
+              <p class="counter-item-title mt-4 pt-2">Days</p>
+            </div>
+            <div class="mx-1 mx-lg-2">
+              <div class="counter-item hours theme-1-heading fw-normal h4"></div>
+              <p class="counter-item-title mt-4 pt-2">Hours</p>
+            </div>
+            <div class="mx-1 mx-lg-2">
+              <div class="counter-item minutes theme-1-heading fw-normal h4"></div>
+              <p class="counter-item-title mt-4 pt-2">Minutes</p>
+            </div>
+            <div class="mx-1 mx-lg-2">
+              <div class="counter-item seconds theme-1-heading fw-normal h4"></div>
+              <p class="counter-item-title mt-4 pt-2">Seconds</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Footer-->
+      <footer class="py-4">
+        <div class="container">
+          <!-- Newsletter-->
+          <div class="row">
+            <div class="col-lg-5 mx-auto">
+              <p class="mb-3 text-center">Subscribe to our newsletter to know when we launch our website</p>
+              <form class="subscribing-form" action="#">
+                <div class="input-group mb-3 p-2 rounded bg-transparent">
+                  <input class="form-control bg-none border-0 shadow-0 text-white" type="text" placeholder="e.g. Jasondoe@gmail.com" aria-label="Recipient's email address">
+                  <button class="btn btn-light bg-white rounded px-4" type="submit">Notify me</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <!-- Copyrights-->
+          <p class="mb-0 text-center text-sm fw-light">&copy; 2021 Ionichub.co All rights reserved.</p>
+        </div>
+      </footer>
+    </div>
+    <!-- JavaScript files-->
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="js/counter.js"></script>
+    <script src="vendor/particles.js/particles.js"></script>
+    <script>compareViewports('js/particles2.json', 'js/particles2.mb.json');</script>
+    <script>
+      /* ======================================
+          TIME ZONE JSON REQUEST
+      ======================================== */
+      let timezoneInput = document.getElementById('timeZone');
+      if (timezoneInput) {
+          
+          window.addEventListener('load', function () {
+              const timezoneRequest = new XMLHttpRequest();
+              timezoneRequest.open('GET', 'js/timezone.json');
+          
+              timezoneRequest.onload = function () {
+                  let timezoneRequestData = JSON.parse(timezoneRequest.responseText);        
+          
+                  if (timezoneRequest.status >= 200 && timezoneRequest.status < 400) {
+                      for (let i = 0; i < timezoneRequestData.length; i++) {
+                          let timezoneDataHTML = `<option value='${timezoneRequestData[i].offset}'>${timezoneRequestData[i].name}</option>`;
+                          timezoneInput.insertAdjacentHTML('beforeend', timezoneDataHTML);
+                      }
+                  } else {
+                      console.log('Ooops! server error');
+                  }
+              }
+              timezoneRequest.send();
+          });
+          
+          timezoneInput.addEventListener('input', function () {
+              let inputTimezoneValue = timezoneInput.options[timezoneInput.selectedIndex].value;
+          });            
+      }
+              
+    </script>
+    <!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  </body>
+</html>

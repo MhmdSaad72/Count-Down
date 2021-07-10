@@ -7888,7 +7888,7 @@ textarea.form-control-lg {
 *
 */
 .theme-4 {
-  background: url(../img/landscape.jpg);
+  background: url(../img/tree.jpg);
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   height: 100vh;
@@ -7896,7 +7896,22 @@ textarea.form-control-lg {
   background-position: center left;
   position: relative;
   overflow-x: hidden; }
-  .theme-4::before {
+  .theme-4 .title {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 1px; }
+  .theme-4 h1.theme-4-heading, .theme-4 .theme-4-heading.h1 {
+    background: url(../img/tree.jpg);
+    background-size: cover;
+    animation: txtClip 2s infinite;
+    animation-direction: alternate;
+    color: transparent;
+    -moz-background-clip: text;
+    -webkit-background-clip: text; }
+  .theme-4::before, .theme-4::after {
     content: "";
     display: block;
     position: absolute;
@@ -7904,15 +7919,39 @@ textarea.form-control-lg {
     right: 0;
     bottom: 0;
     left: 0;
-    background: rgba(4, 50, 70, 0.4); }
+    background: #fff;
+    width: 30%;
+    z-index: 5; }
+    @media (max-width: 1199.98px) {
+      .theme-4::before, .theme-4::after {
+        width: 100%;
+        height: 25%;
+        bottom: auto; } }
+  .theme-4::after {
+    left: 30%;
+    top: 0;
+    background: url(../img/smoke.png);
+    width: 35%;
+    background-size: 100% 100%;
+    background-position: left center; }
+    @media (max-width: 1199.98px) {
+      .theme-4::after {
+        background: url(../img/smoke-alt.png);
+        background-size: 150% 100%;
+        background-position: center bottom;
+        height: 40%;
+        width: 100%;
+        top: calc(25% - 0.5rem);
+        left: 0;
+        bottom: auto; } }
   .theme-4 .layer {
     width: 100%;
     position: absolute;
     bottom: 0;
     left: 0; }
   .theme-4-heading {
-    font-family: "Abril Fatface", serif;
-    font-weight: normal; }
+    font-family: "Montserrat", serif;
+    font-weight: 900; }
   .theme-4 .heading-2x {
     font-size: 3rem; }
     @media (min-width: 992px) {
@@ -7925,12 +7964,15 @@ textarea.form-control-lg {
     align-items: center;
     justify-content: center; }
     .theme-4 .counter-item {
-      width: 5rem;
-      height: 5rem;
+      width: 100%;
+      max-width: 8rem;
+      height: 6rem;
       display: flex;
       align-items: center;
       justify-content: center;
-      position: relative; }
+      position: relative;
+      color: #fff;
+      z-index: 999; }
       .theme-4 .counter-item::before, .theme-4 .counter-item::after {
         content: "";
         width: 100%;
@@ -7948,9 +7990,9 @@ textarea.form-control-lg {
         border-bottom-right-radius: 0.5rem;
         bottom: 0;
         background: rgba(255, 255, 255, 0.3); }
-      @media (max-width: 575.98px) {
-        .theme-4 .counter-item {
-          width: 4.5rem; } }
+      .theme-4 .counter-item-title {
+        color: #fff;
+        font-weight: 400; }
   .theme-4 .separator {
     width: 2rem;
     height: 1px;
@@ -7959,215 +8001,11 @@ textarea.form-control-lg {
     position: absolute;
     top: 50%;
     right: 0; }
-  .theme-4 .bird {
-    background-image: url(../img/bird-cells-new.svg);
-    background-size: auto 100%;
-    width: 88px;
-    height: 125px;
-    will-change: background-position;
-    animation-name: fly-cycle;
-    animation-timing-function: steps(10);
-    animation-iteration-count: infinite; }
-    .theme-4 .bird--one {
-      animation-duration: 1s;
-      animation-delay: -0.5s; }
-    .theme-4 .bird--two {
-      animation-duration: 0.9s;
-      animation-delay: -0.75s; }
-    .theme-4 .bird--three {
-      animation-duration: 1.25s;
-      animation-delay: -0.25s; }
-    .theme-4 .bird--four {
-      animation-duration: 1.1s;
-      animation-delay: -0.5s; }
-  .theme-4 .bird-container {
-    position: absolute;
-    top: 20%;
-    left: -10%;
-    transform: scale(0) translateX(-10vw);
-    will-change: transform;
-    animation-name: fly-right-one;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite; }
-    .theme-4 .bird-container--one {
-      animation-duration: 15s;
-      animation-delay: 0; }
-    .theme-4 .bird-container--two {
-      animation-duration: 16s;
-      animation-delay: 1s; }
-    .theme-4 .bird-container--three {
-      animation-duration: 14.6s;
-      animation-delay: 9.5s; }
-    .theme-4 .bird-container--four {
-      animation-duration: 16s;
-      animation-delay: 10.25s; }
-
-@keyframes fly-cycle {
-  100% {
-    background-position: -900px 0; } }
-
-@keyframes fly-right-one {
-  0% {
-    transform: scale(0.3) translateX(-10vw); }
-  10% {
-    transform: translateY(2vh) translateX(10vw) scale(0.4); }
-  20% {
-    transform: translateY(0vh) translateX(30vw) scale(0.5); }
-  30% {
-    transform: translateY(4vh) translateX(50vw) scale(0.6); }
-  40% {
-    transform: translateY(2vh) translateX(70vw) scale(0.6); }
-  50% {
-    transform: translateY(0vh) translateX(90vw) scale(0.6); }
-  60% {
-    transform: translateY(0vh) translateX(110vw) scale(0.6); }
-  100% {
-    transform: translateY(0vh) translateX(110vw) scale(0.6); } }
-
-@keyframes fly-right-two {
-  0% {
-    transform: translateY(-2vh) translateX(-10vw) scale(0.5); }
-  10% {
-    transform: translateY(0vh) translateX(10vw) scale(0.4); }
-  20% {
-    transform: translateY(-4vh) translateX(30vw) scale(0.6); }
-  30% {
-    transform: translateY(1vh) translateX(50vw) scale(0.45); }
-  40% {
-    transform: translateY(-2.5vh) translateX(70vw) scale(0.5); }
-  50% {
-    transform: translateY(0vh) translateX(90vw) scale(0.45); }
-  51% {
-    transform: translateY(0vh) translateX(110vw) scale(0.45); }
-  100% {
-    transform: translateY(0vh) translateX(110vw) scale(0.45); } }
-
-/*
-*
-* ==========================================
-* THEME 3 STYLING
-* ==========================================
-*
-*/
-.theme-5 {
-  background: url(../img/tree.jpg);
-  font-family: "Montserrat", sans-serif;
-  font-weight: 400;
-  height: 100vh;
-  background-size: cover;
-  background-position: center left;
-  position: relative;
-  overflow-x: hidden; }
-  .theme-5 .title {
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    letter-spacing: 1px; }
-  .theme-5 h1.theme-5-heading, .theme-5 .theme-5-heading.h1 {
-    background: url(../img/tree.jpg);
-    background-size: cover;
-    animation: txtClip 2s infinite;
-    animation-direction: alternate;
-    color: transparent;
-    -moz-background-clip: text;
-    -webkit-background-clip: text; }
-  .theme-5::before, .theme-5::after {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: #fff;
-    width: 30%;
-    z-index: 5; }
-    @media (max-width: 1199.98px) {
-      .theme-5::before, .theme-5::after {
-        width: 100%;
-        height: 25%;
-        bottom: auto; } }
-  .theme-5::after {
-    left: 30%;
-    top: 0;
-    background: url(../img/smoke.png);
-    width: 35%;
-    background-size: 100% 100%;
-    background-position: left center; }
-    @media (max-width: 1199.98px) {
-      .theme-5::after {
-        background: url(../img/smoke-alt.png);
-        background-size: 150% 100%;
-        background-position: center bottom;
-        height: 40%;
-        width: 100%;
-        top: calc(25% - 0.5rem);
-        left: 0;
-        bottom: auto; } }
-  .theme-5 .layer {
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    left: 0; }
-  .theme-5-heading {
-    font-family: "Montserrat", serif;
-    font-weight: 900; }
-  .theme-5 .heading-2x {
-    font-size: 3rem; }
-    @media (min-width: 992px) {
-      .theme-5 .heading-2x {
-        font-size: 5rem; } }
-  .theme-5 .btn {
-    font-family: "Montserrat", sans-serif; }
-  .theme-5 .counter {
-    display: flex;
-    align-items: center;
-    justify-content: center; }
-    .theme-5 .counter-item {
-      width: 100%;
-      max-width: 8rem;
-      height: 6rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      color: #fff;
-      z-index: 999; }
-      .theme-5 .counter-item::before, .theme-5 .counter-item::after {
-        content: "";
-        width: 100%;
-        height: 50%;
-        display: block;
-        position: absolute;
-        left: 0; }
-      .theme-5 .counter-item::before {
-        border-top-left-radius: 0.5rem;
-        border-top-right-radius: 0.5rem;
-        top: 0;
-        background: rgba(255, 255, 255, 0.24); }
-      .theme-5 .counter-item::after {
-        border-bottom-left-radius: 0.5rem;
-        border-bottom-right-radius: 0.5rem;
-        bottom: 0;
-        background: rgba(255, 255, 255, 0.3); }
-      .theme-5 .counter-item-title {
-        color: #fff;
-        font-weight: 400; }
-  .theme-5 .separator {
-    width: 2rem;
-    height: 1px;
-    display: inline-block;
-    background: rgba(255, 255, 255, 0.56);
-    position: absolute;
-    top: 50%;
-    right: 0; }
-  .theme-5 .social-link {
+  .theme-4 .social-link {
     color: #343a40 !important;
     text-decoration: none; }
     @media (min-width: 1200px) {
-      .theme-5 .social-link {
+      .theme-4 .social-link {
         color: #fff !important;
         background: rgba(255, 255, 255, 0.2);
         border-radius: 0.3rem;
@@ -8178,18 +8016,18 @@ textarea.form-control-lg {
         display: flex;
         align-items: center;
         justify-content: center; } }
-    .theme-5 .social-link:hover {
+    .theme-4 .social-link:hover {
       color: #343a40;
       text-decoration: none; }
       @media (min-width: 1200px) {
-        .theme-5 .social-link:hover {
+        .theme-4 .social-link:hover {
           color: #fff;
           background: rgba(255, 255, 255, 0.4);
           box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); } }
-  .theme-5 .copyrights {
+  .theme-4 .copyrights {
     color: #fff; }
     @media (min-width: 1200px) {
-      .theme-5 .copyrights {
+      .theme-4 .copyrights {
         color: #343a40; } }
 
 .under-construction {
