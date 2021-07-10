@@ -31,14 +31,18 @@
         @method('PATCH')
         <div class="row gy-4">
 
-            <div class="form-group col-lg-6">
-                <!-- Input-->
-                <label class="form-label h5 mb-0 required" for="countingType">{{__('Counting Type')}}</label>
-                <p class="form-text mb-3">{{__('Please select the date type of counting, progress or counter.')}}</p>
-                <select class="form-select shadow-0" id="countingType"/>
-                    <option value="counter">Counter</option>
-                    <option value="progress">progress</option>
-                  </select>
+            <div class="col-lg-12">
+              <div class="row">
+                <div class="form-group col-lg-6">
+                    <!-- Input-->
+                    <label class="form-label h5 mb-0 required" for="countingType">{{__('Counting Type')}}</label>
+                    <p class="form-text mb-3">{{__('Please select the date type of counting, progress or counter.')}}</p>
+                    <select class="form-select shadow-0" id="countingType"/>
+                        <option value="counter">Counter</option>
+                        <option value="progress">progress</option>
+                      </select>
+                </div>
+              </div>
             </div>
 
             <div class="form-group col-lg-6 initialDateInput d-none">
@@ -66,7 +70,7 @@
                 <!-- Select -->
                 <label class="form-label required h5 mb-0" for="releaseTime">{{__('Release time')}}</label>
                 <p class="form-text mb-3">{{__('Please select the time of your project release.')}}</p>
-                <input type="time" name="releaseTime" placeholder="Type your release time" value="">
+                <input class="form-control" type="time" name="releaseTime" placeholder="Type your release time" value="">
             </div>
 
             <div class="form-group col-12">
