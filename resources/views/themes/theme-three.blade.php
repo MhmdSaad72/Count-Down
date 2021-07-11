@@ -101,24 +101,34 @@
                 <p class="text-whtie lead mb-5">{{ $generalSetting->counter_message ?? ''}}</p>
               </div>
             </div>
+            <div class="d-none row z-index-20">
+              <div class="col-lg-3 col-md-4 col-sm-6 col-7 mx-auto">
+                <div class="position-relative">
+                  <div class="progress rounded-pill">
+                    <div class="progress-bar rounded-pill bar-bg-custom" role="progressbar" data-width="70" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  <div class="progress-status text-white"><i class="fas fa-calendar me-2"></i>Lanched at 20/05/2020</div>
+                </div>
+              </div>
+            </div>
 
             <!-- Counter-->
             <div class="counter" id="counter">
                 <div class="counter-item">
-                    <div class="days counter-no theme-3-heading h1"></div>
-                    <p class="counter-item-title my-2">{{__('Days')}}</p>
+                    <div class="days counter-no theme-3-heading px-3 px-lg-4 px-xl-5 text-shadow"></div>
+                    <p class="counter-item-title">{{__('Days')}}</p>
                 </div>
                 <div class="counter-item">
-                    <div class="hours counter-no theme-3-heading h1"></div>
-                    <p class="counter-item-title my-2">{{__('Hours')}}</p>
+                    <div class="hours counter-no theme-3-heading px-3 px-lg-4 px-xl-5 text-shadow"></div>
+                    <p class="counter-item-title">{{__('Hours')}}</p>
                 </div>
                 <div class="counter-item">
-                    <div class="minutes counter-no theme-3-heading h1"></div>
-                    <p class="counter-item-title my-2">{{__('Minutes')}}</p>
+                    <div class="minutes counter-no theme-3-heading px-3 px-lg-4 px-xl-5 text-shadow"></div>
+                    <p class="counter-item-title">{{__('Minutes')}}</p>
                 </div>
                 <div class="counter-item">
-                    <div class="seconds counter-no theme-3-heading h1"></div>
-                    <p class="counter-item-title my-2">{{__('Seconds')}}</p>
+                    <div class="seconds counter-no theme-3-heading px-3 px-lg-4 px-xl-5 text-shadow"></div>
+                    <p class="counter-item-title">{{__('Seconds')}}</p>
                 </div>
             </div>
 
@@ -131,9 +141,9 @@
         <div class="container">
 
             <!-- Newsletter-->
-            <div class="row pb-5">
+            <div class="row pb-2">
                 <div class="col-lg-5 mx-auto">
-                    <p class="lead mb-3 text-center">{{ $generalSetting->newsletter ?? '' }}</p>
+                    <p class="mb-3 text-center">{{ $generalSetting->newsletter ?? '' }}</p>
                     <form class="subscribing-form" action="{{ route('subscribe.user')}}" method="POST">
                       @csrf
                         <div class="input-group mb-3 p-2 rounded bg-transparent">
@@ -153,4 +163,36 @@
 @endsection
 @section('js')
 <script src="{{asset('js/counter.js')}}"></script>
+<script>
+  /* ======================================
+      TIME ZONE JSON REQUEST
+  ======================================== */
+  let timezoneInput = document.getElementById('timeZone');
+  if (timezoneInput) {
+
+      window.addEventListener('load', function () {
+          const timezoneRequest = new XMLHttpRequest();
+          timezoneRequest.open('GET', 'js/timezone.json');
+
+          timezoneRequest.onload = function () {
+              let timezoneRequestData = JSON.parse(timezoneRequest.responseText);
+
+              if (timezoneRequest.status >= 200 && timezoneRequest.status < 400) {
+                  for (let i = 0; i < timezoneRequestData.length; i++) {
+                      let timezoneDataHTML = `<option value='${timezoneRequestData[i].offset}'>${timezoneRequestData[i].name}</option>`;
+                      timezoneInput.insertAdjacentHTML('beforeend', timezoneDataHTML);
+                  }
+              } else {
+                  console.log('Ooops! server error');
+              }
+          }
+          timezoneRequest.send();
+      });
+
+      timezoneInput.addEventListener('input', function () {
+          let inputTimezoneValue = timezoneInput.options[timezoneInput.selectedIndex].value;
+      });
+  }
+
+</script>
 @endsection
