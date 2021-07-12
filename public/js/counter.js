@@ -65,32 +65,40 @@ PROGRESS
 ======================================== */
 if (progressBarUsed) {
     let progress = document.querySelector(".progress-bar");
-    let progressIdentifier = document.querySelector(".progress-status");
+    let progressIdentifier = document.querySelector(".progress-status-text");
+    let progressIdentifierTip = document.querySelector(".progress-status-tip");
 
     (function progressing() {
         setInterval(function () {
             let today = new Date();
             let initalDate = new Date("07/10/2021 16:55:00");
-            let launchDate = new Date("07/10/2021 18:10:00");
+            let launchDate = new Date("07/12/2021 22:10:00");
+
+            function timeDiffCalc(initDate, relDate) {
+                let diffInMilliSeconds = Math.abs(relDate.getTime() - initDate.getTime()) / 1000;
+                // Calculate days
+                let days = Math.floor(diffInMilliSeconds / 86400);
+                diffInMilliSeconds -= days * 86400;
+                // Calculate hours
+                let hours = Math.floor(diffInMilliSeconds / 3600) % 24;
+                diffInMilliSeconds -= hours * 3600;
+                // Calculate minutes
+                let minutes = Math.floor(diffInMilliSeconds / 60) % 60;
+                diffInMilliSeconds -= minutes * 60;
+                progressIdentifier.innerText =`Released in ${days} days - ${hours} hrs - ${minutes} mins`;
+                console.log(progressIdentifier.innerText)
+            }
+            timeDiffCalc(today, launchDate);
 
             let q = Math.abs(today.getTime() - initalDate.getTime());
             let d = Math.abs(launchDate.getTime() - initalDate.getTime());
 
             let progressWidth = Math.round((q / d) * 100);
 
+            progressIdentifierTip.style.left = `calc(${progressWidth}% - 7px)`
             progress.style.width = `${progressWidth}%`;
-            progressIdentifier.style.left = `${progressWidth}%`;
-            if (progressWidth > 50) {
-                progressIdentifier.classList.add("reversing");
-                progressIdentifier.style.textAlign = "right";
-                progressIdentifier.style.left = "auto";
-                progressIdentifier.style.right = `${100 - progressWidth}%`;
-            } else {
-                progressIdentifier.style.left = `${progressWidth}%`;
-                progressIdentifier.style.textAlign = "left";
-                progressIdentifier.style.right = "auto";
-            }
-            if (progressWidth < 100) {
+            if (progressWidth > 70) {
+                document.querySelector('.progress-status').classList.add('float-end');
             } else if (progressWidth >= 100) {
                 location.assign("https://ionichub.co/");
             }

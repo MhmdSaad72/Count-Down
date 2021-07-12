@@ -91,7 +91,7 @@
       <div class="row py-5 align-items-center">
         <div class="col-xl-6 pb-5 mb-5 pb-xl-0 mb-xl-0">
           <!-- Page main heading-->
-          <p class="text-uppercase text-gray-600 small letter-spacing-3 fw-bold z-index-20">Site is under construction</p>
+          <p class="text-uppercase text-gray-600 small letter-spacing-3 text-center text-xl-start fw-bold z-index-20">Site is under construction</p>
           <div class="title">
             <h1 class="lh-1 text-uppercase theme-4-heading letter-spacing-0 text-center text-xl-start heading-2x" data-shadow="Comming Soon">{{ $generalSetting->main_heading ?? '' }}</h1>
           </div>
@@ -113,6 +113,21 @@
           </div>
         </div>
         <div class="col-xl-3 ms-auto pt-2 mt-5 pt-xl-0 mt-lg-0">
+
+        <!-- Progress-->
+          <div class="row z-index-20">
+            <div class="col-xl-12 col-7 mx-auto">
+              <div class="position-relative">
+                <div class="progress rounded-pill">
+                  <div class="progress-bar rounded-pill bar-bg-custom" role="progressbar" data-width="70" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <div class="progress-status text-white text-nowrap d-inline-block">
+                  <div class="progress-status-text"></div>
+                  <div class="progress-status-tip"></div>
+                </div>
+              </div>
+            </div>
+
           <!-- Counter-->
           <div class="row gx-2 gx-xl-4 counter text-center justify-content-end flex-wrap mb-5 z-index-20" id="counter">
             <div class="col-3 col-xl-6">

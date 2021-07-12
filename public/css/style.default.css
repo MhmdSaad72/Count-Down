@@ -7579,6 +7579,32 @@ textarea.form-control-lg {
       .theme-1 .counter-item-title {
         font-size: 1rem;
         text-transform: uppercase; }
+  .theme-1 .progress {
+    height: 0.8rem !important;
+    background: rgba(255, 255, 255, 0.3); }
+  .theme-1 .bar-bg-custom {
+    background: #fff;
+    position: relative;
+    box-shadow: inset 0 0 10px #b6b5b5; }
+  .theme-1 .progress-status {
+    font-size: 0.85rem;
+    border-radius: 0.25rem;
+    margin-top: 1rem;
+    width: auto;
+    text-align: center;
+    padding: 0.25rem 0.5rem;
+    background: rgba(255, 255, 255, 0.15);
+    font-weight: 400;
+    position: relative; }
+    .theme-1 .progress-status-tip {
+      position: absolute;
+      display: block;
+      top: -10px;
+      left: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-bottom: 10px solid white;
+      opacity: 0.15; }
 
 /*
 *
@@ -7605,7 +7631,8 @@ textarea.form-control-lg {
     font-weight: 700;
     font-size: 2.7rem; }
     .theme-2-main-heading.ta {
-      text-shadow: 3px 3px 0px #eb452b, 6px 6px 0px #353055, 9px 9px 0px #46b59b, 12px 12px 0px #017e7f; }
+      text-shadow: 3px 3px 0px #eb452b, 6px 6px 0px #353055, 9px 9px 0px #46b59b,
+ 12px 12px 0px #017e7f; }
     @media (min-width: 992px) {
       .theme-2-main-heading {
         letter-spacing: 0.5em !important;
@@ -7679,43 +7706,24 @@ textarea.form-control-lg {
       background: #109c9d;
       width: calc(100% - 0.7rem); }
   .theme-2 .progress-status {
-    font-size: 0.8rem;
-    position: absolute;
-    bottom: -3.5rem;
+    font-size: 0.85rem;
     border-radius: 0.25rem;
-    left: 0;
+    margin-top: 1rem;
     width: auto;
-    text-align: left;
+    text-align: center;
     padding: 0.25rem 0.5rem;
-    background: rgba(255, 255, 255, 0.2); }
-    .theme-2 .progress-status.reversing {
-      text-align: right;
-      left: auto; }
-    .theme-2 .progress-status::before {
-      content: "";
-      width: 2px;
-      height: 0.75rem;
-      background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.15);
+    font-weight: 400;
+    position: relative; }
+    .theme-2 .progress-status-tip {
       position: absolute;
-      left: 4px;
-      top: -12px; }
-    .theme-2 .progress-status::after {
-      content: "";
       display: block;
-      position: absolute;
-      top: -1rem;
-      transform: translateY(-50%);
+      top: -10px;
       left: 0;
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.2); }
-    .theme-2 .progress-status.reversing::before {
-      left: auto !important;
-      right: 4px !important; }
-    .theme-2 .progress-status.reversing::after {
-      left: auto !important;
-      right: 0 !important; }
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-bottom: 10px solid white;
+      opacity: 0.15; }
 
 /*
 *
@@ -7725,7 +7733,7 @@ textarea.form-control-lg {
 *
 */
 .theme-3 {
-  background: linear-gradient(to top, #fe7378 40%, #fe977b);
+  background: linear-gradient(to top, #06beb6 40%, #48b1bf);
   background-size: cover;
   background-position: center center;
   font-family: "Ubuntu", sans-serif;
@@ -7842,43 +7850,23 @@ textarea.form-control-lg {
     box-shadow: inset 0 0 10px #b6b5b5; }
   .theme-3 .progress-status {
     font-size: 0.85rem;
-    position: absolute;
-    bottom: -3.5rem;
     border-radius: 0.25rem;
-    left: 0;
+    margin-top: 1rem;
     width: auto;
-    text-align: left;
+    text-align: center;
     padding: 0.25rem 0.5rem;
-    background: rgba(255, 255, 255, 0.35);
-    font-weight: 400; }
-    .theme-3 .progress-status::before {
-      content: "";
-      width: 2px;
-      height: 0.75rem;
-      background: rgba(255, 255, 255, 0.35);
+    background: rgba(255, 255, 255, 0.2);
+    font-weight: 400;
+    position: relative; }
+    .theme-3 .progress-status-tip {
       position: absolute;
-      left: 4px;
-      top: -12px; }
-    .theme-3 .progress-status::after {
-      content: "";
       display: block;
-      position: absolute;
-      top: -1rem;
-      transform: translateY(-50%);
+      top: -10px;
       left: 0;
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.35); }
-    .theme-3 .progress-status.reversing {
-      text-align: right;
-      left: auto; }
-    .theme-3 .progress-status.reversing::before {
-      left: auto !important;
-      right: 4px !important; }
-    .theme-3 .progress-status.reversing::after {
-      left: auto !important;
-      right: 0 !important; }
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-bottom: 10px solid white;
+      opacity: 0.2; }
 
 /*
 *
@@ -8029,6 +8017,32 @@ textarea.form-control-lg {
     @media (min-width: 1200px) {
       .theme-4 .copyrights {
         color: #343a40; } }
+  .theme-4 .progress {
+    height: 0.9rem !important;
+    background: rgba(255, 255, 255, 0.48); }
+  .theme-4 .bar-bg-custom {
+    background: #fff;
+    position: relative;
+    box-shadow: inset 0 0 10px #b6b5b5; }
+  .theme-4 .progress-status {
+    font-size: 0.85rem;
+    border-radius: 0.25rem;
+    margin-top: 1rem;
+    width: auto;
+    text-align: center;
+    padding: 0.25rem 0.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    font-weight: 400;
+    position: relative; }
+    .theme-4 .progress-status-tip {
+      position: absolute;
+      display: block;
+      top: -10px;
+      left: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-bottom: 10px solid white;
+      opacity: 0.2; }
 
 .under-construction {
   background: #f6fffd; }
@@ -9631,3 +9645,4 @@ a.text-hover-dark {
 
 .visibility-hidden {
   visibility: hidden; }
+{"mode":"full","isActive":false}
