@@ -50,7 +50,7 @@
                 <!-- Image uploader-->
                 <div class="form-group mb-4 d-none" id="altBackground">
                     <h2 class="form-label h5 mb-0">{{__('Custom Image')}}</h2>
-                    <p class="form-text mb-3">{{__('Upload a custom background image from your device.')}}</p>
+                    <p class="form-text mb-3">{{__('It\'s recommended to upload image resembles the current tint.')}}</p>
                     <div class="uploader" id="file-upload-form">
                         <input class="d-none" id="file-upload" type="file" name="fileUpload" accept="image/*">
                         <label class="d-block" id="file-drag" for="file-upload">

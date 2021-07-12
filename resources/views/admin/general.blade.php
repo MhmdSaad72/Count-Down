@@ -36,10 +36,25 @@
 
             <div class="form-group col-lg-6">
                 <!-- Input-->
+                <label class="form-label h5 mb-0 required" for="themeSubHeading">{{__('Theme subheading')}}</label>
+                <p class="form-text mb-3">{{__('The large small heading appears on top of the main heading.')}}</p>
+                <input class="form-control shadow-0" id="themeSubHeading" type="text" name="sub_heading" placeholder="Type theme subheading" value="{{ $generalSetting->main_heading ?? '' }}" />
+            </div>
+
+            <div class="form-group col-lg-6">
+                <!-- Input-->
+                <label class="form-label h5 mb-0 required" for="themelogo">{{__('Theme logo')}}</label>
+                <p class="form-text mb-3">{{__('Upload an image to be your page logo.')}}</p>
+                <input class="form-control shadow-0" id="themelogo" type="file" name="theme_logo" />
+            </div>
+
+            <div class="form-group col-lg-6">
+                <!-- Input-->
                 <label class="form-label h5 mb-0 required" for="newsLetterText">{{__('Theme counter message')}}</label>
                 <p class="form-text mb-3">{{__('Your main counter description message.')}}</p>
                 <input class="form-control shadow-0" id="counter_message" type="text" name="counter_message" placeholder="Type theme counter message" value="{{ $generalSetting->counter_message ?? '' }}" />
             </div>
+
             <div class="form-group col-lg-6">
                 <!-- Input-->
                 <label class="form-label h5 mb-0 required" for="newsLetterText">{{__('Newsletter text')}}</label>
