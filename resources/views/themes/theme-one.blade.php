@@ -97,6 +97,22 @@
                 <p class="text-white mb-5">{{ $generalSetting->counter_message ?? ''}}</p>
               </div>
             </div>
+
+            <!-- Progress-->
+              <div class="row z-index-20">
+                <div class="col-xl-3 col-lg-5 col-md-6 col-7 mx-auto">
+                  <div class="position-relative">
+                    <div class="progress rounded-pill">
+                      <div class="progress-bar rounded-pill bar-bg-custom" role="progressbar" data-width="70" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <div class="progress-status text-white text-nowrap d-inline-block">
+                      <div class="progress-status-text"></div>
+                      <div class="progress-status-tip"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
             <!-- Counter-->
             <div class="counter z-index-20" id="counter">
                 <div class="mx-1">
