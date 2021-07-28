@@ -17,9 +17,11 @@ class CreateCountersTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->date('releaseDate')->nullable();
-            $table->time('releaseHours')->nullable();
-            $table->time('releaseMinutes')->nullable();
+            $table->time('releaseTime')->nullable();
+            $table->date('initialDate')->nullable();
+            $table->time('initialTime')->nullable();
             $table->string('releaseUrl')->nullable();
+            $table->boolean('countingType')->default(0);
         });
     }
 

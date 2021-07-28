@@ -3,13 +3,8 @@
 @section('content')
 <section class="py-5">
     <!-- Success Flash Message-->
-    @if (session('flash_message'))
-    <div class="flash-msg-popup is-dismissed px-4 py-3">
-        <p class="mb-0 w-100">
-            <i class="fas fa-check-circle me-2"></i>{{ session('flash_message') }}
-        </p>
-    </div>
-    @endif
+    @include('includes.flash-message')
+    
     @if ($errors->any())
     <!-- Info Alert-->
     <div class="alert alert-danger mb-4" role="alert">

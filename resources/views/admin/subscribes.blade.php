@@ -8,13 +8,7 @@
 @section('content')
 <section class="py-5">
   <!-- Success Flash Message-->
-  @if (session('flash_message'))
-  <div class="flash-msg-popup is-dismissed px-4 py-3">
-      <p class="mb-0 w-100">
-          <i class="fas fa-check-circle me-2"></i>{{ session('flash_message') }}
-      </p>
-  </div>
-  @endif
+  @include('includes.flash-message')
 
     <!-- Subscribers Table-->
     <table class="table bg-white shadow rounded table-striped text-nowrap mb-0" id="subscribersTable">

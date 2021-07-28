@@ -42,11 +42,11 @@ class ThemeController extends Controller
     =========================================================*/
     public function updateTheme(Request $request, Theme $theme)
     {
+      // dd($request->all());
       $file = $request->fileUpload ?? null;
       ThemeImage::where('theme_id',$theme->id)->update(['active' => 0]);
 
       if ($file) {        // case uploade new image
-
           $fileName = 'uploaded-' . $theme->id . '.jpg';
           $path = public_path().'/img';
           $uplaod = $file->move($path,$fileName);
@@ -59,7 +59,23 @@ class ThemeController extends Controller
           }
 
       }else {
-        ThemeImage::where('theme_id',$theme->id)->where('image',$request->themebg)->update(['active' => 1]);
+        if ($theme->id == 3) {
+          $gradient = $request->gradient_color_1 . ' 40%, ' . $request->gradient_color_2 ;
+          $gradientImage = ThemeImage::where('theme_id',$theme->id)->where('gradient',$request->themegrad)->first();
+          if ($gradientImage) {
+            // dd('hhhhh');
+            $gradientImage->update(['active' => 1]);
+          }else {
+            $existGradiant = ThemeImage::where('theme_id',$theme->id)->where('image','gradient')->first();
+            if ($existGradiant) {
+              $existGradiant->update(['active' => 1 , 'gradient' => $gradient]);
+            }else {
+              ThemeImage::create(['image' => 'gradient' , 'theme_id' => $theme->id , 'active' => 1 , 'gradient' => $gradient]);
+            }
+          }
+        }else {
+          ThemeImage::where('theme_id',$theme->id)->where('image',$request->themebg)->update(['active' => 1]);
+        }
       }
 
 
@@ -87,7 +103,7 @@ class ThemeController extends Controller
       $theme->socials()->sync($socila_ids);
 
 
-      return redirect()->back()->with('flash_message' , 'Cool! You\'ve updated your data');
+      return redirect()->back()->with('flash_message' , 'You\'ve updated your data');
 
     }
 
@@ -98,7 +114,7 @@ class ThemeController extends Controller
     {
       Theme::where('active','>=',0)->update(['active' => 0]);
       $theme->update(['active'=> 1]);
-      return redirect()->back()->with('flash_message','Cool! You\'ve updated your data');
+      return redirect()->back()->with('flash_message','You\'ve updated your data');
     }
 
     /*============================================================================
@@ -107,22 +123,29 @@ class ThemeController extends Controller
     public function updateCounter(Request $request, Counter $counter)
     {
       $requestData = $request->all();
+      $countType = $requestData['countingType'];
       $requestData['releaseDate'] = Carbon::parse($requestData['releaseDate'])->format('Y-m-d');
-      $today = Carbon::now()->format('Y-m-d');
-      $hours = Carbon::now()->format('H');
-      $minutes = Carbon::now()->format('i');
+      $requestData['releaseTime'] = Carbon::parse($requestData['releaseTime'])->format('H:i:s');
+      if ($countType == 'progress') {
+        $requestData['initialDate'] = Carbon::parse($requestData['initialDate'])->format('Y-m-d');
+        $requestData['initialTime'] = Carbon::parse($requestData['initialTime'])->format('H:i:s');
+        $requestData['countingType'] = 1 ;
+      }else {
+        $requestData['initialDate'] = $requestData['initialTime'] = null ;
+        $requestData['countingType'] = 0 ;
+      }
+      $date = Carbon::now()->format('Y-m-d');
+      $time = Carbon::now()->format('H:i');
+
 
       $this->validate($request,[
-        'releaseDate' => 'required|date|after_or_equal:' . $today,
-        'releaseHours' => ['required' , 'integer' , ($requestData['releaseDate'] == $today && $requestData['releaseHours'] < $hours) ? 'gt:' . $hours : ''],
-        'releaseMinutes' => ['required' , 'integer' , ($requestData['releaseDate'] == $today && $requestData['releaseHours'] == $hours) ? 'gt:' . $minutes : ''],
+        'initialDate' => ($countType == 'progress') ? 'required|date|before:releaseDate' : '',
+        'initialTime' => ($countType == 'progress') ? 'required|date_format:H:i' : '',
+        'releaseDate' => 'required|date|after_or_equal:' . $date,
+        'releaseTime' => ['required','date_format:H:i' , ($requestData['releaseDate'] == $date) ? 'after:' . $time : ''],
         'releaseUrl' => 'required|url|max:255',
       ]);
-
-      $requestData['releaseHours'] = Carbon::parse("" . $requestData['releaseHours'] . ":00:00");
-      $requestData['releaseMinutes'] = Carbon::parse("00:" . $requestData['releaseMinutes'] . ":00");
-
       $counter->update($requestData);
-      return redirect()->back()->with('flash_message','Cool! You\'ve updated your data');
+      return redirect()->back()->with('flash_message','You\'ve updated your data');
     }
 }

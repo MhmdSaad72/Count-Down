@@ -20,7 +20,7 @@
   <!-- Sociallinks-->
   <div class="pt-4 text-center">
     <div class="container d-flex align-items-center justify-content-between">
-      <div class="logo z-index-20"><a class="d-block" href="index.html"><img class="img-fluid" src="img/theme-1-logo-dark.svg" alt="Ionic Counter" width="60"></a></div>
+      <div class="logo z-index-20"><a class="d-block" href="{{ route('home') }}"><img class="img-fluid" src="img/theme-1-logo-dark.svg" alt="Ionic Counter" width="60"></a></div>
       <!-- Social Menu-->
       <ul class="list-inline mb-0 z-index-20">
         <li class="list-inline-item mx-2 mx-xl-1">
@@ -159,7 +159,7 @@
           @csrf
           <div class="input-group mb-3 p-2 rounded bg-transparent">
             <input class="form-control bg-none border-0 shadow-0 text-white" type="text" placeholder="e.g. Jasondoe@gmail.com" aria-label="Recipient's email address">
-            <button class="btn btn-light bg-white rounded px-3" type="submit">Notify me</button>
+            <button class="btn btn-light bg-white rounded px-3" type="submit">{{ $generalSetting->submit_button ?? '' }}</button>
           </div>
         </form>
       </div>

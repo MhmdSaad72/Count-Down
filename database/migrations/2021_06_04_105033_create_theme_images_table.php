@@ -17,6 +17,7 @@ class CreateThemeImagesTable extends Migration
             $table->increments('id');
             $table->string('image')->nullable();
             $table->boolean('active')->default(0);
+            $table->string('gradient')->nullable();
             $table->timestamps();
 
             $table->integer('theme_id')->unsigned()->nullable();

@@ -8,7 +8,7 @@ if (sidebarLinks.length > 0) {
     // Make sidebar link hide the current page on click
     sidebarLinks.forEach((sidebarLink) => {
         sidebarLink.addEventListener('click', function (event) {
-            if( event.which == 2 || (event.which == 1 && event.ctrlKey )) { 
+            if( event.which == 2 || (event.which == 1 && event.ctrlKey )) {
                 event.preventDefault();
             } else {
                 pageHolder.classList.add('fade');

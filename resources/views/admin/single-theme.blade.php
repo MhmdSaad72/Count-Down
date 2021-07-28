@@ -3,13 +3,8 @@
 @section('content')
 <section class="py-5">
     <!-- Success Flash Message-->
-    @if (session('flash_message'))
-    <div class="flash-msg-popup is-dismissed px-4 py-3">
-        <p class="mb-0 w-100">
-            <i class="fas fa-check-circle me-2"></i>{{ session('flash_message') }}
-        </p>
-    </div>
-    @endif
+    @include('includes.flash-message')
+
     <h2 class="h5 text-uppercase letter-spacing-0 mb-3">{{__('Choose theme background')}}</h2>
 
     <!-- Theme Edit Form-->
@@ -17,18 +12,18 @@
         @csrf
         @method('patch')
         <div class="row gy-2 gx-3 mb-4 align-items-stretch">
-
+          @if ($singleTheme->name != 'Theme Three')
             @foreach ($singleTheme->images as $key => $value)
-            <!-- Theme default background item-->
-            <div class="col-xl-2 col-lg-3 col-6 form-group">
+              <!-- Theme default background item-->
+              <div class="col-xl-2 col-lg-3 col-6 form-group">
                 <input class="btn-check" type="radio" name="themebg" id="themeOneBg{{ $loop->iteration }}" onchange="altBackground()" value="{{$value->image}}" {{ $singleTheme->checkImage($value->id) ? 'checked' : '' }}>
                 <label class="bg-cover bg-center theme-label rounded-lg bg-cover bg-center" for="themeOneBg{{ $loop->iteration }}" style="background: url({{ asset('img/' . $value->image)}})">
-                    <span class="theme-label-identifier bg-success text-white px-2 text-xs text-uppercase letter-spacing-0 fw-bold">
-                        <i class="fas fa-check-circle me-2"></i>
-                        Active
-                    </span>
+                  <span class="theme-label-identifier bg-success text-white px-2 text-xs text-uppercase letter-spacing-0 fw-bold">
+                    <i class="fas fa-check-circle me-2"></i>
+                    Active
+                  </span>
                 </label>
-            </div>
+              </div>
             @endforeach
 
 
@@ -41,85 +36,52 @@
                     </span>
                 </label>
             </div>
+          @endif
         </div>
 
 
         <!-- NEW [ONLY AVAILABEL FOR INDEX 3 - MAKE GRADIENT BACKGROUND ] -->
         <div class="row gy-2 gx-3 mb-4 align-items-stretch">
-
-            <!-- Theme default gradient item-->
-            <div class="col-xl-2 col-lg-3 col-6 form-group">
-                <input class="btn-check" type="radio" name="themebg" id="themeGrad1" onchange="altBackground()" value="">
-                <label class="bg-cover bg-center theme-label rounded-lg bg-cover bg-center" for="themeGrad1" style="background: url(../../../public/img/grad-1.png)" data-grad-colors="#06BEB6 40%, #48B1BF">
-                    <span class="theme-label-identifier bg-success text-white px-2 text-xs text-uppercase letter-spacing-0 fw-bold">
-                        <i class="fas fa-check-circle me-2"></i>
-                        Active
-                    </span>
+          @if ($singleTheme->name == 'Theme Three')
+            @foreach ($singleTheme->images as $key => $value)
+              <!-- Theme default gradient item-->
+              <div class="col-xl-2 col-lg-3 col-6 form-group">
+                <input class="btn-check" type="radio" name="themegrad" id="themeGrad{{$key}}" onchange="altBackground()" value="{{ $value->gradient }}" {{ $singleTheme->checkImage($value->id) ? 'checked' : '' }}>
+                <label class="bg-cover bg-center theme-label rounded-lg bg-cover bg-center" for="themeGrad{{$key}}" style="
+                background: linear-gradient(to top, {{$value->gradient}})
+                ">
+                  <span class="theme-label-identifier bg-success text-white px-2 text-xs text-uppercase letter-spacing-0 fw-bold">
+                    <i class="fas fa-check-circle me-2"></i>
+                    Active
+                  </span>
                 </label>
-            </div>
-            <!-- Theme default gradient item-->
-            <div class="col-xl-2 col-lg-3 col-6 form-group">
-                <input class="btn-check" type="radio" name="themebg" id="themeGrad2" onchange="altBackground()" value="">
-                <label class="bg-cover bg-center theme-label rounded-lg bg-cover bg-center" for="themeGrad2" style="background: url(../../../public/img/grad-2.png)" data-grad-colors="#B993D6 40%, #8CA6DB">
-                    <span class="theme-label-identifier bg-success text-white px-2 text-xs text-uppercase letter-spacing-0 fw-bold">
-                        <i class="fas fa-check-circle me-2"></i>
-                        Active
-                    </span>
-                </label>
-            </div>
-            <!-- Theme default gradient item-->
-            <div class="col-xl-2 col-lg-3 col-6 form-group">
-                <input class="btn-check" type="radio" name="themebg" id="themeGrad3" onchange="altBackground()" value="">
-                <label class="bg-cover bg-center theme-label rounded-lg bg-cover bg-center" for="themeGrad3" style="background: url(../../../public/img/grad-3.png)" data-grad-colors="#FE7378 40%, #FE977B">
-                    <span class="theme-label-identifier bg-success text-white px-2 text-xs text-uppercase letter-spacing-0 fw-bold">
-                        <i class="fas fa-check-circle me-2"></i>
-                        Active
-                    </span>
-                </label>
-            </div>
-            <!-- Theme default gradient item-->
-            <div class="col-xl-2 col-lg-3 col-6 form-group">
-                <input class="btn-check" type="radio" name="themebg" id="themeGrad4" onchange="altBackground()" value="">
-                <label class="bg-cover bg-center theme-label rounded-lg bg-cover bg-center" for="themeGrad4" style="background: url(../../../public/img/grad-4.png)" data-grad-colors="#E53935 40%, #E35D5B">
-                    <span class="theme-label-identifier bg-success text-white px-2 text-xs text-uppercase letter-spacing-0 fw-bold">
-                        <i class="fas fa-check-circle me-2"></i>
-                        Active
-                    </span>
-                </label>
-            </div>
-            <!-- Theme default gradient item-->
-            <div class="col-xl-2 col-lg-3 col-6 form-group">
-                <input class="btn-check" type="radio" name="themebg" id="themeGrad5" onchange="altBackground()" value="">
-                <label class="bg-cover bg-center theme-label rounded-lg bg-cover bg-center" for="themeGrad5" style="background: url(../../../public/img/grad-5.png)" data-grad-colors="#76B852 40%, #8DC26F">
-                    <span class="theme-label-identifier bg-success text-white px-2 text-xs text-uppercase letter-spacing-0 fw-bold">
-                        <i class="fas fa-check-circle me-2"></i>
-                        Active
-                    </span>
-                </label>
-            </div>
+              </div>
+            @endforeach
 
             <!-- Theme custom gradient input-->
             <div class="col-xl-2 col-lg-3 col-6 form-group">
-                <input class="btn-check" id="themeCustomGrad" type="radio" name="themebg" onchange="altGradient()">
-                <label class="bg-cover bg-center theme-label text-center choose-custom-bg" for="themeCustomGrad">
-                    <span class="theme-label-overlay"><i class="fas fa-image"></i>
-                        <small class="d-block mb-0">{{__('Make custom Gradient')}}</small>
-                    </span>
-                </label>
+              <input class="btn-check" id="themeCustomGrad" type="radio" name="themebg" onchange="altGradient()">
+              <label class="bg-cover bg-center theme-label text-center choose-custom-bg" for="themeCustomGrad">
+                <span class="theme-label-overlay"><i class="fas fa-image"></i>
+                  <small class="d-block mb-0">{{__('Make custom Gradient')}}</small>
+                </span>
+              </label>
             </div>
 
 
             <!-- Theme custom gradient input-->
             <div class="row gy-4 mb-5 d-none custom-grad-inputs">
-                <div class="col-lg-6">
-                    <label class="form-label h5 mb-0" for="gradient_color_start">{{__('Gradient custom colors')}}</label>
-                    <p class="form-text mb-3">The first color of theme background gradient</p>
-                    <div class="d-flex">
-                        <input class="form-control form-control-color me-2" type="color" name="gradient_color_1" value="#fe7378">
-                        <input class="form-control form-control-color me-2" type="color" name="gradient_color_2" value="#fe977b">
-                    </div>
+              <div class="col-lg-6">
+                <label class="form-label h5 mb-0" for="gradient_color_start">{{__('Gradient custom colors')}}</label>
+                <p class="form-text mb-3">The first color of theme background gradient</p>
+                <div class="d-flex">
+                  <input class="form-control form-control-color me-2" type="color" name="gradient_color_1" value="">
+                  <input class="form-control form-control-color me-2" type="color" name="gradient_color_2" value="">
                 </div>
+              </div>
             </div>
+
+          @endif
 
         </div>
         <!-- END NEW [ONLY AVAILABEL FOR INDEX 3 - MAKE GRADIENT BACKGROUND ] -->

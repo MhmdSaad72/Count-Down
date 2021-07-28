@@ -30,6 +30,13 @@ class Theme extends Model
       return $image;
     }
 
+    public function gradient()
+    {
+      $image = ThemeImage::where('theme_id',$this->id)->where('active',1)->first();
+      $gradient = $image->gradient ?? '';
+      return $gradient;
+    }
+
     public function checkSocial($title)
     {
       $social = SocialLink::where('title',$title)->first();

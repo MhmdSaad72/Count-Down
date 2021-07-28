@@ -7,9 +7,7 @@
 @section('style')
   <style media="screen">
   .theme-3{
-    background: url({{$themeThree->activeImage()}});
-    background-size: cover;
-    background-position: center center;
+    background: linear-gradient(to top, {{$themeThree->gradient()}});
   }
 </style>
 @endsection
@@ -153,7 +151,7 @@
                       @csrf
                         <div class="input-group mb-3 p-2 rounded bg-transparent">
                             <input class="form-control bg-none border-0 shadow-0 text-white" type="text" placeholder="e.g. Jasondoe@gmail.com" name="email" aria-label="Recipient's email address">
-                            <button class="btn btn-light bg-white rounded px-4" type="submit">{{ $generalSetting->submit_button ?? '' }}</button>
+                            <button class="btn btn-light bg-white rounded px-4" type="submit" style="color: {{ substr($themeThree->gradient(),0,7)}} !important">{{ $generalSetting->submit_button ?? '' }}</button>
                         </div>
                     </form>
                 </div>

@@ -7,13 +7,8 @@
 @section('content')
 <section class="py-5">
     <!-- Success Flash Message-->
-    @if (session('flash_message'))
-    <div class="flash-msg-popup is-dismissed px-4 py-3">
-        <p class="mb-0 w-100">
-            <i class="fas fa-check-circle me-2"></i>{{ session('flash_message') }}
-        </p>
-    </div>
-    @endif
+    @include('includes.flash-message')
+    
     @if ($errors->any())
     <!-- Info Alert-->
     <div class="alert alert-danger mb-4" role="alert">
@@ -37,9 +32,9 @@
                     <!-- Input-->
                     <label class="form-label h5 mb-0 required" for="countingType">{{__('Counting Type')}}</label>
                     <p class="form-text mb-3">{{__('Please select the date type of counting, progress or counter.')}}</p>
-                    <select class="form-select shadow-0" id="countingType"/>
-                        <option value="counter">Counter</option>
-                        <option value="progress">progress</option>
+                    <select class="form-select shadow-0" id="countingType" name="countingType"/>
+                        <option value="counter"{{ (old('countingType') =='counter' || $countDown->countingType == 'counter') ? 'selected' : '' }}>{{__('Counter')}}</option>
+                        <option value="progress"{{ (old('countingType') == 'progress' || $countDown->countingType == 'progress') ? 'selected' : '' }}>{{__('Progress')}}</option>
                       </select>
                 </div>
               </div>
@@ -49,14 +44,14 @@
                 <!-- Input-->
                 <label class="form-label h5 mb-0 required" for="initialDate">{{__('Initial date')}}</label>
                 <p class="form-text mb-3">{{__('Please select the date on which you\'ll start construction i.e. start date.')}}</p>
-                <input class="form-control shadow-0" id="initialDate" type="text" name="initialDate" placeholder="select initial date" value="" />
+                <input class="form-control shadow-0" id="initialDate" type="text" name="initialDate" placeholder="select initial date" value="{{ $countDown->initialDate ?? ''}}" />
             </div>
 
             <div class="form-group col-lg-6 initialTimeInput d-none">
                 <!-- Input-->
                 <label class="form-label h5 mb-0 required" for="initialTime">{{__('Initial time')}}</label>
                 <p class="form-text mb-3">{{__('Please select the time on which you\'ll start construction i.e. start date.')}}</p>
-                <input class="form-control shadow-0" id="initialTime" type="time" name="initialTime" placeholder="select initial time" value="" />
+                <input class="form-control shadow-0" id="initialTime" type="time" name="initialTime" placeholder="select initial time" value="{{ $countDown->initialTime ?? ''}}" />
             </div>
 
             <div class="form-group col-lg-6">
@@ -70,7 +65,13 @@
                 <!-- Select -->
                 <label class="form-label required h5 mb-0" for="releaseTime">{{__('Release time')}}</label>
                 <p class="form-text mb-3">{{__('Please select the time of your project release.')}}</p>
-                <input class="form-control" type="time" name="releaseTime" placeholder="Type your release time" value="">
+                <input class="form-control" type="time" name="releaseTime" placeholder="Type your release time" value="{{ $countDown->releaseTime ?? ''}}">
+            </div>
+            <div class="form-group col-lg-6">
+              <!-- Input-->
+              <label class="form-label h5 mb-0 required" for="releaseDate">{{__('Release url')}}</label>
+              <p class="form-text mb-3">{{__('Please type the url of your project release.')}}</p>
+              <input class="form-control shadow-0" id="releaseUrl" type="text" name="releaseUrl" placeholder="select release date" value="{{ $countDown->releaseUrl ?? ''}}" />
             </div>
 
             <div class="form-group col-12">

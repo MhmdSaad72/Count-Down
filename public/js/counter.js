@@ -32,7 +32,7 @@ if (!progressBarUsed) {
         /* ======================================
         CALLBACK FUNCTION AFTER TIMER ENDS
         ======================================== */
-        function updateClock() {
+        function updateClock(releaseUrl) {
             const t = getTimeRemaining(endtime);
 
             // let inputTimezoneValue = 0;
@@ -41,9 +41,10 @@ if (!progressBarUsed) {
             hoursSpan.innerHTML = ("0" + (t.hours + inputTimezoneValue)).slice(-2);
             minutesSpan.innerHTML = ("0" + t.minutes).slice(-2);
             secondsSpan.innerHTML = ("0" + t.seconds).slice(-2);
+            console.log(inputTimezoneValue);
 
             if (t.total <= 0) {
-                location.assign("https://users.ionichub.co/");
+                location.assign(releaseUrl);
             }
         }
 
@@ -55,9 +56,8 @@ if (!progressBarUsed) {
     /* ======================================
     INITIALIZING COUNTER
     ======================================== */
-    const deadline = "08 29 2021 14:21:59 GMT+0200"; // From here set up the deadline date.
-    let inputTimezoneValueOffset = 24;
-    initializeClock("counter", deadline, inputTimezoneValueOffset);
+    let inputTimezoneValueOffset = 0;
+    initializeClock("counter", deadline, inputTimezoneValueOffset, releaseUrl);
 }
 
 /* ======================================
@@ -136,19 +136,4 @@ if (pxEls) {
             }
         });
     });
-}
-
-/* ======================================
-IMPORT DIFFERNT PARTICLE.JS JSON FILES
-======================================== */
-function compareViewports(jsonFile, jsonAltFile) {
-    if (window.innerWidth > 768) {
-        particlesJS.load("particles-js", `${jsonFile}`, function () {
-            console.log("particles is moving");
-        });
-    } else {
-        particlesJS.load("particles-js", `${jsonAltFile}`, function () {
-            console.log("particles is moving");
-        });
-    }
 }
