@@ -42,7 +42,6 @@ class ThemeController extends Controller
     =========================================================*/
     public function updateTheme(Request $request, Theme $theme)
     {
-      // dd($request->all());
       $file = $request->fileUpload ?? null;
       ThemeImage::where('theme_id',$theme->id)->update(['active' => 0]);
 
@@ -62,8 +61,7 @@ class ThemeController extends Controller
         if ($theme->id == 3) {
           $gradient = $request->gradient_color_1 . ' 40%, ' . $request->gradient_color_2 ;
           $gradientImage = ThemeImage::where('theme_id',$theme->id)->where('gradient',$request->themegrad)->first();
-          if ($gradientImage) {
-            // dd('hhhhh');
+          if ($gradientImage && $request->existGradiant == 0) {
             $gradientImage->update(['active' => 1]);
           }else {
             $existGradiant = ThemeImage::where('theme_id',$theme->id)->where('image','gradient')->first();

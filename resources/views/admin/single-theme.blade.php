@@ -77,6 +77,7 @@
                 <div class="d-flex">
                   <input class="form-control form-control-color me-2" type="color" name="gradient_color_1" value="">
                   <input class="form-control form-control-color me-2" type="color" name="gradient_color_2" value="">
+                  <input type="hidden" name="existGradiant" value="0" id="existGradiant">
                 </div>
               </div>
             </div>
@@ -245,6 +246,7 @@
         let customgradInputs = document.querySelector('.custom-grad-inputs');
         if (customGradInputToggler.checked) {
             customgradInputs.classList.remove('d-none');
+            document.getElementById('existGradiant').setAttribute("value", "1");
         } else {
             customgradInputs.classList.add('d-none');
         }

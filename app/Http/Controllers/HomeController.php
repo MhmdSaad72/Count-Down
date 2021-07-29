@@ -20,7 +20,7 @@ class HomeController extends Controller
         $themeThree = Theme::where('name','Theme Three')->where('active',1)->first();
         $themeFour = Theme::where('name','Theme Four')->where('active',1)->first();
 
-        
+
 
         $generalSetting = GeneralSetting::first();
         $count = ($generalSetting->views) + 1 ;

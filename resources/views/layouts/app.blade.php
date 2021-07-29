@@ -36,6 +36,7 @@
         const deadline = "{{ $deadline ?? '' }}" ;
         const releaseUrl = "{{ $releaseUrl ?? '' }}" ;
         const initalDate = "{{ $initalDate ?? '' }}" ;
+        const startProgress = "{{ $startProgress ?? '' }}";
         </script>
         <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
         @yield('js')

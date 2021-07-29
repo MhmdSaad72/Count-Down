@@ -99,8 +99,8 @@
                 <p class="text-whtie lead mb-5">{{ $generalSetting->counter_message ?? ''}}</p>
               </div>
             </div>
-
-            <!-- Progress-->
+            @if ($startProgress)
+              <!-- Progress-->
               <div class="row z-index-20">
                 <div class="col-xl-3 col-lg-5 col-md-6 col-7 mx-auto">
                   <div class="position-relative">
@@ -114,26 +114,28 @@
                   </div>
                 </div>
               </div>
+            @else
+              <!-- Counter-->
+              <div class="counter" id="counter">
+                <div class="counter-item">
+                  <div class="days counter-no theme-3-heading px-3 px-lg-4 px-xl-5 text-shadow"></div>
+                  <p class="counter-item-title">{{__('Days')}}</p>
+                </div>
+                <div class="counter-item">
+                  <div class="hours counter-no theme-3-heading px-3 px-lg-4 px-xl-5 text-shadow"></div>
+                  <p class="counter-item-title">{{__('Hours')}}</p>
+                </div>
+                <div class="counter-item">
+                  <div class="minutes counter-no theme-3-heading px-3 px-lg-4 px-xl-5 text-shadow"></div>
+                  <p class="counter-item-title">{{__('Minutes')}}</p>
+                </div>
+                <div class="counter-item">
+                  <div class="seconds counter-no theme-3-heading px-3 px-lg-4 px-xl-5 text-shadow"></div>
+                  <p class="counter-item-title">{{__('Seconds')}}</p>
+                </div>
+              </div>
+            @endif
 
-            <!-- Counter-->
-            <div class="counter" id="counter">
-                <div class="counter-item">
-                    <div class="days counter-no theme-3-heading px-3 px-lg-4 px-xl-5 text-shadow"></div>
-                    <p class="counter-item-title">{{__('Days')}}</p>
-                </div>
-                <div class="counter-item">
-                    <div class="hours counter-no theme-3-heading px-3 px-lg-4 px-xl-5 text-shadow"></div>
-                    <p class="counter-item-title">{{__('Hours')}}</p>
-                </div>
-                <div class="counter-item">
-                    <div class="minutes counter-no theme-3-heading px-3 px-lg-4 px-xl-5 text-shadow"></div>
-                    <p class="counter-item-title">{{__('Minutes')}}</p>
-                </div>
-                <div class="counter-item">
-                    <div class="seconds counter-no theme-3-heading px-3 px-lg-4 px-xl-5 text-shadow"></div>
-                    <p class="counter-item-title">{{__('Seconds')}}</p>
-                </div>
-            </div>
 
         </div>
     </section>
