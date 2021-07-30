@@ -7,9 +7,7 @@
 @section('style')
   <style media="screen">
   .theme-3{
-    background: url({{$themeThree->activeImage()}});
-    background-size: cover;
-    background-position: center center;
+    background: linear-gradient(to top, {{$themeThree->gradient()}});
   }
 </style>
 @endsection
@@ -101,8 +99,8 @@
                 <p class="text-whtie lead mb-5">{{ $generalSetting->counter_message ?? ''}}</p>
               </div>
             </div>
-
-            <!-- Progress-->
+            @if ($startProgress)
+              <!-- Progress-->
               <div class="row z-index-20">
                 <div class="col-xl-3 col-lg-5 col-md-6 col-7 mx-auto">
                   <div class="position-relative">
@@ -116,26 +114,28 @@
                   </div>
                 </div>
               </div>
+            @else
+              <!-- Counter-->
+              <div class="counter" id="counter">
+                <div class="counter-item">
+                  <div class="days counter-no theme-3-heading px-3 px-lg-4 px-xl-5 text-shadow"></div>
+                  <p class="counter-item-title">{{__('Days')}}</p>
+                </div>
+                <div class="counter-item">
+                  <div class="hours counter-no theme-3-heading px-3 px-lg-4 px-xl-5 text-shadow"></div>
+                  <p class="counter-item-title">{{__('Hours')}}</p>
+                </div>
+                <div class="counter-item">
+                  <div class="minutes counter-no theme-3-heading px-3 px-lg-4 px-xl-5 text-shadow"></div>
+                  <p class="counter-item-title">{{__('Minutes')}}</p>
+                </div>
+                <div class="counter-item">
+                  <div class="seconds counter-no theme-3-heading px-3 px-lg-4 px-xl-5 text-shadow"></div>
+                  <p class="counter-item-title">{{__('Seconds')}}</p>
+                </div>
+              </div>
+            @endif
 
-            <!-- Counter-->
-            <div class="counter" id="counter">
-                <div class="counter-item">
-                    <div class="days counter-no theme-3-heading px-3 px-lg-4 px-xl-5 text-shadow"></div>
-                    <p class="counter-item-title">{{__('Days')}}</p>
-                </div>
-                <div class="counter-item">
-                    <div class="hours counter-no theme-3-heading px-3 px-lg-4 px-xl-5 text-shadow"></div>
-                    <p class="counter-item-title">{{__('Hours')}}</p>
-                </div>
-                <div class="counter-item">
-                    <div class="minutes counter-no theme-3-heading px-3 px-lg-4 px-xl-5 text-shadow"></div>
-                    <p class="counter-item-title">{{__('Minutes')}}</p>
-                </div>
-                <div class="counter-item">
-                    <div class="seconds counter-no theme-3-heading px-3 px-lg-4 px-xl-5 text-shadow"></div>
-                    <p class="counter-item-title">{{__('Seconds')}}</p>
-                </div>
-            </div>
 
         </div>
     </section>
@@ -153,7 +153,7 @@
                       @csrf
                         <div class="input-group mb-3 p-2 rounded bg-transparent">
                             <input class="form-control bg-none border-0 shadow-0 text-white" type="text" placeholder="e.g. Jasondoe@gmail.com" name="email" aria-label="Recipient's email address">
-                            <button class="btn btn-light bg-white rounded px-4" type="submit">{{ $generalSetting->submit_button ?? '' }}</button>
+                            <button class="btn btn-light bg-white rounded px-4" type="submit" style="color: {{ substr($themeThree->gradient(),0,7)}} !important">{{ $generalSetting->submit_button ?? '' }}</button>
                         </div>
                     </form>
                 </div>

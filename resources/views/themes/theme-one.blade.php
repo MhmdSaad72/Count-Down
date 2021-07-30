@@ -16,7 +16,7 @@
 @endsection
 
 @section('content')
-<div class="page-holder theme theme-1 text-white">
+<div class="page-holder theme theme-1 text-white {{ $startProgress ? 'progress-used' : ''}}">
   <div id="particles-js"></div>
 
   <div class="pt-4 px-4 text-center">
@@ -98,7 +98,8 @@
               </div>
             </div>
 
-            <!-- Progress-->
+            @if ($startProgress)
+              <!-- Progress-->
               <div class="row z-index-20">
                 <div class="col-xl-3 col-lg-5 col-md-6 col-7 mx-auto">
                   <div class="position-relative">
@@ -112,26 +113,29 @@
                   </div>
                 </div>
               </div>
+            @else
+              <!-- Counter-->
+              <div class="counter z-index-20" id="counter">
+                <div class="mx-1">
+                  <div class="counter-item days theme-1-heading shadow h3 rounded-lg"></div>
+                  <p class="counter-item-title my-3">{{__('Days')}}</p>
+                </div>
+                <div class="mx-1">
+                  <div class="counter-item hours theme-1-heading shadow h3 rounded-lg"></div>
+                  <p class="counter-item-title my-3">{{__('Hours')}}</p>
+                </div>
+                <div class="mx-1">
+                  <div class="counter-item minutes theme-1-heading shadow h3 rounded-lg"></div>
+                  <p class="counter-item-title my-3">{{__('Minutes')}}</p>
+                </div>
+                <div class="mx-1">
+                  <div class="counter-item seconds theme-1-heading shadow h3 rounded-lg"></div>
+                  <p class="counter-item-title my-3">{{__('Seconds')}}</p>
+                </div>
+              </div>
+            @endif
 
-            <!-- Counter-->
-            <div class="counter z-index-20" id="counter">
-                <div class="mx-1">
-                    <div class="counter-item days theme-1-heading shadow h3 rounded-lg"></div>
-                    <p class="counter-item-title my-3">{{__('Days')}}</p>
-                </div>
-                <div class="mx-1">
-                    <div class="counter-item hours theme-1-heading shadow h3 rounded-lg"></div>
-                    <p class="counter-item-title my-3">{{__('Hours')}}</p>
-                </div>
-                <div class="mx-1">
-                    <div class="counter-item minutes theme-1-heading shadow h3 rounded-lg"></div>
-                    <p class="counter-item-title my-3">{{__('Minutes')}}</p>
-                </div>
-                <div class="mx-1">
-                    <div class="counter-item seconds theme-1-heading shadow h3 rounded-lg"></div>
-                    <p class="counter-item-title my-3">{{__('Seconds')}}</p>
-                </div>
-            </div>
+
         </div>
     </section>
 
@@ -158,7 +162,6 @@
             <p class="mb-0 text-center text-sm fw-light z-index-20">&copy; {{ $generalSetting->copyrights ?? '' }}</p>
         </div>
     </footer>
-
 </div>
 @endsection
 @section('js')

@@ -53,8 +53,9 @@ class AdminController extends Controller
       $counter = true ;
       $countDown = Counter::first();
       $countDown->releaseDate = Carbon::parse($countDown->releaseDate)->format('d/m/Y');
-      $countDown->releaseHours = Carbon::parse($countDown->releaseHours)->format('H');
-      $countDown->releaseMinutes = Carbon::parse($countDown->releaseMinutes)->format('i');
+      $countDown->releaseTime = Carbon::parse($countDown->releaseTime)->format('H:i');
+      $countDown->initialDate = $countDown->initialDate ? Carbon::parse($countDown->initialDate)->format('d/m/Y') : '';
+      $countDown->initialTime = $countDown->initialTime ? Carbon::parse($countDown->initialTime)->format('H:i') : '';
       $auth = Auth::user();
       return view('admin.counter',compact('pageName','counter','auth','countDown','pageDescription'));
     }
@@ -126,7 +127,7 @@ class AdminController extends Controller
       }
 
       $general->update($requestData);
-      return redirect()->back()->with('flash_message','Cool! You\'ve updated your data');
+      return redirect()->back()->with('flash_message','You\'ve updated your data');
     }
 
     /*==============================================

@@ -32,8 +32,7 @@ class DatabaseSeeder extends Seeder
         // count down setting
         Counter::create([
           'releaseDate' => '2021-12-29',
-          'releaseHours' => '10:00:00',
-          'releaseMinutes' => '00:10:00',
+          'releaseTime' => '10:10:00',
           'releaseUrl' => 'https://www.google.com',
         ]);
         // create four themes and there images
@@ -44,17 +43,26 @@ class DatabaseSeeder extends Seeder
             'name' => 'Theme ' . $number[$i],
             'active' => $active[$i]
           ]);
-          ThemeImage::create([
-            'theme_id' => $theme->id,
-            'active' => 1,
-            'image' => 'theme-' . ($i+1) . '.jpg' ,
-          ]);
+          if ($theme->id != 3) {
+            ThemeImage::create([
+              'theme_id' => $theme->id,
+              'active' => 1,
+              'image' => 'theme-' . ($i+1) . '.jpg' ,
+            ]);
+          }
         }
 
         for ($i = 1; $i < 7; $i++) {
           ThemeImage::create([
             'theme_id' => 1,
             'image' => 'bg-' . $i . '.jpg' ,
+          ]);
+        }
+        $gradient = ['#06BEB6 40%, #48B1BF','#B993D6 40%, #8CA6DB','#FE7378 40%, #FE977B','#E53935 40%, #E35D5B','#76B852 40%, #8DC26F'];
+        for ($i = 0; $i < 5; $i++) {
+          ThemeImage::create([
+            'theme_id' => 3,
+            'gradient' => $gradient[$i]
           ]);
         }
         // add all social links

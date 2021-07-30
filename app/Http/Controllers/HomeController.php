@@ -20,6 +20,8 @@ class HomeController extends Controller
         $themeThree = Theme::where('name','Theme Three')->where('active',1)->first();
         $themeFour = Theme::where('name','Theme Four')->where('active',1)->first();
 
+
+
         $generalSetting = GeneralSetting::first();
         $count = ($generalSetting->views) + 1 ;
         $generalSetting->update(['views' => $count]);
@@ -27,16 +29,20 @@ class HomeController extends Controller
         $counter = Counter::first();
 
         $now = Carbon::now();
-        $day = Carbon::parse($counter->releaseDate)->format('Y-m-d');
-        $hour = Carbon::parse($counter->releaseHours)->format('H');
-        $minute = Carbon::parse($counter->releaseMinutes)->format('i');
+        $releaseDate = Carbon::parse($counter->releaseDate)->format('Y-m-d');
+        $releaseTime = Carbon::parse($counter->releaseTime)->format('H:i:s');
+        if ($counter->countingType == 'progress') {
+          $initialDate = Carbon::parse($counter->initialDate)->format('Y-m-d');
+          $initialTime = Carbon::parse($counter->initialTime)->format('H:i:s');
+        }
 
-        $deadline = $day . ' ' . $hour . ':' . $minute . ':00';
+        $deadline = $releaseDate . ' ' . $releaseTime;
+        $startProgress = isset($initialDate) ? ($initialDate . ' ' . $initialTime)  : null;
         $releaseUrl = $counter->releaseUrl;
 
         $this->reloadDatetime($deadline,$counter,$now);
 
-        return view('home',compact('themeOne','themeTwo','themeThree','themeFour','generalSetting','deadline','releaseUrl'));
+        return view('home', compact('themeOne','themeTwo','themeThree','themeFour','generalSetting','deadline','releaseUrl','startProgress'));
     }
 
     /*=================================================================

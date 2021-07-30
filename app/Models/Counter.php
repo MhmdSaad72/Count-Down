@@ -12,5 +12,13 @@ class Counter extends Model
 
     protected $table = 'counters';
 
-    protected $fillable = ['releaseUrl','releaseDate','releaseHours','releaseMinutes'];
+    protected $guarded = [];
+
+    public function getCountingTypeAttribute($attribute)
+    {
+      return [
+        '0' => 'counter',
+        '1' => 'progress',
+      ][$attribute];
+    }
 }

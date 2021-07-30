@@ -9,7 +9,13 @@
           <h2 class="h5 text-uppercase letter-spacing-0 mb-0">{{ $value->name ?? '' }}</h2>
           <p class="text-muted mb-4">{{ $value->description($key) }}</p>
           <!-- Theme Item Card-->
-          <div class="card theme-card shadow rounded-lg" style="background: url({{ $value->activeImage() ?? asset('img/index1.png')}})">
+          <div class="card theme-card shadow rounded-lg" style="
+          @if ($value->id == 3)
+          background: linear-gradient(to top, {{$value->gradient()}})
+          @else
+          background: url({{ $value->activeImage() ?? asset('img/index1.png')}})
+          @endif
+          ">
             <div class="card-overlay p-3">
               <ul class="list-inline mb-0">
                 <li class="list-inline-item">

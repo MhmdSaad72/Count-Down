@@ -20,7 +20,7 @@
   <!-- Sociallinks-->
   <div class="pt-4 text-center">
     <div class="container d-flex align-items-center justify-content-between">
-      <div class="logo z-index-20"><a class="d-block" href="index.html"><img class="img-fluid" src="img/theme-1-logo-dark.svg" alt="Ionic Counter" width="60"></a></div>
+      <div class="logo z-index-20"><a class="d-block" href="{{ route('home') }}"><img class="img-fluid" src="img/theme-1-logo-dark.svg" alt="Ionic Counter" width="60"></a></div>
       <!-- Social Menu-->
       <ul class="list-inline mb-0 z-index-20">
         <li class="list-inline-item mx-2 mx-xl-1">
@@ -114,39 +114,43 @@
         </div>
         <div class="col-xl-3 ms-auto pt-2 mt-5 pt-xl-0 mt-lg-0">
 
-        <!-- Progress-->
-          <div class="row z-index-20">
-            <div class="col-xl-12 col-7 mx-auto">
-              <div class="position-relative">
-                <div class="progress rounded-pill">
-                  <div class="progress-bar rounded-pill bar-bg-custom" role="progressbar" data-width="70" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <div class="progress-status text-white text-nowrap d-inline-block">
-                  <div class="progress-status-text"></div>
-                  <div class="progress-status-tip"></div>
+          @if ($startProgress)
+            <!-- Progress-->
+            <div class="row z-index-20">
+              <div class="col-xl-12 col-7 mx-auto">
+                <div class="position-relative">
+                  <div class="progress rounded-pill">
+                    <div class="progress-bar rounded-pill bar-bg-custom" role="progressbar" data-width="70" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  <div class="progress-status text-white text-nowrap d-inline-block">
+                    <div class="progress-status-text"></div>
+                    <div class="progress-status-tip"></div>
+                  </div>
                 </div>
               </div>
+          @else
+            <!-- Counter-->
+            <div class="row gx-2 gx-xl-4 counter text-center justify-content-end flex-wrap mb-5 z-index-20" id="counter">
+              <div class="col-3 col-xl-6">
+                <div class="counter-item days counter-no theme-4-heading rounded-lg h2"></div>
+                <p class="counter-item-title my-2">Days</p>
+              </div>
+              <div class="col-3 col-xl-6">
+                <div class="counter-item hours counter-no theme-4-heading rounded-lg h2"></div>
+                <p class="counter-item-title my-2">Hours</p>
+              </div>
+              <div class="col-3 col-xl-6">
+                <div class="counter-item minutes counter-no theme-4-heading rounded-lg h2"></div>
+                <p class="counter-item-title my-2">Minutes</p>
+              </div>
+              <div class="col-3 col-xl-6">
+                <div class="counter-item seconds counter-no theme-4-heading rounded-lg h2"></div>
+                <p class="counter-item-title my-2">Seconds</p>
+              </div>
             </div>
+          @endif
 
-          <!-- Counter-->
-          <div class="row gx-2 gx-xl-4 counter text-center justify-content-end flex-wrap mb-5 z-index-20" id="counter">
-            <div class="col-3 col-xl-6">
-              <div class="counter-item days counter-no theme-4-heading rounded-lg h2"></div>
-              <p class="counter-item-title my-2">Days</p>
-            </div>
-            <div class="col-3 col-xl-6">
-              <div class="counter-item hours counter-no theme-4-heading rounded-lg h2"></div>
-              <p class="counter-item-title my-2">Hours</p>
-            </div>
-            <div class="col-3 col-xl-6">
-              <div class="counter-item minutes counter-no theme-4-heading rounded-lg h2"></div>
-              <p class="counter-item-title my-2">Minutes</p>
-            </div>
-            <div class="col-3 col-xl-6">
-              <div class="counter-item seconds counter-no theme-4-heading rounded-lg h2"></div>
-              <p class="counter-item-title my-2">Seconds</p>
-            </div>
-          </div>
+
         </div>
       </div>
     </div>
@@ -159,7 +163,7 @@
           @csrf
           <div class="input-group mb-3 p-2 rounded bg-transparent">
             <input class="form-control bg-none border-0 shadow-0 text-white" type="text" placeholder="e.g. Jasondoe@gmail.com" aria-label="Recipient's email address">
-            <button class="btn btn-light bg-white rounded px-3" type="submit">Notify me</button>
+            <button class="btn btn-light bg-white rounded px-3" type="submit">{{ $generalSetting->submit_button ?? '' }}</button>
           </div>
         </form>
       </div>
