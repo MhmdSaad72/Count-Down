@@ -13,7 +13,7 @@
 @endsection
 
 @section('content')
-<div class="page-holder theme theme-3 text-white">
+<div class="page-holder theme theme-3 text-white {{ $startProgress ? 'progress-used' : ''}}">
   <div class="parallax-el parallax-el-1"></div>
   <div class="parallax-el parallax-el-2"></div>
   <div class="parallax-el parallax-el-3"></div>
@@ -85,7 +85,7 @@
     </div>
   </div>
     <!-- Main Content-->
-    <section class="py-5 text-center">
+    <section class="pb-5 text-center">
 
         <div class="container">
 

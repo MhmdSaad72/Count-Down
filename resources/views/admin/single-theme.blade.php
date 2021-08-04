@@ -46,7 +46,7 @@
             @foreach ($singleTheme->images as $key => $value)
               <!-- Theme default gradient item-->
               <div class="col-xl-2 col-lg-3 col-6 form-group">
-                <input class="btn-check" type="radio" name="themegrad" id="themeGrad{{$key}}" onchange="altBackground()" value="{{ $value->gradient }}" {{ $singleTheme->checkImage($value->id) ? 'checked' : '' }}>
+                <input class="btn-check" type="radio" name="themegrad" id="themeGrad{{$key}}" onchange="altGradient()" value="{{ $value->gradient }}" {{ $singleTheme->checkImage($value->id) ? 'checked' : '' }}>
                 <label class="bg-cover bg-center theme-label rounded-lg bg-cover bg-center" for="themeGrad{{$key}}" style="
                 background: linear-gradient(to top, {{$value->gradient}})
                 ">
@@ -60,7 +60,7 @@
 
             <!-- Theme custom gradient input-->
             <div class="col-xl-2 col-lg-3 col-6 form-group">
-              <input class="btn-check" id="themeCustomGrad" type="radio" name="themebg" onchange="altGradient()">
+              <input class="btn-check" id="themeCustomGrad" type="radio" name="themegrad" onchange="altGradient()">
               <label class="bg-cover bg-center theme-label text-center choose-custom-bg" for="themeCustomGrad">
                 <span class="theme-label-overlay"><i class="fas fa-image"></i>
                   <small class="d-block mb-0">{{__('Make custom Gradient')}}</small>
@@ -235,21 +235,29 @@
     function altBackground() {
         let customBgInputToggler = document.getElementById('themeOneAltBg');
         let customBgInput = document.getElementById('altBackground');
-        if (customBgInputToggler.checked) {
-            customBgInput.classList.toggle('d-none');
-        } else {
-            customBgInput.classList.add('d-none');
+        if (customBgInputToggler) {
+            if (customBgInputToggler.checked) {
+                customBgInput.classList.toggle('d-none');
+            } else {
+                customBgInput.classList.add('d-none');
+            }
         }
+
     }
     function altGradient() {
         let customGradInputToggler = document.getElementById('themeCustomGrad');
         let customgradInputs = document.querySelector('.custom-grad-inputs');
-        if (customGradInputToggler.checked) {
-            customgradInputs.classList.remove('d-none');
-            document.getElementById('existGradiant').setAttribute("value", "1");
-        } else {
-            customgradInputs.classList.add('d-none');
+        if (customGradInputToggler) {
+            if (customGradInputToggler.checked) {
+                customgradInputs.classList.remove('d-none');
+                document.getElementById('existGradiant').setAttribute("value", "1");
+                console.log('checked');
+            } else {
+                customgradInputs.classList.add('d-none');
+                console.log('unchecked')
+            }
         }
+
     }
 </script>
 @endsection

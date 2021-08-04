@@ -68,11 +68,10 @@ if (progressBarUsed) {
     let progressIdentifier = document.querySelector(".progress-status-text");
     let progressIdentifierTip = document.querySelector(".progress-status-tip");
 
-    (function progressing() {
+    function progressing(initalDate, launchDate, releaseUrl) {
         setInterval(function () {
             let today = new Date();
-            let initalDate = new Date("07/10/2021 16:55:00");
-            let launchDate = new Date("07/12/2021 22:10:00");
+
 
             function timeDiffCalc(initDate, relDate) {
                 let diffInMilliSeconds = Math.abs(relDate.getTime() - initDate.getTime()) / 1000;
@@ -100,10 +99,12 @@ if (progressBarUsed) {
             if (progressWidth > 70) {
                 document.querySelector('.progress-status').classList.add('float-end');
             } else if (progressWidth >= 100) {
-                location.assign("https://ionichub.co/");
+                location.assign(releaseUrl);
             }
         }, 1000);
-    })();
+    }
+    
+    progressing(progressInitalDate, progressLaunchDate, releaseUrl);
 }
 
 /* ======================================
@@ -136,4 +137,20 @@ if (pxEls) {
             }
         });
     });
+}
+
+
+/* ======================================
+IMPORT DIFFERNT PARTICLE.JS JSON FILES
+======================================== */
+function compareViewports(jsonFile, jsonAltFile) {
+    if (window.innerWidth > 768) {
+        particlesJS.load("particles-js", `${jsonFile}`, function () {
+            console.log("particles is moving");
+        });
+    } else {
+        particlesJS.load("particles-js", `${jsonAltFile}`, function () {
+            console.log("particles is moving");
+        });
+    }
 }

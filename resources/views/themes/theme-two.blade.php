@@ -15,7 +15,7 @@
 @endsection
 
 @section('content')
-<div class="page-holder text-white theme theme-2">
+<div class="page-holder text-white theme theme-2 {{ $startProgress ? 'progress-used' : ''}}">
   <div id="particles-js"></div>
 
     <!-- Sociallinks-->
@@ -100,7 +100,7 @@
                 <p class="mb-5">{{ $generalSetting->counter_message ?? ''}}</p>
               </div>
             </div>
-            
+
             <!-- Progress-->
               <div class="row z-index-20">
                 <div class="col-xl-3 col-lg-5 col-md-6 col-7 mx-auto">

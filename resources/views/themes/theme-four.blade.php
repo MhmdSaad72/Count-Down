@@ -15,7 +15,7 @@
 @endsection
 
 @section('content')
-<div class="pgae-holder theme theme-4 d-flex justify-content-between flex-column">
+<div class="pgae-holder theme theme-4 d-flex justify-content-between flex-column {{ $startProgress ? 'progress-used' : ''}}">
   <div id="particles-js"></div>
   <!-- Sociallinks-->
   <div class="pt-4 text-center">
