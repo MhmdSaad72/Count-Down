@@ -15,7 +15,7 @@
 @endsection
 
 @section('content')
-<div class="page-holder text-white theme theme-2 {{ $startProgress ? 'progress-used' : ''}}">
+<div class="page-holder text-white theme theme-2 {{ $progressMessage ? 'progress-used' : ''}}">
   <div id="particles-js"></div>
 
     <!-- Sociallinks-->

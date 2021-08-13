@@ -15,7 +15,7 @@
 @endsection
 
 @section('content')
-<div class="pgae-holder theme theme-4 d-flex justify-content-between flex-column {{ $startProgress ? 'progress-used' : ''}}">
+<div class="pgae-holder theme theme-4 d-flex justify-content-between flex-column {{ $progressMessage ? 'progress-used' : ''}}">
   <div id="particles-js"></div>
   <!-- Sociallinks-->
   <div class="pt-4 text-center">
@@ -114,7 +114,7 @@
         </div>
         <div class="col-xl-3 ms-auto pt-2 mt-5 pt-xl-0 mt-lg-0">
 
-          @if ($startProgress)
+          @if ($progressMessage)
             <!-- Progress-->
             <div class="row z-index-20">
               <div class="col-xl-12 col-7 mx-auto">

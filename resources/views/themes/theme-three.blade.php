@@ -13,7 +13,7 @@
 @endsection
 
 @section('content')
-<div class="page-holder theme theme-3 text-white {{ $startProgress ? 'progress-used' : ''}}">
+<div class="page-holder theme theme-3 text-white {{ $progressMessage ? 'progress-used' : ''}}">
   <div class="parallax-el parallax-el-1"></div>
   <div class="parallax-el parallax-el-2"></div>
   <div class="parallax-el parallax-el-3"></div>
@@ -99,7 +99,7 @@
                 <p class="text-whtie lead mb-5">{{ $generalSetting->counter_message ?? ''}}</p>
               </div>
             </div>
-            @if ($startProgress)
+            @if ($progressMessage)
               <!-- Progress-->
               <div class="row z-index-20">
                 <div class="col-xl-3 col-lg-5 col-md-6 col-7 mx-auto">

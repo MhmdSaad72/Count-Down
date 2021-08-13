@@ -43,19 +43,21 @@ class DatabaseSeeder extends Seeder
             'name' => 'Theme ' . $number[$i],
             'active' => $active[$i]
           ]);
-          if ($theme->id != 3) {
+          if ($theme->id != 3 && $theme->id != 1) {
             ThemeImage::create([
               'theme_id' => $theme->id,
               'active' => 1,
-              'image' => 'theme-' . ($i+1) . '.jpg' ,
+              'image' => 'theme-' . ($i+1) .'-bg.jpg' ,
             ]);
           }
         }
 
-        for ($i = 1; $i < 7; $i++) {
+        for ($i = 1; $i < 5; $i++) {
+          $active = ($i == 1) ? 1 : 0;
           ThemeImage::create([
             'theme_id' => 1,
-            'image' => 'bg-' . $i . '.jpg' ,
+            'active' => $active,
+            'image' => 'theme-1-bg-' . $i . '.jpg' ,
           ]);
         }
         $gradient = ['#06BEB6 40%, #48B1BF','#B993D6 40%, #8CA6DB','#FE7378 40%, #FE977B','#E53935 40%, #E35D5B','#76B852 40%, #8DC26F'];

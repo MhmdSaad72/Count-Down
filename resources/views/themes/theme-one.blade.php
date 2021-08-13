@@ -16,7 +16,7 @@
 @endsection
 
 @section('content')
-<div class="page-holder theme theme-1 text-white {{ $startProgress ? 'progress-used' : ''}}">
+<div class="page-holder theme theme-1 text-white {{ $progressMessage ? 'progress-used' : ''}}">
   <div id="particles-js"></div>
 
   <div class="pt-4 px-4 text-center">
@@ -98,7 +98,7 @@
               </div>
             </div>
 
-            @if ($startProgress)
+            @if ($progressMessage)
               <!-- Progress-->
               <div class="row z-index-20">
                 <div class="col-xl-3 col-lg-5 col-md-6 col-7 mx-auto">

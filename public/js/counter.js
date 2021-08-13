@@ -68,32 +68,12 @@ if (progressBarUsed) {
     let progressIdentifier = document.querySelector(".progress-status-text");
     let progressIdentifierTip = document.querySelector(".progress-status-tip");
 
-    function progressing(initalDate, launchDate, releaseUrl) {
+    setInterval(function() {
+      progressIdentifier.innerText = progressMessage;
+    }, 1000)
+
+    function progressing(progressWidth, launchDate, releaseUrl) {
         setInterval(function () {
-            let today = new Date();
-
-
-            function timeDiffCalc(initDate, relDate) {
-                let diffInMilliSeconds = Math.abs(relDate.getTime() - initDate.getTime()) / 1000;
-                // Calculate days
-                let days = Math.floor(diffInMilliSeconds / 86400);
-                diffInMilliSeconds -= days * 86400;
-                // Calculate hours
-                let hours = Math.floor(diffInMilliSeconds / 3600) % 24;
-                diffInMilliSeconds -= hours * 3600;
-                // Calculate minutes
-                let minutes = Math.floor(diffInMilliSeconds / 60) % 60;
-                diffInMilliSeconds -= minutes * 60;
-                progressIdentifier.innerText =`Released in ${days} days - ${hours} hrs - ${minutes} mins`;
-                console.log(progressIdentifier.innerText)
-            }
-            timeDiffCalc(today, launchDate);
-
-            let q = Math.abs(today.getTime() - initalDate.getTime());
-            let d = Math.abs(launchDate.getTime() - initalDate.getTime());
-
-            let progressWidth = Math.round((q / d) * 100);
-
             progressIdentifierTip.style.left = `calc(${progressWidth}% - 7px)`
             progress.style.width = `${progressWidth}%`;
             if (progressWidth > 70) {
@@ -103,8 +83,8 @@ if (progressBarUsed) {
             }
         }, 1000);
     }
-    
-    progressing(progressInitalDate, progressLaunchDate, releaseUrl);
+
+    progressing(progressWidth, deadline, releaseUrl);
 }
 
 /* ======================================

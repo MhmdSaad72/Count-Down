@@ -137,8 +137,9 @@ class ThemeController extends Controller
 
 
       $this->validate($request,[
-        'initialDate' => ($countType == 'progress') ? 'required|date|before:releaseDate' : '',
-        'initialTime' => ($countType == 'progress') ? 'required|date_format:H:i' : '',
+        'initialDate' => ($countType == 'progress') ? 'required|date|before_or_equal:releaseDate' : '',
+        // 'initialTime' => ($countType == 'progress') ? 'required|date_format:H:i' : '',
+        'initialTime' => [($countType == 'progress') ? 'required' : '', ($requestData['initialDate'] == $requestData['releaseDate']) ? 'before:releaseTime' : ''],
         'releaseDate' => 'required|date|after_or_equal:' . $date,
         'releaseTime' => ['required','date_format:H:i' , ($requestData['releaseDate'] == $date) ? 'after:' . $time : ''],
         'releaseUrl' => 'required|url|max:255',
