@@ -100,7 +100,7 @@
                 <p class="mb-5">{{ $generalSetting->counter_message ?? ''}}</p>
               </div>
             </div>
-
+            
             <!-- Progress-->
               <div class="row z-index-20">
                 <div class="col-xl-3 col-lg-5 col-md-6 col-7 mx-auto">
@@ -172,7 +172,7 @@
 /* ==========================================================
     GET DIFFERENT PARTICLES JSON FILES ACCORDING TO VIEWPORT
 ============================================================= */
-compareViewports('js/particles.json', 'js/particles.mb.json');
+compareViewports('js/particles2.json', 'js/particles2.mb.json');
   /* ======================================
       TIME ZONE JSON REQUEST
   ======================================== */

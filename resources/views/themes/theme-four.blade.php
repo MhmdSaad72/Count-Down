@@ -180,7 +180,7 @@
   /* ==========================================================
       GET DIFFERENT PARTICLES JSON FILES ACCORDING TO VIEWPORT
   ============================================================= */
-  compareViewports('js/particles.json', 'js/particles.mb.json');
+  compareViewports('js/particles3.json', 'js/particles3.mb.json');
     /* ======================================
         TIME ZONE JSON REQUEST
     ======================================== */
