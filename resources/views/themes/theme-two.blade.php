@@ -100,8 +100,9 @@
                 <p class="mb-5">{{ $generalSetting->counter_message ?? ''}}</p>
               </div>
             </div>
-            
-            <!-- Progress-->
+
+            @if ($progressMessage)
+              <!-- Progress-->
               <div class="row z-index-20">
                 <div class="col-xl-3 col-lg-5 col-md-6 col-7 mx-auto">
                   <div class="position-relative">
@@ -115,26 +116,28 @@
                   </div>
                 </div>
               </div>
-
+            @else
               <!-- Counter -->
-            <div class="d-flex counter" id="counter">
+              <div class="d-flex counter" id="counter">
                 <div class="mx-1 mx-lg-2">
-                    <div class="counter-item days theme-1-heading fw-normal h4"></div>
-                    <p class="counter-item-title my-3">{{__('Days')}}</p>
+                  <div class="counter-item days theme-1-heading fw-normal h4"></div>
+                  <p class="counter-item-title my-3">{{__('Days')}}</p>
                 </div>
                 <div class="mx-1 mx-lg-2">
-                    <div class="counter-item hours theme-1-heading fw-normal h4"></div>
-                    <p class="counter-item-title my-3">{{__('Hours')}}</p>
+                  <div class="counter-item hours theme-1-heading fw-normal h4"></div>
+                  <p class="counter-item-title my-3">{{__('Hours')}}</p>
                 </div>
                 <div class="mx-1 mx-lg-2">
-                    <div class="counter-item minutes theme-1-heading fw-normal h4"></div>
-                    <p class="counter-item-title my-3">{{__('Minutes')}}</p>
+                  <div class="counter-item minutes theme-1-heading fw-normal h4"></div>
+                  <p class="counter-item-title my-3">{{__('Minutes')}}</p>
                 </div>
                 <div class="mx-1 mx-lg-2">
-                    <div class="counter-item seconds theme-1-heading fw-normal h4"></div>
-                    <p class="counter-item-title my-3">{{__('Seconds')}}</p>
+                  <div class="counter-item seconds theme-1-heading fw-normal h4"></div>
+                  <p class="counter-item-title my-3">{{__('Seconds')}}</p>
                 </div>
-            </div>
+              </div>
+            @endif
+
         </div>
     </section>
 
