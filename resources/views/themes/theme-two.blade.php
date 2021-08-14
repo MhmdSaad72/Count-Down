@@ -137,10 +137,8 @@
                 </div>
               </div>
             @endif
-
         </div>
     </section>
-
 
     <!-- Footer-->
     <footer class="py-4">
