@@ -28,9 +28,11 @@ class HomeController extends Controller
 
         $counter = Counter::first();
 
+
         $now = Carbon::now();
         $releaseDate = Carbon::parse($counter->releaseDate);
         $releaseTime = Carbon::parse($counter->releaseTime);
+        $finalInitialDate = $finalInitialDate ?? null;
         if ($counter->countingType == 'progress') {
           $initialDate = Carbon::parse($counter->initialDate);
           $initialTime = Carbon::parse($counter->initialTime);
@@ -47,13 +49,14 @@ class HomeController extends Controller
         }
 
         $deadline = $releaseDate->format('Y-m-d') . ' ' . $releaseTime->format('H:i:s');
+        $finalInitialDate = $initialDate->format('Y-m-d') . ' ' . $initialTime->format('H:i:s');
         $releaseUrl = $counter->releaseUrl;
         $progressWidth = isset($progressWidth) ? $progressWidth : null ;
         $progressMessage = isset($progressWidth) ? 'Released in ' . $days .' days - ' . $hours . ' hrs - ' . $minutes . ' mins' : null ;
 
         $this->reloadDatetime($deadline,$counter,$now);
 
-        return view('home', compact('themeOne','themeTwo','themeThree','themeFour','generalSetting','deadline','releaseUrl','progressWidth','progressMessage'));
+        return view('home', compact('themeOne','themeTwo','themeThree','themeFour','generalSetting','deadline','releaseUrl','progressWidth','progressMessage', 'finalInitialDate'));
     }
 
     /*=================================================================

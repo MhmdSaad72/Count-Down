@@ -69,9 +69,9 @@ if (progressBarUsed) {
     let progressIdentifierTip = document.querySelector(".progress-status-tip");
 
 
-    function progressing(progressWidth, launchDate, releaseUrl) {
+    function progressing(initalDate, launchDate, relURL) {
 
-        setInterval(function () {
+        let progressInterval = setInterval(() => {
             let relDateStamp = new Date(launchDate)
             let today = new Date()
 
@@ -94,17 +94,27 @@ if (progressBarUsed) {
             }
             timeDiffCalc(today, relDateStamp)
 
-            progressIdentifierTip.style.left = `calc(${progressWidth}% - 7px)`
+            let initialDateStamp = new Date(initalDate)
+
+            let q = Math.abs(today.getTime() - initialDateStamp.getTime());
+            let d = Math.abs(relDateStamp.getTime() - initialDateStamp.getTime());
+
+            let progressWidth = Math.round((q / d) * 100);
+
+            console.log(progressWidth)
+
+            progressIdentifierTip.style.left = `calc(${progressWidth}% - 15px)`
             progress.style.width = `${progressWidth}%`;
-            if (progressWidth > 70) {
-                document.querySelector('.progress-status').classList.add('float-end');
-            } else if (progressWidth >= 100) {
-                location.assign(releaseUrl);
+            if (progressWidth >= 100) {
+                clearInterval(progressInterval)
+                location.assign(relURL)
+                progressIdentifierTip.style.display = 'none'
+                progressIdentifier.innerText = 'We\'re preparing now';
             }
         }, 1000);
     }
 
-    progressing(progressWidth, deadline, releaseUrl);
+    progressing(finalInitialDate, deadline, releaseUrl);
 }
 
 /* ======================================
