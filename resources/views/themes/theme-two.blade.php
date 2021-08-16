@@ -121,19 +121,19 @@
               <div class="d-flex counter" id="counter">
                 <div class="mx-1 mx-lg-2">
                   <div class="counter-item days theme-1-heading fw-normal h4"></div>
-                  <p class="counter-item-title my-3">{{__('Days')}}</p>
+                  <p class="counter-item-title mt-4 mb-3">{{__('Days')}}</p>
                 </div>
                 <div class="mx-1 mx-lg-2">
                   <div class="counter-item hours theme-1-heading fw-normal h4"></div>
-                  <p class="counter-item-title my-3">{{__('Hours')}}</p>
+                  <p class="counter-item-title mt-4 mb-3">{{__('Hours')}}</p>
                 </div>
                 <div class="mx-1 mx-lg-2">
                   <div class="counter-item minutes theme-1-heading fw-normal h4"></div>
-                  <p class="counter-item-title my-3">{{__('Minutes')}}</p>
+                  <p class="counter-item-title mt-4 mb-3">{{__('Minutes')}}</p>
                 </div>
                 <div class="mx-1 mx-lg-2">
                   <div class="counter-item seconds theme-1-heading fw-normal h4"></div>
-                  <p class="counter-item-title my-3">{{__('Seconds')}}</p>
+                  <p class="counter-item-title mt-4 mb-3">{{__('Seconds')}}</p>
                 </div>
               </div>
             @endif

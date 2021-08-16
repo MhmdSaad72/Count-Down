@@ -23,61 +23,58 @@
       <div class="logo z-index-20"><a class="d-block" href="{{ route('home') }}"><img class="img-fluid" src="img/theme-1-logo-dark.svg" alt="Ionic Counter" width="60"></a></div>
       <!-- Social Menu-->
       <ul class="list-inline mb-0 z-index-20">
-        <li class="list-inline-item mx-2 mx-xl-1">
-            <p class="mb-0 pe-5 position-relative text-uppercase">{{__('Follow us')}}<span class="separator"></span></p>
-        </li>
         @if ($themeFour->checkSocial('facebookUrl'))
           <li class="list-inline-item mx-2 mx-xl-1">
-            <a class="reset-link text-white text-sm" href="{{ $themeFour->socialUrl('facebookUrl') }}" title="Facebook">
+            <a class="social-link" href="{{ $themeFour->socialUrl('facebookUrl') }}" title="Facebook">
               <i class="fab fa-facebook-f"></i>
             </a>
           </li>
         @endif
         @if ($themeFour->checkSocial('twitterUrl'))
           <li class="list-inline-item mx-2 mx-xl-1">
-            <a class="reset-link text-white text-sm" href="{{ $themeFour->socialUrl('twitterUrl') }}" title="Twitter">
+            <a class="social-link" href="{{ $themeFour->socialUrl('twitterUrl') }}" title="Twitter">
               <i class="fab fa-twitter"></i>
             </a>
           </li>
         @endif
         @if ($themeFour->checkSocial('linkedinUrl'))
           <li class="list-inline-item mx-2 mx-xl-1">
-            <a class="reset-link text-white text-sm" href="{{ $themeFour->socialUrl('linkedinUrl') }}" title="Linkedin">
+            <a class="social-link" href="{{ $themeFour->socialUrl('linkedinUrl') }}" title="Linkedin">
               <i class="fab fa-linkedin-in"></i>
             </a>
           </li>
         @endif
         @if ($themeFour->checkSocial('vimeoUrl'))
           <li class="list-inline-item mx-2 mx-xl-1">
-            <a class="reset-link text-white text-sm" href="{{ $themeFour->socialUrl('vimeoUrl') }}" title="vimeo">
+            <a class="social-link" href="{{ $themeFour->socialUrl('vimeoUrl') }}" title="vimeo">
               <i class="fab fa-vimeo-v"></i>
             </a>
           </li>
         @endif
         @if ($themeFour->checkSocial('youtubeUrl'))
           <li class="list-inline-item mx-2 mx-xl-1">
-            <a class="reset-link text-white text-sm" href="{{ $themeFour->socialUrl('youtubeUrl') }}" title="youtube">
+            <a class="social-link" href="{{ $themeFour->socialUrl('youtubeUrl') }}" title="youtube">
               <i class="fab fa-youtube"></i>
             </a>
           </li>
         @endif
         @if ($themeFour->checkSocial('behanceUrl'))
           <li class="list-inline-item mx-2 mx-xl-1">
-            <a class="reset-link text-white text-sm" href="{{ $themeFour->socialUrl('behanceUrl') }}" title="behance">
+            <a class="social-link" href="{{ $themeFour->socialUrl('behanceUrl') }}" title="behance">
               <i class="fab fa-behance"></i>
             </a>
           </li>
         @endif
         @if ($themeFour->checkSocial('pinterestUrl'))
           <li class="list-inline-item mx-2 mx-xl-1">
-            <a class="reset-link text-white text-sm" href="{{ $themeFour->socialUrl('pinterestUrl') }}" title="pinterest">
+            <a class="social-link" href="{{ $themeFour->socialUrl('pinterestUrl') }}" title="pinterest">
               <i class="fab fa-pinterest"></i>
             </a>
           </li>
         @endif
         @if ($themeFour->checkSocial('instagramUrl'))
           <li class="list-inline-item mx-2 mx-xl-1">
-            <a class="reset-link text-white text-sm" href="{{ $themeFour->socialUrl('instagramUrl') }}" title="instagram">
+            <a class="social-link" href="{{ $themeFour->socialUrl('instagramUrl') }}" title="instagram">
               <i class="fab fa-instagram"></i>
             </a>
           </li>
@@ -131,19 +128,19 @@
           @else
             <!-- Counter-->
             <div class="row gx-2 gx-xl-4 counter text-center justify-content-end flex-wrap mb-5 z-index-20" id="counter">
-              <div class="col-3 col-xl-6">
+              <div class="col-3 col-xl-6 d-flex flex-column align-item-center">
                 <div class="counter-item days counter-no theme-4-heading rounded-lg h2"></div>
                 <p class="counter-item-title my-2">Days</p>
               </div>
-              <div class="col-3 col-xl-6">
+              <div class="col-3 col-xl-6 d-flex flex-column align-item-center">
                 <div class="counter-item hours counter-no theme-4-heading rounded-lg h2"></div>
                 <p class="counter-item-title my-2">Hours</p>
               </div>
-              <div class="col-3 col-xl-6">
+              <div class="col-3 col-xl-6 d-flex flex-column align-item-center">
                 <div class="counter-item minutes counter-no theme-4-heading rounded-lg h2"></div>
                 <p class="counter-item-title my-2">Minutes</p>
               </div>
-              <div class="col-3 col-xl-6">
+              <div class="col-3 col-xl-6 d-flex flex-column align-item-center">
                 <div class="counter-item seconds counter-no theme-4-heading rounded-lg h2"></div>
                 <p class="counter-item-title my-2">Seconds</p>
               </div>
