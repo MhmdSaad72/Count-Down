@@ -103,7 +103,7 @@ if (progressBarUsed) {
 
             console.log(progressWidth)
 
-            progressIdentifierTip.style.left = `calc(${progressWidth}% - 15px)`
+            progressIdentifierTip.style.left = `calc(${progressWidth}% - 7px)`
             progress.style.width = `${progressWidth}%`;
             if (progressWidth >= 100) {
                 clearInterval(progressInterval)
