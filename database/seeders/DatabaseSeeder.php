@@ -36,11 +36,11 @@ class DatabaseSeeder extends Seeder
           'releaseUrl' => 'https://www.google.com',
         ]);
         // create four themes and there images
-        $number = ['One','Two','Three','Four'];
+        $number = ['Space','Geometric','Minimal','Forest'];
         $active = [1,0,0,0];
         for ($i = 0; $i < 4 ; $i++) {
           $theme = Theme::create([
-            'name' => 'Theme ' . $number[$i],
+            'name' => $number[$i] . ' Theme',
             'active' => $active[$i]
           ]);
           if ($theme->id != 3 && $theme->id != 1) {

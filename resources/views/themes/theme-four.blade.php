@@ -88,7 +88,7 @@
       <div class="row py-5 align-items-center">
         <div class="col-xl-6 pb-5 mb-5 pb-xl-0 mb-xl-0">
           <!-- Page main heading-->
-          <p class="text-uppercase text-gray-600 small letter-spacing-3 text-center text-xl-start fw-bold z-index-20">Site is under construction</p>
+          <p class="text-uppercase text-gray-600 small letter-spacing-3 text-center text-xl-start fw-bold z-index-20">{{ $generalSetting->sub_heading ?? '' }}</p>
           <div class="title">
             <h1 class="lh-1 text-uppercase theme-4-heading letter-spacing-0 text-center text-xl-start heading-2x" data-shadow="Comming Soon">{{ $generalSetting->main_heading ?? '' }}</h1>
           </div>

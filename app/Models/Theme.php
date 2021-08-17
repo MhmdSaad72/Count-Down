@@ -64,7 +64,7 @@ class Theme extends Model
 
     public function description($index)
     {
-      $themesDesc = ['A large sans serif bold heading with light background counter items, all are rendered on the page middle.','A large sans serif thin heading with a geometric background, all are rendered on the page middle.','A large serif bold heading with a plain background and counter items separator, all are rendered on the page middle.','A large sans serif heading with a fancy background and light counter items background, all are rendered on the page side.'];
+      $themesDesc = ['Space background with animated heading and moving stars around the page.','Geometric background with parallaxing heading and moving shapes around the page.','Minimal gradient background with large counter and parallax elements.','Forest background with background text heading'];
       return $themesDesc[$index];
     }
 }

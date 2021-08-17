@@ -6,7 +6,7 @@
 
         <div class="col-lg-4 col-md-6">
             <!-- Dashboard Item-->
-            <div class="card rounded-lg card-striped card-striped-gradient-success">
+            <div class="card rounded-lg border-0 card-striped card-striped-gradient-success">
                 <div class="card-body rounded-lg bg-white shadow-sm p-lg-4">
                     <h2 class="h5 text-uppercase letter-spacing-0 mb-0 fw-bold">{{__('All subscribers')}}</h2>
                     <p class="text-gray-500 mb-4">{{__('All users that have subscribed to get notified.')}}</p>
@@ -17,7 +17,7 @@
 
         <div class="col-lg-4 col-md-6">
             <!-- Dashboard Item-->
-            <div class="card rounded-lg card-striped card-striped-gradient-danger">
+            <div class="card rounded-lg border-0 card-striped card-striped-gradient-danger">
                 <div class="card-body rounded-lg bg-white shadow-sm p-lg-4">
                     <h2 class="h5 text-uppercase letter-spacing-0 mb-0 fw-bold">{{__('New subscribers')}}</h2>
                     <p class="text-gray-500 mb-4">{{__('New subscribers this month.')}}</p>

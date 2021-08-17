@@ -17,6 +17,7 @@ class CreateGeneralSettingsTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->string('main_heading')->nullable();
+            $table->string('sub_heading')->nullable();
             $table->string('newsletter')->nullable();
             $table->string('submit_button')->nullable();
             $table->string('copyrights')->nullable();

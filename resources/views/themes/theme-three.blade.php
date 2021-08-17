@@ -90,7 +90,7 @@
         <div class="container">
 
           <!-- Page subheading -->
-          <p class="h4 theme-font-main z-index-20">Stay tuned!</p>
+          <p class="h4 theme-font-main z-index-20">{{ $generalSetting->sub_heading ?? '' }}</p>
 
             <!-- Page main heading-->
             <h1 class="theme-3-main-heading text-shadow mb-2">{{ $generalSetting->main_heading ?? '' }}</h1>

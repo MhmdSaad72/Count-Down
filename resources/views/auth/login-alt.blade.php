@@ -37,7 +37,7 @@
                                 <div class="input-group flex-row-reverse">
                                     <input class="form-control border-start-0 shadow-0 rounded rounded-start-0" id="uniqueKey" type="text" name="security_key" placeholder="Enter your unique security key" aria-label="uniqueKey"
                                       aria-describedby="uniqueKey-addon" />
-                                    <span class="input-group-text pe-0 border-end-0 rounded rounded-end-0" id="uniqueKey-addon">
+                                    <span class="input-group-text pe-0 border-end-0 rounded rounded-end-0 bg-white" id="uniqueKey-addon">
                                         <i class="text-muted fas fa-lock"></i>
                                     </span>
                                 </div>

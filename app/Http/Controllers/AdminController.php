@@ -105,6 +105,7 @@ class AdminController extends Controller
     {
       $this->validate($request,[
         'main_heading' => 'required|max:255',
+        'sub_heading' => 'required|max:255',
         'counter_message' => 'required|max:255',
         'newsletter' => 'required|max:255',
         'submit_button' => 'required|max:255',

@@ -34,7 +34,7 @@
                                   <label class="form-label h6 mb-2" for="username">{{__('Username or email')}}</label>
                                   <!-- Icon Input-->
                                   <div class="input-group flex-row-reverse">
-                                      <input class="form-control border-start-0 shadow-0 rounded rounded-start-0" id="username" type="text" name="username" placeholder="Enter your username or email address" aria-label="username" aria-describedby="username-addon" value="admin@admin.com"/>
+                                      <input class="form-control border-start-0 shadow-0 rounded rounded-start-0 bg-white" id="username" type="text" name="username" placeholder="Enter your username or email address" aria-label="username" aria-describedby="username-addon" value="admin@admin.com"/>
                                       <span class="input-group-text pe-0 border-end-0 rounded rounded-end-0" id="username-addon">
                                           <i class="text-muted fas fa-user"></i>
                                       </span>

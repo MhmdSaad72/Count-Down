@@ -15,10 +15,10 @@ class HomeController extends Controller
     ===================================*/
     public function index()
     {
-        $themeOne = Theme::where('name','Theme One')->where('active',1)->first();
-        $themeTwo = Theme::where('name','Theme Two')->where('active',1)->first();
-        $themeThree = Theme::where('name','Theme Three')->where('active',1)->first();
-        $themeFour = Theme::where('name','Theme Four')->where('active',1)->first();
+        $themeOne = Theme::where('id',1)->where('active',1)->first();
+        $themeTwo = Theme::where('id',2)->where('active',1)->first();
+        $themeThree = Theme::where('id',3)->where('active',1)->first();
+        $themeFour = Theme::where('id',4)->where('active',1)->first();
 
 
 

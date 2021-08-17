@@ -12,7 +12,7 @@
         @csrf
         @method('patch')
         <div class="row gy-2 gx-3 mb-4 align-items-stretch">
-          @if ($singleTheme->name != 'Theme Three')
+          @if ($singleTheme->id != 3)
             @foreach ($singleTheme->images as $key => $value)
               <!-- Theme default background item-->
               <div class="col-xl-2 col-lg-3 col-6 form-group">
@@ -42,7 +42,7 @@
 
         <!-- NEW [ONLY AVAILABEL FOR INDEX 3 - MAKE GRADIENT BACKGROUND ] -->
         <div class="row gy-2 gx-3 mb-4 align-items-stretch">
-          @if ($singleTheme->name == 'Theme Three')
+          @if ($singleTheme->id == 3)
             @foreach ($singleTheme->images as $key => $value)
               <!-- Theme default gradient item-->
               <div class="col-xl-2 col-lg-3 col-6 form-group">

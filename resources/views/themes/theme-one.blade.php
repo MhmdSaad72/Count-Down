@@ -89,7 +89,7 @@
     <section class="py-5 text-center">
         <div class="container pt-4 position-relative">
           <!-- Page Subheading-->
-          <p class="text-uppercase text-gray-500 letter-spacing-3 fw-bold z-index-20">Site is under construction</p>
+          <p class="text-uppercase text-gray-500 letter-spacing-3 fw-bold z-index-20">{{ $generalSetting->sub_heading ?? '' }}</p>
             <!-- Page main heading-->
             <h1 class="ta theme-1-main-heading text-uppercase text-shadow mb-3 z-index-20">{{ $generalSetting->main_heading ?? '' }}</h1>
             <div class="row">

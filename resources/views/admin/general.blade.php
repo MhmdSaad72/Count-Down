@@ -4,7 +4,7 @@
 <section class="py-5">
     <!-- Success Flash Message-->
     @include('includes.flash-message')
-    
+
     @if ($errors->any())
     <!-- Info Alert-->
     <div class="alert alert-danger mb-4" role="alert">
@@ -33,7 +33,7 @@
                 <!-- Input-->
                 <label class="form-label h5 mb-0 required" for="themeSubHeading">{{__('Theme subheading')}}</label>
                 <p class="form-text mb-3">{{__('The large small heading appears on top of the main heading.')}}</p>
-                <input class="form-control shadow-0" id="themeSubHeading" type="text" name="sub_heading" placeholder="Type theme subheading" value="{{ $generalSetting->main_heading ?? '' }}" />
+                <input class="form-control shadow-0" id="themeSubHeading" type="text" name="sub_heading" placeholder="Type theme subheading" value="{{ $generalSetting->sub_heading ?? '' }}" />
             </div>
 
             <div class="form-group col-lg-6">
