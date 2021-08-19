@@ -35,7 +35,7 @@
                                   <!-- Icon Input-->
                                   <div class="input-group flex-row-reverse">
                                       <input class="form-control border-start-0 shadow-0 rounded rounded-start-0 bg-white" id="username" type="text" name="username" placeholder="Enter your username or email address" aria-label="username" aria-describedby="username-addon" value="admin@admin.com"/>
-                                      <span class="input-group-text pe-0 border-end-0 rounded rounded-end-0" id="username-addon">
+                                      <span class="input-group-text pe-0 border-end-0 rounded rounded-end-0 bg-white" id="username-addon">
                                           <i class="text-muted fas fa-user"></i>
                                       </span>
                                   </div>
@@ -46,7 +46,7 @@
                                   <!-- Icon Input-->
                                   <div class="input-group flex-row-reverse">
                                       <input class="form-control border-start-0 shadow-0 rounded rounded-start-0" id="password" type="password" name="password" placeholder="Enter your password" aria-label="password" aria-describedby="password-addon" value="123456789"/>
-                                      <span class="input-group-text pe-0 border-end-0 rounded rounded-end-0" id="password-addon">
+                                      <span class="input-group-text pe-0 border-end-0 rounded rounded-end-0 bg-white" id="password-addon">
                                           <i class="text-muted fas fa-lock"></i>
                                       </span>
                                   </div>
