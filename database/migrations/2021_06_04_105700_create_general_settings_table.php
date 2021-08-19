@@ -25,6 +25,7 @@ class CreateGeneralSettingsTable extends Migration
             $table->string('meta_keywords')->nullable();
             $table->string('meta_author')->nullable();
             $table->string('favicon_image')->nullable();
+            $table->string('theme_logo')->nullable();
             $table->string('counter_message')->nullable();
             $table->string('timezone')->default('UTC');
             $table->text('meta_description')->nullable();

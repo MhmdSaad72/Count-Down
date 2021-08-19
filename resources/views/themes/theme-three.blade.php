@@ -20,7 +20,7 @@
   <!-- Sociallinks-->
   <div class="container pt-4 px-4 text-center">
     <div class="d-flex align-items-center justify-content-between">
-      <div class="logo z-index-20"><a class="d-block" href="{{ route('home') }}"><img class="img-fluid" src="{{ asset('img/theme-1-logo.svg') }}" alt="Ionic Counter" width="100"></a></div>
+      <div class="logo z-index-20"><a class="d-block" href="{{ route('home') }}"><img class="img-fluid" src="{{ isset($generalSetting->theme_logo) ? asset('img/' . $generalSetting->theme_logo ) : 'img/theme-1-logo.svg' }}" alt="Ionic Counter" width="100"></a></div>
 
       <ul class="list-inline mb-0 z-index-20">
         @if ($themeThree->checkSocial('facebookUrl'))

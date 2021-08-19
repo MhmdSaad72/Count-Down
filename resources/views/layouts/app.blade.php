@@ -35,9 +35,8 @@
         <script>
         const deadline = "{{ $deadline ?? '' }}" ;
         const releaseUrl = "{{ $releaseUrl ?? '' }}" ;
-        // const progressWidth = "{{ $progressWidth ?? '' }}";
-        const finalInitialDate = "{{ $finalInitialDate ?? '' }}";
-        console.log(releaseUrl)
+        const progressWidth = "{{ $progressWidth ?? '' }}";
+        console.log(deadline)
         </script>
         <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
         @yield('js')

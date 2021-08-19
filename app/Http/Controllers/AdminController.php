@@ -114,6 +114,7 @@ class AdminController extends Controller
         'meta_keywords' => 'nullable|regex:/^[\pL\s]+$/u|max:255',
         'meta_author' => 'nullable|max:255',
         'favicon_image' => 'nullable|file|image|mimes:jpeg,png,jpg,ico|dimensions:ratio=1',
+        'theme_logo' => 'nullable|file|image|mimes:jpeg,png,jpg,ico|dimensions:ratio=1',
         'meta_description' => 'nullable|max:255',
       ]);
 
@@ -126,7 +127,14 @@ class AdminController extends Controller
          $uplaod = $file->move($path,$fileName);
          $requestData['favicon_image'] = $fileName;
       }
-
+      if ($request->hasFile('theme_logo')) {
+         $file = $requestData['theme_logo'];
+         $extension = $file->getClientOriginalExtension(); // you can also use file name
+         $fileName = 'favicon.' . $extension;
+         $path = public_path().'/img';
+         $uplaod = $file->move($path,$fileName);
+         $requestData['theme_logo'] = $fileName;
+      }
       $general->update($requestData);
       return redirect()->back()->with('flash_message','You\'ve updated your data');
     }

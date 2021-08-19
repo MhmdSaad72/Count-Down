@@ -21,7 +21,7 @@
 
   <div class="pt-4 px-4 text-center">
     <div class="container-fluid d-flex align-items-center justify-content-center flex-column">
-      <div class="logo z-index-20"><a class="d-block" href="{{ route('home')}}"><img class="img-fluid" src="{{asset('img/theme-1-logo.svg')}}" alt="Ionic Counter" width="70"></a></div>
+      <div class="logo z-index-20"><a class="d-block" href="{{ route('home')}}"><img class="img-fluid" src="{{ isset($generalSetting->theme_logo) ? asset('img/' . $generalSetting->theme_logo ) : 'img/theme-1-logo.svg' }}" alt="Ionic Counter" width="70"></a></div>
       <!-- Social Menu-->
       <ul class="list-inline mb-0 social-menu z-index-20">
         @if ($themeOne->checkSocial('facebookUrl'))

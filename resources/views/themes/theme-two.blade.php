@@ -23,7 +23,7 @@
         <div class="container-fluid d-flex align-item-center justify-content-center flex-column">
           <div class="logo z-index-20">
             <a class="d-block" href="{{ route('home') }}">
-            <img class="img-fluid" src="{{ asset('img/theme-1-logo.svg')}}" alt="Ionic Counter" width="70">
+            <img class="img-fluid" src="{{ isset($generalSetting->theme_logo) ? asset('img/' . $generalSetting->theme_logo ) : 'img/theme-1-logo.svg' }}" alt="Ionic Counter" width="70">
           </a>
         </div>
             <ul class="list-inline mb-0 social-menu z-index-20">
