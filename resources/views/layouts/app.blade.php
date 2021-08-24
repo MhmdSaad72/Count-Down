@@ -36,6 +36,7 @@
         const deadline = "{{ $deadline ?? '' }}" ;
         const releaseUrl = "{{ $releaseUrl ?? '' }}" ;
         const progressWidth = "{{ $progressWidth ?? '' }}";
+        const finalInitialDate = "{{ $finalInitialDate ?? '' }}"
         console.log(deadline)
         </script>
         <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
